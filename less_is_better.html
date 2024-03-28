@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Less-is-better effect</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>We favor simple-looking options</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Less-is-better effect</h1>
+                    </header>
+
+                    <span class="image main"><img src="images/occam.png" alt="" /></span>
+
+                    <h2>Examples of usage</h2>
+                    <p>The Less-is-better effect describes a cognitive bias where people judge a smaller quantity as more valuable than a larger one, under certain conditions, contrary to logical expectations. Here are a few examples in one sentence each:</p>
+                    <ul>
+                        <li><strong>Gift Cards</strong>: A person may perceive a $50 gift card to a high-end store as more valuable than a $60 gift card to a less prestigious retailer, valuing the exclusivity over the higher monetary value.</li>
+                        <li><strong>Food Portions</strong>: Individuals might rate a gourmet small portion dish higher in quality and taste than a larger portion of a standard meal, associating size with exclusivity and craftsmanship.</li>
+                        <li><strong>Workshops</strong>: A shorter, more focused workshop is often seen as more valuable and efficient than a longer, comprehensive course, despite covering less material, due to perceived focus and specificity.</li>
+                        <li><strong>Vacations</strong>: A shorter vacation to a luxury, exotic destination can be seen as more desirable than a longer stay at a standard vacation spot, with the uniqueness and luxury outweighing the duration.</li>
+                        <li><strong>Electronics</strong>: A smaller, sleeker electronic gadget is sometimes considered more advanced and desirable than a larger one with more features, associating compactness with modernity and innovation.</li>
+                    </ul>
+
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <b>Classes:</b>
+                    <ul>
+                        <li><strong>Person (Judge)</strong>. The individual evaluating and making decisions.</li>
+                        <ul>
+                            <li><strong>hasName</strong>
+                        </ul>
+                        <li><strong>Thing</strong>.  An item or scenario being evaluated.</li>
+                        <ul>
+                            <li>hasDescription</li>
+                        </ul>
+                        <li><strong>Attribute</strong>. Characteristics or features of a Thing that are assessed by the Person.</li>
+                        <li><strong>Value</strong>. The perceived worth or desirability of an Attribute of a Thing.</li>
+                        <li><strong>Judgment</strong>. The outcome of the evaluation process.</li>
+                        <li><strong>RationalDecision (Subclass of Judgment)</strong>: A decision based on objective evaluation.</li>
+                        <li><strong>BiasedDecision (Subclass of Judgment)</strong>: A decision influenced by the perception that less quantity or size can be more valuable under certain contexts.</li>
+                        <ul>
+                            
+                        </ul>
+                    </ul>
+                    <b>Properties (Attributes and Relationships):</b>
+                    <ul>
+                        <li><strong>hasName (Person)</strong></li>
+                        <ul>
+                            <li>Domain: Person</li>
+                            <li>Range: String</li>
+                        </ul>
+                        <li><strong>hasAttribute (Thing to Attribute)</strong></li>
+                        <ul>
+                            <li>Domain: Thing</li>
+                            <li>Range: Attribute</li>
+                        </ul>
+                        <li><strong>hasValue (Attribute to Value)</strong></li>
+                        <ul>
+                            <li>Domain: Attribute</li>
+                            <li>Range: Value</li>
+                            </ul>
+                        <li><strong>makesJudgment (Person to Judgment)</strong></li>
+                        <ul>
+                            <li>Domain: Person</li>
+                            <li>Range: Judgment</li>
+                            </ul>
+                        <li><strong>basedOn (Judgment to Thing)</strong></li>
+                        <ul>
+                            <li>Domain: Judgment</li>
+                            <li>Range: Thing</li>
+                        <li><strong>resultsIn (Judgment to RationalDecision or BiasedDecision)</strong></li>
+                        <ul>
+                            <li>Domain: Judgment</li>
+                            <li>Range: RationalDecision, BiasedDecision</li>
+                        </ul>
+                        
+                    </ul>
+                   
+                   
+                    <hr class="major" />
+
+                    <h2>Ontology visualization</h2>
+                    <img src="images/occam.png" alt="Ontology visualization" width="800px" />
+                    <p><a href="owl/occam.owl">TTL code for the ontology</a></p>
+                    </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Bike-shedding effect</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>We favor simple-looking options</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Bike-shedding effect</h1>
+                    </header>
+
+                    <span class="image main"><img src="images/rhyme-reason.png" alt="" /></span>
+
+                    <h2>Examples of usage</h2>
+                    <p>The bike-shedding effect, also known as Parkinson's Law of Triviality, occurs when a group or
+                        individual gives disproportionate weight or time to trivial issues while neglecting more
+                        significant ones. Here are five examples:</p>
+                    <ul>
+                        <li><strong>Corporate Meetings on Office Decor</strong>: A team spends the majority of a meeting
+                            debating what color to paint the office bike shed, while allocating only a few minutes to
+                            discuss critical strategic decisions that affect the future of the company. The simplicity
+                            and relatability of the bike shed topic lead to extensive discussion, overshadowing more
+                            complex but important topics.</li>
+                        <li><strong>Legal Phrases</strong>: "If it doesn't fit, you must acquit." Famously used during
+                            the O.J. Simpson
+                            trial by his defense lawyer, Johnny Cochran, regarding a glove. The rhyming phrase was
+                            designed to be memorable and persuasive to the jury.</li>
+                        <li><strong>Software Development Prioritization</strong>: A software development team spends
+                            several days arguing over the design of a minor feature's icon in a new app, such as the
+                            color or shape, but rushes through more critical discussions on data security measures or
+                            architectural choices that have significant long-term implications for the project.</li>
+                        <li><strong>Government Budget Allocations</strong>: A local government council debates for hours
+                            over a small budget allocation for a public park's new benches, while swiftly passing larger
+                            and more impactful budget items, like infrastructure improvements or educational funding.
+                            The tangible and straightforward nature of the park bench discussion invites more opinions
+                            and debate, despite its relative unimportance in the broader budget.</li>
+                        <li><strong>Home Renovation</strong>: A couple is renovating their house and needs to make
+                            decisions on various aspects, including structural changes, plumbing, electrical work, and
+                            interior design. They end up spending several hours debating the color of the kitchen tiles,
+                            a relatively minor decision, while postponing critical choices related to the budget,
+                            contractors, and timelines for the more significant aspects of the renovation. This
+                            disproportionate focus on less important details can delay the overall project and impact
+                            its success.</li>
+                    </ul>
+
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <b>Classes:</b>
+                    <ul>
+                        <li><strong>Group</strong>. Represents an entity with a structured group of people
+                            working together to meet a shared objective.</li>
+                        <li><strong>Project</strong>. A specific initiative or program within an organization, defined
+                            by goals, timelines, and resources.</li>
+                        <li><strong>Meeting</strong>. A scheduled gathering of project members or organization staff to
+                            discuss topics, make decisions, or share information related to the project.</li>
+                        <li><strong>Task</strong>. An individual assignment or piece of work to be done as part of the
+                            project's requirements.</li>
+                        <li><strong>Discussion</strong>. The act of talking about something with another person or a
+                            group of people, especially to make a decision or solve a problem.</li>
+                    </ul>
+                    <b>Object Properties:</b>
+                    <ul>
+                        <li><strong>hasProject</strong> (Organization -> Project). Links an organization to its
+                            projects.</li>
+                        <li><strong>hasMeeting</strong> (Project -> Meeting). Connects a project to its associated
+                            meetings.</li>
+                        <li><strong>hasDiscussion</strong> (Meeting -> Discussion). Associates a meeting with the
+                            discussions that take place within it.</li>
+                        <li><strong>comprises</strong> (Project -> Task). Indicates that a project is made up of
+                            multiple tasks.</li>
+                    </ul>
+                    <b>Data Properties:</b>
+                    <ul>
+                        <li><strong>name</strong> (Organization, Project). The name of an organization or project.</li>
+                        <li><strong>budget</strong> (Project). The allocated budget for a project.</li>
+                        <li><strong>deadline</strong> (Project). The deadline by which the project or a task within the
+                            project is to be completed.</li>
+                        <li><strong>meetingDate</strong> (Meeting). The date on which a meeting is scheduled.</li>
+                        <li><strong>duration</strong> (Meeting, Discussion). The length of time a meeting or discussion
+                            lasts.</li>
+                        <li><strong>importanceLevel</strong> (Task). A measure of a task's significance or priority
+                            within the project.</li>
+                        <li><strong>topic</strong> (Discussion). The subject matter being discussed in a meeting.</li>
+                    </ul>
+                    <b>Axioms and Rules:</b>
+                    <ul>
+                        <li>Meetings that disproportionately focus on tasks with low importance levels are exhibiting
+                            the Bike-shedding effect.</li>
+                        <li>The more significant the disparity between the importance of tasks and the time spent
+                            discussing them, the stronger the indication of the Bike-shedding effect.</li>
+                    </ul>
+                    <p>This ontology provides a foundation for exploring the Rhyme-as-Reason effect, allowing for the
+                        comparison of rhyming and simple messages in terms of their perceived impact. The structure
+                        facilitates understanding how cognitive biases can influence message reception and the
+                        assessment of their effectiveness.</p>
+
+                    <hr class="major" />
+
+                    <h2>Ontology visualization</h2>
+                    <img src="images/rhyme-reason.png" alt="Ontology visualization" width="800px" />
+                    <p><a href="owl/rhymas_as_reason.owl">TTL code for the ontology</a></p>
+                    </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

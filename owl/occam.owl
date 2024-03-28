@@ -1,0 +1,65 @@
+@prefix : <http://example.com/occam#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Classes
+:Person a owl:Class .
+:Problem a owl:Class .
+:Explanation a owl:Class .
+:SimpleExplanation a owl:Class ; rdfs:subClassOf :Explanation .
+:ComplexExplanation a owl:Class ; rdfs:subClassOf :Explanation .
+:Decision a owl:Class .
+:RationalDecision a owl:Class ; rdfs:subClassOf :Decision .
+:BiasedDecision a owl:Class ; rdfs:subClassOf :Decision .
+
+# Properties
+:hasName a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:hasDescription a owl:DatatypeProperty ;
+    rdfs:domain [ owl:unionOf ( :Problem :Explanation ) ] ;
+    rdfs:range xsd:string .
+
+:hasAssumptionCount a owl:DatatypeProperty ;
+    rdfs:domain :Explanation ;
+    rdfs:range xsd:integer .
+
+:hasComplexityLevel a owl:DatatypeProperty ;
+    rdfs:domain :Explanation ;
+    rdfs:range xsd:string .
+
+:makesDecision a owl:ObjectProperty ;
+    rdfs:domain :Person ;
+    rdfs:range :Decision .
+
+:considersExplanation a owl:ObjectProperty ;
+    rdfs:domain :Problem ;
+    rdfs:range :Explanation .
+
+:chosenExplanation a owl:ObjectProperty ;
+    rdfs:domain :Decision ;
+    rdfs:range :Explanation .
+
+# Example Individuals
+:DrSmith a :Person ;
+    :hasName "Dr. Smith" .
+
+:SuddenHeadache a :Problem ;
+    :hasDescription "Patient reports a sudden onset of headache." .
+
+:DehydrationExplanation a :SimpleExplanation ;
+    :hasDescription "The headache is due to dehydration." ;
+    :hasAssumptionCount 1 ;
+    :hasComplexityLevel "Low" .
+
+:NeurologicalConditionExplanation a :ComplexExplanation ;
+    :hasDescription "The headache is caused by a rare neurological condition." ;
+    :hasAssumptionCount 5 ;
+    :hasComplexityLevel "High" .
+
+:ChooseDehydration a :RationalDecision ;
+    :chosenExplanation :DehydrationExplanation .

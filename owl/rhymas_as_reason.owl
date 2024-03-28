@@ -1,0 +1,76 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/rhyme-reason#> .
+
+### Ontology Declaration
+: rdf:type owl:Ontology ;
+  rdfs:comment "An ontology for the Rhyme as Reason effect." .
+
+### Classes
+:Message rdf:type owl:Class .
+
+### Class Definition with Property Restriction
+:RhymingMessage rdf:type owl:Class ;
+                rdfs:subClassOf :Message ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRhyme ;
+                                  owl:hasValue true
+                                ] .
+
+### Class Definition with Property Restriction for SimpleMessage
+:SimpleMessage rdf:type owl:Class ;
+                rdfs:subClassOf :Message ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRhyme ;
+                                  owl:hasValue false
+                                ] .
+
+:Perceiver rdf:type owl:Class .
+
+:CognitiveBias rdf:type owl:Class .
+
+### Individuals - Examples of cognitive bias
+:RhymeAsReasonEffect rdf:type :CognitiveBias .
+
+### Object Properties
+:hasMessage rdf:type owl:ObjectProperty ;
+            rdfs:domain :Perceiver ;
+            rdfs:range :Message .
+
+### Adjusted Object Property
+:influencedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Perceiver ;
+              rdfs:range :RhymeAsReasonEffect ;
+              rdfs:comment "Indicates that the perceiver's interpretation or judgment is influenced by a cognitive bias." .
+            
+### Data Properties
+:hasRhyme rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Message ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "Indicates if the message contains a rhyme." .
+
+:impactScore rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Message ;
+          rdfs:range xsd:float ;
+          rdfs:comment "Quantifies the impact or persuasiveness of the message." .
+
+
+### Adjusting the individuals to include the hasRhyme property
+:ExampleRhymingMessage rdf:type :RhymingMessage ;
+                       rdfs:label "Loose lips sink ships." ;
+                       :hasRhyme true ;
+                       :impactScore 8.5 .
+                     
+:ExampleSimpleMessage rdf:type :SimpleMessage ;
+                      rdfs:label "Careless talk causes harm." ;
+                      :hasRhyme false ;
+                      :impactScore 6.0 .
+
+### Axioms (Examples - Simplified for illustration)
+# Here you would include axioms that specify the conditions under which
+# the cognitive bias effects are more pronounced, e.g., rhyming messages
+# being perceived as more credible than simple messages. This requires
+# a deeper understanding of OWL axioms and is more complex to implement
+# directly without specific logical conditions.

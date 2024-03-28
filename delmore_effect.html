@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>The Delmore Effect</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>We favor simple-looking options</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Delmore Effect</h1>
+                    </header>
+
+                    <span class="image main"><img src="images/delmore.png" alt="" /></span>
+
+                    <h2>Examples of usage</h2>
+                    <p>Individuals focus on completing minor tasks or goals due to the immediate satisfaction and sense
+                        of
+                        achievement they provide, while neglecting more significant, challenging goals that could have a
+                        substantial
+                        impact on their happiness and life quality. Here are few examples:</p>
+                    <ul>
+                        <li><strong>Workplace Productivity</strong>: An employee spends their day clearing out their
+                            email inbox, organizing files, and attending to minor administrative tasks that offer a
+                            sense of completion. These tasks are straightforward and provide immediate satisfaction
+                            through the visual progress of an empty inbox or a tidy desk. However, this focus on minor
+                            accomplishments comes at the expense of working on a major project that requires deep focus
+                            and creative thinking. The project has the potential to significantly advance their career
+                            or contribute to the company's innovation, but it remains neglected due to its complexity
+                            and the longer timeframe required to see results.</li>
+                        <li><strong>Personal Fitness Goals</strong>: An individual sets a resolution to get in shape by
+                            joining a gym, buying workout clothes, and creating a detailed exercise schedule. Initially,
+                            they feel a sense of achievement from these preparatory actions, checking off each step as a
+                            move towards their fitness goals. However, they consistently choose to engage in easier,
+                            less impactful activities like short walks or light, sporadic workouts, avoiding the more
+                            challenging and time-consuming workouts that would lead to significant health improvements
+                            and weight loss. The immediate gratification and lesser effort of small tasks overshadow the
+                            commitment needed to achieve their substantial fitness goals.</li>
+                        <li><strong>Home Improvement Projects</strong>: A homeowner has a critical renovation project to
+                            enhance their home's value and livability, such as fixing a leaky roof or updating an
+                            outdated and inefficient heating system. Instead, they find themselves repeatedly distracted
+                            by smaller, more manageable tasks around the house, like repainting a room, rearranging
+                            furniture, or gardening. These tasks offer a quick sense of accomplishment and aesthetic
+                            improvements but do not address the more significant issues that could lead to severe
+                            consequences if left unattended. The homeowner prefers the simplicity and immediate rewards
+                            of minor projects over the daunting complexity and higher costs of essential renovations.
+                        </li>
+                    </ul>
+
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <b>Classes:</b>
+                    <ul>
+                        <li><strong>Agent (Person)</strong>. Represents individuals subject.</li>
+                        <ul>
+                            <li><strong>hasName</strong>
+                            <li>hasMotivationLevel</li>
+                            <li>hasGoalPriority</li>
+                        </ul>
+                        <li><strong>Task</strong>. Actions or activities an agent might consider.</li>
+                        <ul>
+                            <li>hasDescription</li>
+                            <li>hasComplexityLevel</li>
+                            <li>hasCompletionTime</li>
+                        </ul>
+                        <li><strong>Goal</strong>. Represents more significant, impactful objectives.</li>
+                        <ul>
+                            <li>hasLongTermImpact</li>
+                            <li>hasRequiredEffort</li>
+                        </ul>
+                    </ul>
+                    <b>Object Properties:</b>
+                    <ul>
+                        <li><strong>performsTask</strong></li>
+                        <ul>
+                            <li>Domain: Agent</li>
+                            <li>Range: Task</li>
+                            <li>Description: Links an agent to a task they consider or undertake.</li>
+                        </ul>
+                        <li><strong>makesDecision</strong></li>
+                        <ul>
+                            <li>Domain: Agent</li>
+                            <li>Range: Decision</li>
+                            <li>Description: Represents the cognitive process of an agent choosing between tasks and
+                                goals.</li>
+                        </ul>
+
+                    </ul>
+
+                    <b>Axioms and Rules:</b>
+                    <ul>
+                        <li>Rule Example: If an Agent makesDecision to perform a Task with hasComplexityLevel "Low" over
+                            a Goal with hasLongTermImpact "High", it indicates a manifestation of the Delmore effect.
+                        </li>
+
+                    </ul>
+
+
+                    <hr class="major" />
+
+                    <h2>Ontology visualization</h2>
+                    <img src="images/delmore.png" alt="Ontology visualization" width="800px" />
+                    <p><a href="owl/delmore_effect.owl">TTL code for the ontology</a></p>
+                    </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

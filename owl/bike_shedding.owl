@@ -1,0 +1,49 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/ontology#> .
+
+### Classes
+:Decision rdf:type owl:Class .
+
+:BiasedDecision rdf:type owl:Class ;
+                rdfs:subClassOf :Decision .
+
+:RationalDecision rdf:type owl:Class ;
+                  rdfs:subClassOf :Decision .
+
+:CognitiveBias rdf:type owl:Class .
+
+:BikeSheddingBias rdf:type owl:Class ;
+                  rdfs:subClassOf :CognitiveBias .
+
+:DecisionMaker rdf:type owl:Class .
+
+:Project rdf:type owl:Class .
+
+### Object Properties
+:influencedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :DecisionMaker ;
+              rdfs:range :CognitiveBias .
+
+:makesDecision rdf:type owl:ObjectProperty ;
+               rdfs:domain :DecisionMaker ;
+               rdfs:range :Decision .
+
+:concernsProject rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Decision ;
+                 rdfs:range :Project .
+
+### Data Properties
+:importance rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Project ;
+            rdfs:range xsd:integer .
+
+:budget rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Project ;
+        rdfs:range xsd:double .
+
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Decision ;
+          rdfs:range xsd:double .

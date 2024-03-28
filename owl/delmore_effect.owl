@@ -1,0 +1,74 @@
+@prefix : <http://example.org/delmore#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Classes
+:Agent a owl:Class .
+:Task a owl:Class .
+:Goal a owl:Class ; rdfs:subClassOf :Task .
+
+# Properties
+# Agent Properties
+:hasName a owl:DatatypeProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range xsd:string .
+    
+:hasMotivationLevel a owl:DatatypeProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range xsd:integer .
+    
+:hasGoalPriority a owl:DatatypeProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range xsd:string .
+
+# Task and Goal Properties
+:hasDescription a owl:DatatypeProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:hasComplexityLevel a owl:DatatypeProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:string .
+
+:hasCompletionTime a owl:DatatypeProperty ;
+    rdfs:domain :Task ;
+    rdfs:range xsd:integer .
+
+# Goal Specific Properties
+:hasLongTermImpact a owl:DatatypeProperty ;
+    rdfs:domain :Goal ;
+    rdfs:range xsd:string .
+    
+:hasRequiredEffort a owl:DatatypeProperty ;
+    rdfs:domain :Goal ;
+    rdfs:range xsd:integer .
+
+# Object Properties
+:performsTask a owl:ObjectProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range :Task .
+
+:makesDecision a owl:ObjectProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range :Task .
+
+# Instances Example (optional)
+:John a :Agent ;
+    :hasName "John" ;
+    :hasMotivationLevel 5 ;
+    :hasGoalPriority "Medium" .
+    
+:CleaningDesk a :Task ;
+    :hasDescription "Cleaning the desk" ;
+    :hasComplexityLevel "Low" ;
+    :hasCompletionTime 1 .
+    
+:BusinessProposal a :Goal ;
+    :hasDescription "Working on a business proposal" ;
+    :hasComplexityLevel "High" ;
+    :hasCompletionTime 10 ;
+    :hasLongTermImpact "High" ;
+    :hasRequiredEffort 8 .

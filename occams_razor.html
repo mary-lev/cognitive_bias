@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Occam's Razor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>We favor simple-looking options</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Occam's Razor</h1>
+                    </header>
+
+                    <span class="image main"><img src="images/occam.png" alt="" /></span>
+
+                    <h2>Examples of usage</h2>
+                    <p>Occam's Razor is not a cognitive bias but a problem-solving principle that suggests when faced
+                        with competing hypotheses or explanations, the one that makes the fewest assumptions should be
+                        selected. It's often summarized as "the simplest explanation is usually the right one." However,
+                        applying Occam's Razor can lead to bias if it oversimplifies complex realities or ignores
+                        significant evidence. Here are examples where relying too heavily on Occam's Razor could lead to
+                        biased conclusions:</p>
+                    <ul>
+                        <li><strong>Medical Diagnosis</strong>: A doctor attributes a patient's range of symptoms solely
+                            to stress, overlooking the possibility of a rare but fitting illness because it seems less
+                            likely due to its complexity.</li>
+                        <li><strong>Criminal Investigations</strong>: Investigators immediately focus on the most
+                            obvious suspect without considering more complex scenarios that involve multiple parties or
+                            unusual motives, potentially overlooking crucial evidence.</li>
+                        <li><strong>Science and Research</strong>: A researcher favors a simpler model to explain a
+                            phenomenon, despite data suggesting a more complex theory might be accurate, because the
+                            simpler model aligns with Occam's Razor.</li>
+                        <li><strong>Historical Analysis</strong>: Historians might prefer a straightforward explanation
+                            for an event, such as economic factors leading to a war, ignoring the interplay of
+                            political, cultural, and personal factors that could offer a more nuanced understanding.
+                        </li>
+                        <li><strong>Technology Troubleshooting</strong>: A technician assumes a common, simple issue is
+                            causing a device's malfunction, without exploring the possibility of a more complex problem
+                            involving multiple system components.</li>
+                    </ul>
+                    <p>In each of these examples, the bias towards simplicity under the guise of Occam's Razor can
+                        prevent a deeper investigation, potentially leading to incorrect conclusions or oversights.</p>
+
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <b>Classes:</b>
+                    <ul>
+                        <li><strong>Person (Judge)</strong>. The individual evaluating explanations for a problem.</li>
+                        <ul>
+                            <li><strong>hasName</strong>
+                        </ul>
+                        <li><strong>Problem</strong>. An issue or question that requires explanation.</li>
+                        <ul>
+                            <li>hasDescription</li>
+                        </ul>
+                        <li><strong>Explanation</strong>. A proposed understanding or solution to a problem.</li>
+                        <li><strong>SimpleExplanation (Subclass of Explanation)</strong>. An explanation that is
+                            straightforward and makes the fewest assumptions.</li>
+                        <li><strong>ComplexExplanation (Subclass of Explanation)</strong>. An explanation that is more
+                            detailed and makes more assumptions.</li>
+                        <li><strong>Decision</strong>. The outcome of the evaluation process between different
+                            explanations.</li>
+                        <li><strong>RationalDecision (Subclass of Decision)</strong>:A decision that favors the simpler
+                            explanation, aligning with Occam's Razor.</li>
+                        <li><strong>BiasedDecision (Subclass of Decision)</strong>: A decision that favors a more
+                            complex explanation, possibly due to bias or other factors.</li>
+                        <ul>
+
+                        </ul>
+                    </ul>
+                    <b>Properties (Attributes and Relationships):</b>
+                    <ul>
+                        <li><strong>hasName (Person)</strong></li>
+                        <ul>
+                            <li>Domain: Person</li>
+                            <li>Range: String</li>
+                        </ul>
+                        <li><strong>hasDescription (Problem, Explanation)</strong></li>
+                        <ul>
+                            <li>Domain: Problem, Explanation</li>
+                            <li>Range: String</li>
+                        </ul>
+                        <li><strong>hasAssumptionCount</strong></li>
+                        <ul>
+                            <li>Domain: Explanation</li>
+                            <li>Range: Integer</li>
+                        </ul>
+                        <li><strong>makesDecision (Person to Decision)</strong></li>
+                        <ul>
+                            <li>Domain: Person</li>
+                            <li>Range: Decision</li>
+                        </ul>
+                        <li><strong>hasComplexityLevel (Explanation)</strong></li>
+                        <ul>
+                            <li>Domain: Explanation</li>
+                            <li>Range: Integer</li>
+                            <li><strong>considersExplanation (Problem to Explanation)</strong></li>
+                            <ul>
+                                <li>Domain: Problem</li>
+                                <li>Range: Explanation</li>
+                            </ul>
+                            <li><strong>chosenExplanation (Decision to Explanation)</strong></li>
+                            <ul>
+                                <li>Domain: Decision</li>
+                                <li>Range: Explanation</li>
+                            </ul>
+
+                        </ul>
+
+
+                        <hr class="major" />
+
+                        <h2>Ontology visualization</h2>
+                        <img src="images/occam.png" alt="Ontology visualization" width="800px" />
+                        <p><a href="owl/occam.owl">TTL code for the ontology</a></p>
+                        </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

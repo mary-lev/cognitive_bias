@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>The Delmore Effect</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>To get things done, we tend to complete things we've invested time and energy in</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1> Pseudocertainty Effect</h1>
+                    </header>
+
+                    <span class="image main"><img src="images/Pseudocertaintyeffect.owl.svg"/></span>
+
+                    <h2>Examples of usage</h2>
+                    <p>The individuals tend to want to complete a unit of a given item or task, regardless of its size or the quantity involved. This bias can lead to overconsumption or overuse in some contexts, while in others, it might promote efficiency or completion of tasks.
+                        Here are few examples:</p>
+                    <ul>
+                        <li><strong>Investment Decisions</strong>:  Investors may perceive certain investments as 'sure bets' due to past performance or the illusion of stability, ignoring the inherent risks and uncertainties of the market.
+                            
+                        </li>
+                        <li><strong>Insurance Purchases</strong>:Individuals might opt for extensive insurance coverage for events they perceive as highly certain to occur, even if the statistical likelihood is low, or conversely, neglect insurance for risks they underestimate.
+
+                        </li>
+                        <li><strong>Healthcare Choices</strong>: Patients might choose treatments with certain outcomes over those with statistically better outcomes but perceived uncertainty. For example, opting for surgery with a known success rate over a new treatment with potentially better outcomes but less certainty.
+                        </li>
+                    </ul>
+
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <h3>Classes:</h3>
+                    <ul>
+                        <li><strong>Agent (Person)</strong>. Represents individuals.</li>
+                        
+                        <li><strong>Value</strong>. An agent consider Value accordignly.</li>
+                        <ul>
+                            <li>ShortTermValue</li>
+                            <li>LongTermValue</li>
+                        </ul>
+    
+                        <li><strong>Decision</strong>. Agent makes a decision about the Value accordingly.</li>
+                        <ul>
+                            <li>BiasedDecision</li>
+                            <li>RationalDecision</li>
+                        </ul>
+                        <li><strong>LongTermCertainty</strong>.</li>
+                        <li><strong>EmotionalInfluence</strong>.</li>
+                        <li><strong>ExternalInfluence</strong>.</li>
+                        <li><strong>DecisionOutcome</strong>.</li>
+                    </ul>
+
+                    <h3>Object Properties:</h3>
+                    <ul>
+                        <li><strong>makesDecision</strong></li>
+                        <ul>
+                            <li>Domain: Agent</li>
+                            <li>Range: Decision</li>
+                            <li>Description: Links an agent to a decision they consider.</li>
+                        </ul>
+                        <li><strong>aboutAsset</strong></li>
+                        <ul>
+                            <li>Domain: Decision</li>
+                            <li>Range: Asset</li>
+                            <li>Description: Represents the cognitive process of an agent choosing the asset.</li>
+                        </ul>
+                        <li><strong>hasValue</strong></li>
+                        <ul>
+                            <li>Domain: Asset </li>
+                            <li>Range:Value </li>
+                            <li>Description: Represents the vlaue of the asset through which agent makes a decision.</li>
+                        </ul>
+                        
+                    <h3>Datatype Property:</h3>
+                    <ul>
+                        <li><strong>logicBasedEvaluation</strong></li>
+                         <ul>
+                            <li>Domain:RationalDecision </li>
+                            <li>Range xsd:boolean</li>
+                                
+                        </ul>
+                        <li><strong>longTermGoalsConsidered</strong></li>
+                        <ul>
+                            <li>Domain:RationalDecision</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>immediateBenefit</strong></li>
+                        <ul>
+                            <li>Domain : ShortTermValue</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>certaintyLevel</strong></li>
+                        <ul>
+                            <li>Domain - Decision</li>
+                            <li>Range - xsd:int</li>
+                        </ul>
+                        <li><strong>potentialLongTermBenefit</strong></li>
+                        <ul>
+                            <li>Domain - LongTermValue</li>
+                            <li> Range - xsd:string</li>
+                        </ul>
+                        <li><strong>uncertaintyLevel</strong></li>
+                        <ul>
+                            <li>Domain - LongTermValue</li>
+                            <li>Range - xsd:int</li>
+                        </ul>
+                        <li><strong>expectedLongTermValue</strong></li>
+                        <ul>
+                            <li>Domain - LongTermCertainty</li>
+                            <li>Range - xsd:int</li>
+                        </ul>
+                        <li><strong>shortTermUncertaintyAccepted</strong></li>
+                        <ul>
+                            <li>Domain - LongTermCertainty</li>
+                            <li>Range - xsd:boolean</li>
+                        </ul>
+                        <li><strong>emotionType</strong></li>
+                        <ul>
+                            <li>Domain - EmotionalInfluence</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>influenceStrength</strong></li>
+                        <ul>
+                            <li>Domain - ExternalInfluence</li>
+                            <li>Range - xsd:int</li>
+                        </ul>
+                        <li><strong>influenceType</strong></li>
+                        <ul>
+                            <li>Domain - ExternalInfluence</li>
+                            <li>Range - xxsd:string</li>
+                        </ul>
+                        <li><strong>outcomeType</strong></li>
+                        <ul>
+                            <li>Domain - DecisionOutcome</li>
+                            <li> Range - xsd:string</li>
+                        </ul>
+                        <li><strong>impactScope</strong></li>
+                        <ul>
+                            <li>Domain - DecisionOutcome</li>
+                            <li> Range - xsd:string</li>
+                        </ul>
+
+
+                    </ul>
+             
+
+                
+
+                    <h3>Axioms and Rules:</h3>
+                    <ul>
+                        <li>Rule Example: If an Agent makesDecision to choose a vlaue with pre defined unit,
+                            it indicates a manifestation of the Desposition Effect.
+                        </li>
+
+                    </ul>
+
+
+                    <hr class="major" />
+
+                    <h2>Ontology visualization</h2>
+                    <img src="images/unitbias.owl.svg" alt="Ontology visualization" width="800px" />
+                    <p><a href="owl/unit_bias.owl">TTL code for the ontology</a></p>
+                    </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="disposition_effect.html">Desposition Effect</a></li>
+                                <li><a href="unit_bias.html">Unit bias</a></li>
+                                <li><a href="pseudocertainty_effect.html"></a></li>
+                                <!-- <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li> -->
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

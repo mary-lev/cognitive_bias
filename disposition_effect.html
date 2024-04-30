@@ -25,7 +25,7 @@
 
                 <!-- Header -->
                 <header id="header">
-                    <a href="index.html" class="logo"><strong>We favor simple-looking options</strong></a>
+                    <a href="index.html" class="logo"><strong>To get things done, we tend to complete things we've invested time and energy in</strong></a>
                     <ul class="icons">
                         <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                         <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -61,7 +61,7 @@
                     <hr class="major" />
 
                     <h2>Creating an Ontology</h2>
-                    <b>Classes:</b>
+                    <h3>Classes:</h3>
                     <ul>
                         <li><strong>Agent (Person)</strong>. Represents individuals subject.</li>
                         
@@ -75,7 +75,7 @@
                         <li><strong>AssetValueState</strong>. The vlaue state will decide which assest to hold back and which one to sell.</li>
                     </ul>
 
-                    <b>Object Properties:</b>
+                    <h3>Object Properties:</h3>
                     <ul>
                         <li><strong>makesDecision</strong></li>
                         <ul>
@@ -96,19 +96,92 @@
                             <li>Description: Represents the vlaue of the asset through which agent makes a decision.</li>
                         </ul>
                         
-                    <b>Datatype Property:</b>
+                    <h3>Datatype Property:</h3>
                     <ul>
                         <li><strong>hasName</strong></li>
                          <ul>
                             <li>Domain:Agent </li>
-                            <li>Range:string</li>
+                            <li>Range - xsd:string</li>
                                 
                         </ul>
-                    </ul>
+                        <li><strong>experienceLevel</strong></li>
+                        <ul>
+                            <li>Domain:Agent</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>type:</strong></li>
+                        <ul>
+                            <li>Domain : Agent</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>decisionDate</strong></li>
+                        <ul>
+                            <li>Domain - Decision</li>
+                            <li>Range - xsd:date</li>
+                        </ul>
+                        <li><strong>decisionOutcome</strong></li>
+                        <ul>
+                            <li>Domain - Decision</li>
+                            <li> Range - xsd:string</li>
+                        </ul>
+                        <li><strong>biasType</strong></li>
+                        <ul>
+                            <li>Domain - Biased Decision</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>triggerCondition</strong></li>
+                        <ul>
+                            <li>Domain - Biased Decision</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>logicBasis</strong></li>
+                        <ul>
+                            <li>Domain - Rational Decision</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>assetID</strong></li>
+                        <ul>
+                            <li>Domain - Asset</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>assetName</strong></li>
+                        <ul>
+                            <li>Domain - Asset</li>
+                            <li>Range - xsd:string</li>
+                        </ul>
+                        <li><strong>assetValue</strong></li>
+                        <ul>
+                            <li>Domain - Asset</li>
+                            <li>Range - xsd:decimal</li>
+                        </ul>
+                        <li><strong>previousValue</strong></li>
+                        <ul>
+                            <li>Domain - AssetValueState</li>
+                            <li> Range - xsd:decimal</li>
+                        </ul>
+                        <li><strong>previousValue</strong></li>
+                        <ul>
+                            <li>Domain - AssetValueState</li>
+                            <li> Range - xsd:decimal</li>
+                        </ul>
+                        <li><strong>currentValue</strong></li>
+                        <ul>
+                            <li>Domain - AssetValueState</li>
+                            <li>Range - xsd:decimal</li>
+                        </ul>
+                        <li><strong>valueDifference</strong></li>
+                        <ul>
+                            <li>Domain - AssetValueState</li>
+                            <li>Range - xsd:decimal</li>
+                        </ul>
+
 
                     </ul>
+             
 
-                    <b>Axioms and Rules:</b>
+                
+
+                    <h3>Axioms and Rules:</h3>
                     <ul>
                         <li>Rule Example: If an Agent makesDecision to choose a vlaue with positve value and hold on to the assest with low value,
                             it indicates a manifestation of the Desposition Effect.
@@ -165,6 +238,7 @@
                         <li>
                             <span class="opener">To get things done</span>
                             <ul>
+                                <li><a href="disposition_effect.html">Desposition Effect</a></li>
                                 <li><a href="#">Lorem Dolor</a></li>
                                 <li><a href="#">Ipsum Adipiscing</a></li>
                                 <li><a href="#">Tempus Magna</a></li>

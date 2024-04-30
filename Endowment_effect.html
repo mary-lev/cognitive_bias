@@ -39,22 +39,22 @@
                 <!-- Content -->
                 <section>
                     <header class="main">
-                        <h1> Unit bias</h1>
+                        <h1> Endowment effect</h1>
                     </header>
 
-                    <span class="image main"><img src="images/unitbias.owl.svg"/></span>
+                    <span class="image main"><img src="images/_endowmenteffect.owl.svg"/></span>
 
                     <h2>Examples of usage</h2>
-                    <p>The individuals tend to want to complete a unit of a given item or task, regardless of its size or the quantity involved. This bias can lead to overconsumption or overuse in some contexts, while in others, it might promote efficiency or completion of tasks.
+                    <p>The Endowment Effect is a cognitive bias that causes people to ascribe more value to things merely because they own them. This can lead to irrational decision-making, such as holding onto items longer than beneficial or pricing them higher than market value when selling.
                         Here are few examples:</p>
                     <ul>
-                        <li><strong>Food Consumption</strong>: Individuals may consume more food when offered a buffet because they feel compelled to fill their plate (a "unit" in this context) even if they are not particularly hungry.
+                        <li><strong>Collectibles and Personal Items</strong>: Individuals might value their own collections or personal items (like books, watches, or jewelry) much higher than an impartial market value, making it hard to sell these items at their expected prices.
 
                         </li>
-                        <li><strong>Retail and Consumption</strong>:Consumers may prefer products that are packaged as a single unit (e.g., a six-pack of soda) over buying individual items because the package suggests a complete set.
+                        <li><strong>Stock Market Investments</strong>: Investors might hold onto stocks or other securities longer than advisable because they overvalue their current portfolio due to personal ownership, even in the face of logical indicators suggesting they should sell.
 
                         </li>
-                        <li><strong>Health and Medication</strong>: Patients might adhere strictly to the prescribed number of pills per day as a unit, even if the medication's effect could vary based on other factors such as body weight or concurrent food intake.
+                        <li><strong>Product Purchases</strong>: Once a consumer purchases an item, they often value it more than they did prior to purchase, which can affect their satisfaction with the product and their decisions regarding future purchases or exchanges.
 
 
                         </li>
@@ -66,119 +66,136 @@
                     <h3>Classes:</h3>
                     <ul>
                         <li><strong>Agent (Person)</strong>. Represents individuals subject.</li>
+                        <ul>
+                            <li>Individual</li>
+                        </ul>
                         
                         <li><strong>Value</strong>. An agent consider Value accordignly.</li>
-                        <ul>
-                            <li>PredefinedValue</li>
-                            <li>NonPredefinedValue</li>
-                        </ul>
     
                         <li><strong>Decision</strong>. Agent makes a decision about the asset accordingly.</li>
                         <ul>
                             <li>BiasedDecision</li>
                             <li>RationalDecision</li>
                         </ul>
-                        <li><strong>PastExperience</strong>. The vlaue is decided on past decided units.</li>
-                        <li><strong>IrrationalBehavior</strong>.</li>
+                        <li><strong>CognitiveBias</strong>. A specified bias is activated with the agent choice.</li>
+                        <ul>
+                            <li><strong>EndowmentEffect</strong></li>
+                        </ul>
                     </ul>
 
                     <h3>Object Properties:</h3>
                     <ul>
-                        <li><strong>makesDecision</strong></li>
+                        <li><strong>makes</strong></li>
                         <ul>
                             <li>Domain: Agent</li>
                             <li>Range: Decision</li>
                             <li>Description: Links an agent to a decision they consider.</li>
                         </ul>
-                        <li><strong>aboutAsset</strong></li>
+                        <li><strong>isBasedOn</strong></li>
                         <ul>
                             <li>Domain: Decision</li>
-                            <li>Range: Asset</li>
-                            <li>Description: Represents the cognitive process of an agent choosing the asset.</li>
+                            <li>Range: Value</li>
+                            <li>Description: Represents the cognitive process of an agent choosing the Value.</li>
                         </ul>
-                        <li><strong>hasValueState</strong></li>
+                        <li><strong>resultsFrom</strong></li>
                         <ul>
-                            <li>Domain: Asset </li>
-                            <li>Range:AssetValueState </li>
-                            <li>Description: Represents the vlaue of the asset through which agent makes a decision.</li>
+                            <li>Domain: BiasedDecision </li>
+                            <li>Range:Value </li>
+                            <li>Description: Represents the decision when the agent is affected by the bias.</li>
                         </ul>
-                        
+                        <li><strong>influencedBy</strong></li>
+                        <ul>
+                            <li>Domain: BiasedDecision</li>
+                            <li>Range: Value</li>
+                            <li>Description: Represents when the agent is influnced by the bias and takes the biased decision.</li>
+                        </ul>
+                        <li><strong>resultsFromActualValueAssessment</strong></li>
+                        <ul>
+                            <li>Domain: RationalDecision</li>
+                            <li>Range: Value</li>
+                            <li>Description: Reprseants when the agent is not influnced by the bias and takes the rational decision.</li>
+                        </ul>
+                        <li><strong>reflectsRealWorldConsideration</strong></li>
+                        <ul>
+                            <li>Domain: RationalDecision</li>
+                            <li>Range: Value</li>
+                            
+                        </ul>
+                        <li><strong>influencedByLogicalThinking</strong></li>
+                        <ul>
+                            <li>Domain: RationalDecision</li>
+                            <li>Range: Value</li>
+                            
+                        </ul>
+                        <li><strong>assumes</strong></li>
+                        <ul>
+                            <li>Domain: Individual</li>
+                            <li>Range: Role</li>
+                            
+                        </ul>
+                        <li><strong>roleInfluencesDecision</strong></li>
+                        <ul>
+                            <li>Domain: Role</li>
+                            <li>Range: Decision</li>
+                        </ul>
+                        <li><strong>influencedByBias</strong></li>
+                        <ul>
+                            <li>Doamin: Agent</li>
+                            <li>Range: CognitiveBias</li>
+                        </ul>
+
+
                     <h3>Datatype Property:</h3>
                     <ul>
-                        <li><strong>hasName</strong></li>
+                        <li><strong>OverestimatedValue</strong></li>
                          <ul>
-                            <li>Domain:Agent </li>
-                            <li>Range - xsd:string</li>
+                            <li>Domain:Value </li>
+                            <li>Range - xsd:decimal</li>
                                 
                         </ul>
-                        <li><strong>experienceLevel</strong></li>
+                        <li><strong>ActualValue</strong></li>
                         <ul>
-                            <li>Domain:Agent</li>
-                            <li>Range - xsd:string</li>
+                            <li>Domain:Value</li>
+                            <li>Range - xsd:decimal</li>
                         </ul>
-                        <li><strong>type:</strong></li>
+                        <li><strong>LossAversionIntensity:</strong></li>
                         <ul>
-                            <li>Domain : Agent</li>
-                            <li>Range - xsd:string</li>
+                            <li>Domain : BiasedDecision</li>
+                            <li>Range - xsd:decimal</li>
                         </ul>
-                        <li><strong>decisionDate</strong></li>
+                        <li><strong>RealityAvoidanceLevel</strong></li>
                         <ul>
-                            <li>Domain - Decision</li>
-                            <li>Range - xsd:date</li>
+                            <li>Domain - BiasedDecision</li>
+                            <li>Range - xsd:decimal</li>
                         </ul>
-                        <li><strong>decisionOutcome</strong></li>
+                        <li><strong>Role</strong></li>
                         <ul>
-                            <li>Domain - Decision</li>
+                            <li>Domain - Individual</li>
                             <li> Range - xsd:string</li>
                         </ul>
-                        <li><strong>biasType</strong></li>
+                        <li><strong>ExperienceLevel</strong></li>
                         <ul>
-                            <li>Domain - Biased Decision</li>
+                            <li>Domain - Individual</li>
                             <li>Range - xsd:string</li>
                         </ul>
-                        <li><strong>triggerCondition</strong></li>
+                        <li><strong>DecisionMakingStyle</strong></li>
                         <ul>
-                            <li>Domain - Biased Decision</li>
+                            <li>Domain - Individual</li>
                             <li>Range - xsd:string</li>
                         </ul>
-                        <li><strong>logicBasis</strong></li>
+                        <li><strong>RiskTolerance</strong></li>
                         <ul>
-                            <li>Domain - Rational Decision</li>
-                            <li>Range - xsd:string</li>
-                        </ul>
-                        <li><strong>assetID</strong></li>
-                        <ul>
-                            <li>Domain - Asset</li>
-                            <li>Range - xsd:string</li>
-                        </ul>
-                        <li><strong>assetName</strong></li>
-                        <ul>
-                            <li>Domain - Asset</li>
-                            <li>Range - xsd:string</li>
-                        </ul>
-                        <li><strong>assetValue</strong></li>
-                        <ul>
-                            <li>Domain - Asset</li>
+                            <li>Domain - Individual</li>
                             <li>Range - xsd:decimal</li>
                         </ul>
-                        <li><strong>previousValue</strong></li>
+                        <li><strong>RealWorldConsiderationLevel</strong></li>
                         <ul>
-                            <li>Domain - AssetValueState</li>
-                            <li> Range - xsd:decimal</li>
+                            <li>Domain - RationalDecision</li>
+                            <li>Range - xsd:deimal</li>
                         </ul>
-                        <li><strong>previousValue</strong></li>
+                        <li><strong>LogicalThinkingIntensity</strong></li>
                         <ul>
-                            <li>Domain - AssetValueState</li>
-                            <li> Range - xsd:decimal</li>
-                        </ul>
-                        <li><strong>currentValue</strong></li>
-                        <ul>
-                            <li>Domain - AssetValueState</li>
-                            <li>Range - xsd:decimal</li>
-                        </ul>
-                        <li><strong>valueDifference</strong></li>
-                        <ul>
-                            <li>Domain - AssetValueState</li>
+                            <li>Domain - RationalDecision</li>
                             <li>Range - xsd:decimal</li>
                         </ul>
 
@@ -200,8 +217,8 @@
                     <hr class="major" />
 
                     <h2>Ontology visualization</h2>
-                    <img src="images/unitbias.owl.svg" alt="Ontology visualization" width="800px" />
-                    <p><a href="owl/unit_bias.owl">TTL code for the ontology</a></p>
+                    <img src="images/_endowmenteffect.owl.svg" alt="Ontology visualization" width="800px" />
+                    <p><a href="owl/ endowment_effect.owl">TTL code for the ontology</a></p>
                     </p>
 
                 </section>

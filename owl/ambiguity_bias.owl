@@ -1,0 +1,113 @@
+@prefix : <http://example.org/ontology/ambiguity_bias#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Core Classes and Subclasses
+
+:CognitiveBias a owl:Class .
+
+:AmbiguityBias a owl:Class ;
+               rdfs:subClassOf :CognitiveBias .
+
+:Agent a owl:Class .
+
+:RiskAverseAgent a owl:Class ;
+                 rdfs:subClassOf :Agent .
+
+:RiskNeutralAgent a owl:Class ;
+                  rdfs:subClassOf :Agent .
+
+:RiskSeekingAgent a owl:Class ;
+                  rdfs:subClassOf :Agent .
+
+:Decision a owl:Class .
+
+:BiasedDecision a owl:Class ;
+                rdfs:subClassOf :Decision .
+
+:RationalDecision a owl:Class ;
+                  rdfs:subClassOf :Decision .
+
+:Value a owl:Class .
+
+:KnownValue a owl:Class ;
+             rdfs:subClassOf :Value .
+
+:UnknownValue a owl:Class ;
+               rdfs:subClassOf :Value .
+
+### Attributes and Relations for Agent, Decision, and Value
+
+:Name a owl:DatatypeProperty ;
+      rdfs:domain :Agent ;
+      rdfs:range xsd:string .
+
+:Preference a owl:DatatypeProperty ;
+             rdfs:domain :Agent ;
+             rdfs:range xsd:string .
+
+:Outcome a owl:DatatypeProperty ;
+          rdfs:domain :Decision ;
+          rdfs:range xsd:string .
+
+:DecisionDate a owl:DatatypeProperty ;
+               rdfs:domain :Decision ;
+               rdfs:range xsd:dateTime .
+
+:MakesDecision a owl:ObjectProperty ;
+                rdfs:domain :Agent ;
+                rdfs:range :Decision .
+
+:AffectedByAmbiguityBias a owl:ObjectProperty ;
+                          rdfs:domain :Agent ;
+                          rdfs:range :AmbiguityBias .
+
+:InfluencedByBiasedDecision a owl:ObjectProperty ;
+                             rdfs:domain :Agent ;
+                             rdfs:range :BiasedDecision .
+
+:IsAbout a owl:ObjectProperty ;
+          rdfs:domain :Decision ;
+          rdfs:range :Value .
+
+### Modifications for BiasedDecision and RationalDecision
+
+:GoesFor a owl:ObjectProperty ;
+          rdfs:domain :BiasedDecision ;
+          rdfs:range :KnownValue .
+
+:Chooses a owl:ObjectProperty ;
+           rdfs:domain :RationalDecision ;
+           rdfs:range :UnknownValue .
+
+### Attributes for KnownValue and UnknownValue
+
+:MoreFavourableOutcome a owl:DatatypeProperty ;
+                        rdfs:domain :KnownValue ;
+                        rdfs:range xsd:string .
+
+:PastExperience a owl:DatatypeProperty ;
+                 rdfs:domain :KnownValue ;
+                 rdfs:range xsd:string .
+
+:MoreClarification a owl:DatatypeProperty ;
+                    rdfs:domain :KnownValue ;
+                    rdfs:range xsd:string .
+
+:NoPriorKnowledge a owl:DatatypeProperty ;
+                   rdfs:domain :UnknownValue ;
+                   rdfs:range xsd:string .
+
+:NoEvaluation a owl:DatatypeProperty ;
+               rdfs:domain :UnknownValue ;
+               rdfs:range xsd:string .
+
+:HighRisk a owl:DatatypeProperty ;
+           rdfs:domain :UnknownValue ;
+           rdfs:range xsd:string .
+
+### Full OWL TTL now precisely reflects the enhanced model of decision-making,
+### showcasing the tendencies towards known and unknown values by biased and rational decisions respectively.

@@ -1,0 +1,136 @@
+@prefix rdf:
+<http:// www.w3.org/ 1999/ 02/ 22-rdf-syntax-ns#> .
+@prefix owl:
+<http:// www.w3.org/ 2002/ 07/ owl#> .
+@prefix xsd:
+<http:// www.w3.org/ 2001/ XMLSchema#> .
+@prefix :
+<http:// example.org/ backfire#> .
+
+### Classes
+
+:CognitiveBias rdf:type owl:Class .
+
+:BackfireEffect rdf:type owl:Class ;
+rdfs:subClassOf :CognitiveBias .
+
+:Agent rdf:type owl:Class .
+
+:Decision rdf:type owl:Class .
+
+:BiasedDecision rdf:type owl:Class ;
+rdfs:subClassOf :Decision ;
+owl:disjointWith :RationalDecision .
+
+:RationalDecision rdf:type owl:Class ;
+rdfs:subClassOf :Decision .
+
+:Belief rdf:type owl:Class .
+
+:Evidence rdf:type owl:Class .
+
+:ResponseToEvidence rdf:type owl:Class .
+
+:EmotionalAndCognitiveFactors rdf:type owl:Class .
+
+:Outcome rdf:type owl:Class .
+
+:LogicalThinking rdf:type owl:Class .
+
+:RealLifeSituation rdf:type owl:Class .
+
+### Object Properties
+
+:affectedBy rdf:type owl:ObjectProperty ;
+rdfs:domain :Agent ;
+rdfs:range :CognitiveBias .
+
+:makesDecision rdf:type owl:ObjectProperty ;
+rdfs:domain :Agent ;
+rdfs:range :Decision .
+
+:hasBelief rdf:type owl:ObjectProperty ;
+rdfs:domain :Agent ;
+rdfs:range :Belief .
+
+:influences rdf:type owl:ObjectProperty ;
+rdfs:domain :CognitiveBias ;
+rdfs:range :Decision .
+
+:elicits rdf:type owl:ObjectProperty ;
+rdfs:domain :Belief ;
+rdfs:range :ResponseToEvidence .
+
+:leadsTo rdf:type owl:ObjectProperty ;
+rdfs:domain :ResponseToEvidence ;
+rdfs:range :Outcome .
+
+:isBasedOn rdf:type owl:ObjectProperty ;
+rdfs:domain :Belief ;
+rdfs:range :Evidence .
+
+:evaluates rdf:type owl:ObjectProperty ;
+rdfs:domain :Agent ;
+rdfs:range :Evidence .
+
+:experiences rdf:type owl:ObjectProperty ;
+rdfs:domain :Agent ;
+rdfs:range :EmotionalAndCognitiveFactors .
+
+:basedOnLogicalReasoning rdf:type owl:ObjectProperty ;
+rdfs:domain :RationalDecision ;
+rdfs:range :LogicalThinking .
+
+:facesRealWorldSituation rdf:type owl:ObjectProperty ;
+rdfs:domain :Agent ;
+rdfs:range :RealLifeSituation .
+
+:leadsToChangeInBelief rdf:type owl:ObjectProperty ;
+rdfs:domain :RationalDecision ;
+rdfs:range :Belief .
+
+:influencedByBackfireEffect rdf:type owl:ObjectProperty ;
+rdfs:domain :BiasedDecision ;
+rdfs:range :BackfireEffect .
+
+:resultsInBiasedDecision rdf:type owl:ObjectProperty ;
+rdfs:domain :EmotionalAndCognitiveFactors ;
+rdfs:range :BiasedDecision .
+
+:promptsRationalDecision rdf:type owl:ObjectProperty ;
+rdfs:domain :RealLifeSituation ;
+rdfs:range :RationalDecision .
+
+:supportsRightBelief rdf:type owl:ObjectProperty ;
+rdfs:domain :Evidence ;
+rdfs:range :Belief .
+
+:leadsToWrongBelief rdf:type owl:ObjectProperty ;
+rdfs:domain :BiasedDecision ;
+rdfs:range :Belief .
+
+:supportsRationalDecision rdf:type owl:ObjectProperty ;
+rdfs:domain :Evidence ;
+rdfs:range :RationalDecision .
+
+### Data Properties
+
+:name rdf:type owl:DatatypeProperty ;
+rdfs:domain :CognitiveBias ;
+rdfs:range xsd:string .
+
+:description rdf:type owl:DatatypeProperty ;
+rdfs:domain :CognitiveBias ;
+rdfs:range xsd:string .
+
+:wrongBelief rdf:type owl:DatatypeProperty ;
+rdfs:domain :Belief ;
+rdfs:range xsd:boolean .
+
+:rightBelief rdf:type owl:DatatypeProperty ;
+rdfs:domain :Belief ;
+rdfs:range xsd:boolean .
+
+:openToNewInformation rdf:type owl:DatatypeProperty ;
+rdfs:domain :RationalDecision ;
+rdfs:range xsd:boolean .

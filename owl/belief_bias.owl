@@ -1,0 +1,92 @@
+@prefix : <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:CognitiveBias rdf:type owl:Class .
+:BeliefBias rdf:type owl:Class ;
+            rdfs:subClassOf :CognitiveBias ;
+            rdfs:comment "A cognitive bias where an individual’s judgment is influenced more by the believability of a conclusion than the logical structure of the argument itself." .
+
+:Agent rdf:type owl:Class ;
+       rdfs:comment "An individual or entity making decisions influenced by cognitive processes and pre-existing beliefs." .
+
+:Decision rdf:type owl:Class ;
+          rdfs:comment "A conclusion reached after consideration that can be influenced by belief biases or be based on rational thought." .
+:BiasedDecision rdf:type owl:Class ;
+                rdfs:subClassOf :Decision ;
+                rdfs:comment "Decisions made when the agent is affected by belief bias." .
+:RationalDecision rdf:type owl:Class ;
+                  rdfs:subClassOf :Decision ;
+                  rdfs:comment "Decisions made when the agent is not affected by belief bias." .
+
+:Value rdf:type owl:Class ;
+       rdfs:comment "The perceived or actual importance, worth, or usefulness of something." .
+:InfluencedValue rdf:type owl:Class ;
+                 rdfs:subClassOf :Value ;
+                 rdfs:comment "The value as perceived by an individual, subject to distortions by personal beliefs or biases." .
+:RealValue rdf:type owl:Class ;
+            rdfs:subClassOf :Value ;
+            rdfs:comment "The factual worth based on unbiased assessment." .
+
+# Object Properties
+:affectedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Agent ;
+             rdfs:range :BeliefBias ;
+             rdfs:comment "Relates an agent to the belief bias that affects their decision-making process." .
+
+:takes rdf:type owl:ObjectProperty ;
+        rdfs:domain :Agent ;
+        rdfs:range :Decision ;
+        rdfs:comment "Relates an agent to the decision they make." .
+
+:forThe rdf:type owl:ObjectProperty ;
+         rdfs:domain :Decision ;
+         rdfs:range :Value ;
+         rdfs:comment "Connects a decision to the value it concerns." .
+
+:choosesThe rdf:type owl:ObjectProperty ;
+            rdfs:domain :BiasedDecision ;
+            rdfs:range :InfluencedValue ;
+            rdfs:comment "Relates a biased decision to the influenced value it chooses." .
+
+:goesForThe rdf:type owl:ObjectProperty ;
+            rdfs:domain :RationalDecision ;
+            rdfs:range :RealValue ;
+            rdfs:comment "Connects a rational decision to the real value it opts for." .
+
+:hasPreExistingBelief rdf:type owl:ObjectProperty ;
+                      rdfs:domain :InfluencedValue ;
+                      rdfs:comment "Existing beliefs that affect the perception of an influenced value." .
+
+:hasBelievabilityOfConclusion rdf:type owl:ObjectProperty ;
+                              rdfs:domain :InfluencedValue ;
+                              rdfs:comment "The extent to which a conclusion seems true or credible, influencing the influenced value." .
+
+:hasLogicalStructure rdf:type owl:ObjectProperty ;
+                     rdfs:domain :RealValue ;
+                     rdfs:comment "The coherence and logical integrity of an argument supporting a real value." .
+
+:isNotAffectedByBeliefBias rdf:type owl:ObjectProperty ;
+                           rdfs:domain :RealValue ;
+                           rdfs:comment "Indicates that the real value is free from personal beliefs and cognitive biases." .
+
+:drivenByEmotion rdf:type owl:ObjectProperty ;
+                 rdfs:domain :BiasedDecision ;
+                 rdfs:comment "Indicates that the decision is significantly influenced by emotional factors." .
+
+:basedOnEvidence rdf:type owl:ObjectProperty ;
+                 rdfs:domain :RationalDecision ;
+                 rdfs:comment "Indicates that the decision is based on empirical evidence and logical analysis." .
+
+:resultsInConflict rdf:type owl:ObjectProperty ;
+                   rdfs:domain :BiasedDecision ;
+                   rdfs:range :Agent ;
+                   rdfs:comment "Indicates that the decision may result in conflict due to its biased nature." .
+
+:promotesConsensus rdf:type owl:ObjectProperty ;
+                   rdfs:domain :RationalDecision ;
+                   rdfs:range :Agent ;
+                   rdfs:comment "Indicates that the decision promotes consensus among stakeholders due to its rational basis." .

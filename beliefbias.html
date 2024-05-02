@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>The Delmore Effect</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>To get things done, we tend to complete things we've invested time and energy in</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1> Belief Bias</h1>
+                    </header>
+
+                    <span class="image main"><img src="images/Belief.owl.svg"/></span>
+
+                    <h2>Examples of usage</h2>
+                    <p> This bias that affects the way we judge the validity of arguments. It occurs when the judgments are influenced more by the believability of the conclusion rather than the logical structure of the argument itself.
+                        Here are few examples:</p>
+                    <ul>
+                        <li><strong>Legal Judgments</strong>: In court cases, jurors may be influenced by their pre-existing beliefs about the guilt or innocence of a defendant, affecting their ability to impartially evaluate the evidence and arguments presented.
+
+                        </li>
+                        <li><strong>Healthcare Decisions</strong>: People might accept or reject medical advice based on pre-existing beliefs about health and medicine, rather than on the evidence or logical reasoning supporting that advice. For example, someone might dismiss the benefits of vaccination due to personal beliefs about natural immunity.
+
+                        </li>
+                        <li><strong>Financial Decisions</strong>: Investment decisions can be influenced by belief bias when investors favor financial advice or opportunities that align with their existing beliefs about the market or certain companies, ignoring logical analysis or evidence to the contrary.
+                        </li>
+                    </ul>
+
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <h3>Classes:</h3>
+                    <ul>
+                        <li><strong>Agent (Person)</strong>. Represents individuals subject.</li>
+                        
+    
+                        <li><strong>Decision</strong>. Agent makes a decision about the asset accordingly.</li>
+                        <ul>
+                            <li>BiasedDecision</li>
+                            <ul>
+                                <li>LogicalDecision - Subclass of Biased Decision</li>
+                                <li>InformedDecision - Subclass of Biased Decision</li>
+                            </ul>
+                            <li>RationalDecision</li>
+                        
+                        </ul>
+                        <li><strong>Value</strong></li>
+                        <ul>
+                            <li>InfluencedValue</li>
+                            <li>RealValue</li>
+                        </ul>
+
+                        <li><strong>CognitiveBias</strong>. A specified bias is activated with the agent choice.</li>
+                        <ul>
+                            <li>BeliefBias</li> 
+                            <!-- "A cognitive bias where an individual’s judgment is influenced more by the believability of a conclusion than the logical structure of the argument itself." . -->
+                        </ul>
+                    </ul>
+
+
+                    <h3>Object Property:</h3>
+                    <ul>
+                        
+                        <li><strong>affectedBy</strong></li>
+                        <ul>
+                            <li>Domain - Agent</li>
+                            <li> Range - BeliefBias</li>
+                        </ul>
+                        <li><strong>takes</strong></li>
+                        <ul>
+                            <li>Domain: Agent</li>
+                            <li>Range: Decision</li>
+                        </ul>
+                        <li><strong>forThe</strong></li>
+                        <ul>
+                            <li>Domain: Decision</li>
+                            <li>Range: Value</li>
+                        </ul>
+                        <li><strong>choosesThe</strong></li>
+                        <ul>
+                            <li>Domain: BiasedDecision</li>
+                            <li>Range: InfluencedValue</li>
+                        </ul>
+                        <li><strong>goesForThe</strong></li>
+                        <ul>
+                            <li>Domain: RationalDecision</li>
+                            <li>Range: RealValue</li>
+                        </ul>
+                        <li><strong>hasPreExistingBelief</strong></li>
+                        <ul>
+                            <li>Domain: InfluencedValue</li>
+                            <li>Description: "Existing beliefs that affect the perception of an influenced value." .</li>
+                        </ul>
+                        <li><strong>hasBelievabilityOfConclusion</strong></li>
+                        <ul>
+                            <li>Domain: InfluencedValue</li>
+                            <li>Description: "The extent to which a conclusion seems true or credible, influencing the influenced value." .</li>
+                        </ul>
+                        <li><strong>hasLogicalStructure</strong></li>
+                        <ul>
+                            <li>Domain: RealValue</li>
+                            <li>Description: "The coherence and logical integrity of an argument supporting a real value." .</li>
+                        </ul>
+                        <li><strong>isNotAffectedByBeliefBias</strong></li>
+                        <ul>
+                            <li>Domain: RealValue</li>
+                            <li>Description:  "Indicates that the real value is free from personal beliefs and cognitive biases." .</li>
+                        </ul>
+                        <li><strong>drivenByEmotion</strong></li>
+                        <ul>
+                            <li>Domain: BiasedDecision</li>
+                            <li>Description: "Indicates that the decision is significantly influenced by emotional factors." .</li>
+                        </ul>
+                        <li><strong>basedOnEvidence</strong></li>
+                        <ul>
+                            <li>Domain: RationalDecision</li>
+                            <li>Description: "Indicates that the decision is based on empirical evidence and logical analysis." .</li>
+                        </ul>
+                        <li><strong>resultsInConflict</strong></li>
+                        <ul>
+                            <li>Domain: BiasedDecision</li>
+                            <li>Range: Agent</li>
+                            <li>Description: "Indicates that the decision may result in conflict due to its biased nature." .</li>
+                        </ul>
+                        <li><strong>promotesConsensus</strong></li>
+                        <ul>
+                            <li>Domain: RationalDecision</li>
+                            <li>Range: Agent</li>
+                            <li>Description: "Indicates that the decision promotes consensus among stakeholders due to its rational basis." .</li>
+                        </ul>
+                 
+                    </ul>
+             
+
+                
+
+                    <h3>Axioms and Rules:</h3>
+                    <ul>
+                        <li>Rule Example: If an Agent makes Decision influced by the believability of the conclusion rather than the logical thinking, 
+                            this indicates a manifestation of the Information bias.
+                        </li>
+
+                    </ul>
+
+
+                    <hr class="major" />
+
+                    <h2>Ontology visualization</h2>
+                    <img src="images/Belief.owl.svg" alt="Ontology visualization" width="800px" />
+                    <p><a href="owl/belief_bias.owl">TTL code for the ontology</a></p>
+                    </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                                <li><a href="ambiguitybias.html">Ambiguity bias</a></li>
+                                <li><a href="Informationbias.html">Information bias</a></li>
+                                <li><a href="beliefbias.html">Belief Bias</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="disposition_effect.html">Desposition Effect</a></li>
+                                <li><a href="unit_bias.html">Unit bias</a></li>
+                                <li><a href="pseudocertainty_effect.html">Pseudocertainty Effect</a></li>
+                                <li><a href="Endowment_effect.html">Endowment Effect</a></li>
+                                <li><a href="Backfire_effect.html">Bacfire Effect</a></li>
+                                
+                               
+                                <!-- <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li> -->
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

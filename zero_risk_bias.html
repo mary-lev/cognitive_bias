@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Zero-Risk Bias</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>we tend to complete things we've invested
+                        time and energy in</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Zero-Risk Bias</h1>
+                        <p>Zero-risk bias is a tendency to prefer the complete elimination of risk in a sub-part over alternatives with greater overall risk reduction. It often manifests in cases where decision makers address problems concerning health, safety, and the environment. Its effect on decision making has been observed in surveys presenting hypothetical scenarios</p>       
+                    </header>
+
+                    <span class="image main"><img src="images/zero_risk_bias.svg" alt="" /></span>
+
+                    <h2>ChatGPT's Explanation</h2>
+                    <p>
+                        Zero-risk bias is a cognitive bias wherein people prefer the complete elimination of a risk in one area to a greater reduction in risk across multiple areas, even if the latter option results in a greater overall decrease in risk. Essentially, this bias highlights a preference for certainty and a complete absence of risk in specific scenarios, even if this comes at the cost of higher overall risk.</p>
+
+                    <p>This bias can be seen in decision-making scenarios where individuals or groups prioritize solutions that completely eliminate a small, isolated risk rather than opting for solutions that reduce greater overall risks but do not completely eliminate any single risk. This can lead to inefficient allocation of resources, such as time, money, and effort, towards solutions that feel more secure because they remove uncertainty in a specific area, even though they might not be the most effective or rational use of those resources.</p>
+                
+                    
+                    <hr class="major" />
+                    <h2>Examples of usage</h2>
+                   
+                    <ul>
+                        <li><strong>Public Health Policies</strong>:
+                            <ul>
+                                <li>Scenario: During a flu epidemic, a city government has the option to either vaccinate 100% of the population against the flu (eliminating the risk of flu completely in the population) or use the same funds to vaccinate against both the flu and another more deadly disease, such as pneumonia, significantly reducing but not eliminating the risk of both diseases.
+                                <li>Zero-Risk Bias: The government chooses to vaccinate only against the flu to completely eliminate that risk, despite the option to achieve a greater overall health benefit by partially reducing the risk of two diseases.
+                            </ul>
+                        </li>
+                        <li><strong>Environmental Policy</strong>:   
+                           <ul>
+                            <li>Scenario: A community can allocate a budget to entirely clean up a small, local contaminated lake or use the funds to implement larger-scale reductions in pollution across several lakes that do not completely cleanse any single lake but significantly improve the water quality in all.
+                            <li>Zero-Risk Bias: The community chooses to clean up the small lake completely, achieving zero risk of contamination there, while neglecting broader, more impactful environmental improvements.
+                           </ul>
+                        <li><strong>Business Strategy</strong>: 
+                            <ul>
+                                <li>Scenario: A company must decide between investing in a security system that completely eliminates data breaches in one small department or a more comprehensive IT upgrade that significantly reduces the risk of data breaches company-wide but does not eliminate it in any area.
+                                <li>Zero-Risk Bias: The company opts for the security system for the one department, prioritizing the elimination of all risk in that area, despite a larger potential risk remaining in other parts of the company.
+                            </ul>
+                        <li><strong>Personal Health Choices</strong>: 
+                            <ul>
+                                <li>Scenario: An individual must decide between taking a medication that completely eliminates the risk of a non-life-threatening but chronic condition, or a different medication that significantly reduces the risk of several more serious conditions but does not completely eliminate any of them.
+                                <li>Zero-Risk Bias: The individual chooses the medication that eliminates the risk of the chronic condition, ignoring the potentially more significant health benefits of reducing multiple higher risks.
+                            </ul>
+                    </ul>
+                    <p>These examples illustrate how zero-risk bias can lead to choices that may not be optimal when viewed from a broader perspective, focusing instead on eliminating uncertainty in smaller, more specific contexts.</p>
+
+                    <hr class="major" />
+                    <h2>Flexible conversation</h2>
+                    <p><b>Ludi:</b>If I want to model this bias, what classes, properties, attributes and relationships would you suggest me to consider about?</p>
+                    <p><b>ChatGPT:</b>
+                        (Seen in next session)</p>
+                    <p><b>Ludi:</b>Can we consider about the agent/decision maker in this way: the agent have two subclasses, a a biased agent who is affected by zero-risk bias, and a rational agent who considers about more realistic, rational situations (you can think about attributes for this rational decision making process)</p>
+                    <p><b>Ludi:</b>
+                        Let's also consider about the relationship between the decision context and the risk</p>
+                    <p><b>ChatGPT:</b>
+                            (Kept refining...)</p>
+                    
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <b>Classes</b>
+                        <ul>
+                        <li><strong>DecisionContext</strong>: 
+                            <ul>
+                                <li>Description: Represents the environment or situation in which decisions are made.
+                                <li>Attributes: contextID, description, stakeholders
+                            </ul>
+                        <li><strong>Risk</strong>: 
+                            <ul>
+                                <li>Description: Represents potential negative outcomes that decision-makers aim to mitigate.
+                                <li>Attributes: riskID, description, severity, probability
+                            </ul>
+                        <li><strong>Intervention</strong>: 
+                            <ul>
+                                <li>Description: Actions or strategies implemented to mitigate risks.
+                                <li>Attributes: interventionID, description, cost, effectiveness
+                            </ul>
+                        <li><strong>Outcome</strong>: 
+                            <ul>
+                                <li>Description: Represents the results of choosing a particular intervention.
+                                <li>Attributes: outcomeID, description, overallRiskReduction
+                            </ul>
+                        <li><strong>DecisionMaker</strong>: 
+                            <ul>
+                                <li>Description: Individuals or groups making decisions.
+                                <li>Attributes: decisionMakerID, name, role, riskPreference
+                                <li>Subclasses:
+                                    <ul>
+                                        <li><strong>BiasedAgent</strong>
+                                            <ul>
+                                                <li>Description: Decision-makers who are influenced by zero-risk bias, favoring interventions that eliminate risks completely in specific areas.
+                                                <li>Additional Attributes: preferredRiskToEliminate (linked to specific Risk instances)
+                                            </ul>
+                                        <li><strong>RationalAgent</strong>
+                                            <ul>
+                                                <li>Description: Decision-makers who evaluate risks and interventions more holistically, aiming for the greatest overall risk reduction.
+                                                <li>Additional Attributes: riskAssessmentMethod (e.g., "Expected Value", "Cost-Benefit Analysis")
+                                            </ul>
+                                    </ul>
+                            </ul>
+                        <b>Classes</b>
+
+                    <b>Properties</b>
+                    <ul>
+                        <li><strong>hasRisk</strong>:(DecisionContext -> Risk)
+                            <ul>
+                                <li>Description: Links a decision context to the risks considered within it.
+                            </ul>
+                        <li><strong>considersIntervention</strong>:  (DecisionContext -> Intervention)
+                            <ul>
+                                <li>Description: Links a decision context to potential interventions being considered.
+                            </ul>
+                        <li><strong>leadsToOutcome</strong>: (Intervention -> Outcome)
+                            <ul>
+                                <li>Description: Describes the outcome resulting from an intervention.
+                            </ul>
+                        <li><strong>hasPreference</strong>:  (DecisionMaker -> Risk)
+                            <ul>
+                                <li>Description: Links a decision maker to a specific risk they are particularly focused on mitigating.
+                            </ul>
+                        <li><strong>makesDecision</strong>:   (DecisionMaker -> Intervention)
+                            <ul>
+                                <li>Description: Indicates which intervention is chosen by the decision maker.
+                            </ul>
+                    </ul>
+                    
+                    <b>Relationships</b>
+                    <ul>
+                        <li><strong>influences</strong>: (DecisionMaker -> DecisionContext)
+                            <ul>
+                                <li>Description: Describes how a decision maker influences or controls the decision-making environment.
+                            </ul>
+                        <li><strong>impacts</strong>: (Risk -> Outcome)
+                            <ul>
+                                <li>Description: Indicates how a specific risk impacts the outcome of a decision context when a particular intervention is or is not implemented.
+                            </ul>
+                        <li><strong>prioritizes</strong>: (DecisionMaker -> Intervention)
+                            <ul>
+                                <li>Description: Indicates a preference for interventions that completely mitigate a risk, reflecting zero-risk bias.
+                            </ul>
+                    </ul>
+
+                    <b>Attributes</b>
+                    <ul>
+                        <li><strong>Risk</strong>: 
+                            <ul>
+                                <li>severity (numerical): Indicates how severe the risk is considered.
+                                <li>probability (numerical): Represents the likelihood of the risk occurring.
+                            </ul>
+                        <li><strong>Intervention</strong>:
+                            <ul>
+                                <li>cost (numerical): The resources (e.g., money, time) required to implement the intervention.
+                                <li>effectiveness (numerical): A measure of how effective the intervention is in reducing the risk.
+                            </ul>
+                        <li><strong>Outcome</strong>: 
+                            <ul>
+                                <li>overallRiskReduction (numerical): Measures the total reduction in risk as a result of the intervention across all considered risks.
+                            </ul>
+                        <li><strong>DecisionMaker</strong>: 
+                            <ul>
+                                <li>riskPreference (enumeration): Could include preferences like "Zero-Risk", "Risk-Averse", "Risk-Neutral", "Risk-Tolerant".
+                            </ul>
+                    </ul>
+                    
+
+
+
+                        <hr class="major" />
+
+                        <h2>Ontology visualization</h2>
+                        <img src="zero_risk_bias.svg" alt="Ontology visualization" width="800px" />
+                        <p><a href="owl/zero_risk_bias.owl">TTL code for the ontology</a></p>
+                        </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

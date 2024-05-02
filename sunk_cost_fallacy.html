@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Sunk Cost Fallacy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>we tend to complete things we've invested
+                        time and energy in</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Sunk Cost Fallacy</h1>
+                        <p>In economics and business decision-making, a sunk cost (also known as retrospective cost) is a cost that has already been incurred and cannot be recovered.[1][2] Sunk costs are contrasted with prospective costs, which are future costs that may be avoided if action is taken.[3] In other words, a sunk cost is a sum paid in the past that is no longer relevant to decisions about the future. Even though economists argue that sunk costs are no longer relevant to future rational decision-making, people in everyday life often take previous expenditures in situations, such as repairing a car or house, into their future decisions regarding those properties.</p>
+                    </header>
+
+                    <span class="image main"><img src="images/sunk_cost_fallacy.svg" alt="" /></span>
+
+                    <h2>Examples of usage</h2>
+                   
+                    <ul>
+                        <li><strong>Business Investments</strong>:Continuing to invest in a failing project because significant resources have already been spent, even though halting the project would reduce future losses.
+                        </li>
+                        <li><strong>Education and Careers</strong>: Completing a degree or staying in a career path solely because of the time and money already invested, despite a lack of interest or better opportunities elsewhere.
+                        </li>
+                        <li><strong>Relationships</strong>: Staying in unsatisfying or harmful relationships due to the time and emotional investment made, rather than evaluating the current value or potential future happiness.
+                        </li>
+                        <li><strong>Gaming and Gambling</strong>: Continuing to gamble or play a game after repeated losses, driven by the belief that further investment can recover the initial losses.
+                        </li>
+                        <li><strong>Healthcare</strong>: Persisting with a treatment or medication regimen that isn't working because of the investment in time and hope for improvement, instead of considering alternative treatments.
+                        </li>
+                        <li><strong>Consumer Behavior</strong>: Keeping subscriptions or memberships active because of the initial sign-up cost or fees paid, even when the service is rarely or never used.
+                        </li>
+                        <li><strong>Technology Projects</strong>: Continuing with a technology or software development project that is clearly outdated or outmatched by newer technologies, because of the initial development cost and effort.
+                        </li>
+                        <li><strong>Real Estate</strong>: Holding onto property that is declining in value or not generating expected returns, due to the initial purchase price and improvement costs, rather than cutting losses.
+                        </li>
+                    </ul>
+                    <p>Each of these examples reflects the fallacy's impact on decision-making, where past investments (time, money, effort) unduly influence current choices, leading to potentially suboptimal outcomes.</p>
+
+                    <hr class="major" />
+                    <h2>Flexible conversation</h2>
+                    <p><b>Ludi:</b>So we have an Agent that can make Rational Decision or Biased Decision. In the case when he makes Biased Decision about the Thing (Project, Action, Investment) he takes into account the Past investment in this project (time, money, energy) instead of rational estimation of the current situation or future perspectives?</p>
+                    <p><b>ChatGPT:</b>Yes, that's correct. When the agent makes a biased decision, particularly under the influence of the sunk cost fallacy, the decision is disproportionately weighted by the past investments (such as time, money, and energy) made into the project, action, or investment. This happens instead of making a decision based on a rational estimation of the current situation or the future prospects. The fallacy leads the agent to continue investing in the endeavor, often resulting in suboptimal decision-making, because the focus is on recouping sunk costs rather than evaluating the potential for future returns or losses.</p>
+                    <p><b>Ludi:</b>Can we describe investment types here?</p>
+                    <p><b>ChatGPT:</b>To elaborate on investment types within this context, let's refine the Investment class to include specific types of investments that an agent can make in a project. These types highlight the varied resources an agent might commit, reflecting both tangible and intangible investments.</p>
+                    <p><b>Ludi:</b>How we can describe BiasedDecision that takes into account previous investments instaead of estimation of current outcome or future perspectives?</p>
+                    <p><b>ChatGPT:</b>To describe a BiasedDecision that prioritizes previous investments over rational estimations of current or future outcomes, we can refine the Decision class specifically for biased decisions. This refinement involves detailing the attributes and relationships that capture the essence of decision-making influenced by sunk costs.</p>
+
+
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <b>Classes and Their Attributes:</b>
+                    <ul>
+                        <li><strong>Agent</strong>
+                        <ul>
+                        <li>Attributes: ID, Name, DecisionType (Rational, Biased)</li>
+                        </ul>
+                        <li><strong>Project (or Action, Investment)</strong>
+                        <ul>
+                        <li>Attributes: ID, Name, InitialInvestment (sum of time, money, energy), CurrentValue, FutureProspect</li>
+                        </ul>
+                        <li><strong>Decision</strong>
+                        <ul>    
+                        <li>Attributes: ID, DecisionType (Rational, Biased), ReasoningBasis (PastInvestment, CurrentSituation, FutureProspects), Outcome (Success, Failure)</li>
+                        </ul>
+                        <li><strong>Investment</strong>
+                        <ul>
+                        <li>Attributes: ID, Type (Time, Money, Energy), Amount, Date</li>
+                        </ul>
+                    </ul>
+                    <b>Relationships:</b>
+                    <ul>
+                        <li><strong>Agent-Makes->Decision</strong>: An agent makes a decision.</li>
+                        <li><strong>Project</strong>: A decision is made regarding a project.</li>
+                        <li><strong>Investment</strong>: A project has one or more investments.</li>
+                        <li><strong>Investment</strong>: An agent has made investments in a project.</li>
+                    </ul>
+                    <b>Explanation:</b>
+                        <p>The Agent class represents the entity making decisions. The DecisionType attribute indicates whether decisions are made rationally or with bias.
+                        The Project class represents the object of the decision, which could be any endeavor like a project, action, or investment. It includes both tangible investments (like money) and intangible ones (like time and energy).
+                        The Decision class captures each decision made by an agent, specifying whether it's influenced by rational thinking or bias (such as sunk cost fallacy), and what the outcome was.
+                        The Investment class records the specific investments made into a project, including the type and amount.</p>
+                    <b>Refined Investment Class Attributes:</b>
+                    <ul>
+                    <li><strong>ID</strong>: A unique identifier for each investment.</li>
+                    <li><strong>Type</strong>: Categorizes the investment. Common types include:
+                        <ul>
+                        <li><strong>Money</strong>: Financial investment made into the project.</li>
+                        <li><strong>Time</strong>: The amount of time spent working on or supporting the project.</li>
+                        <li><strong>Energy</strong>: Effort or mental resources expended towards the project, which could be creativity, emotional investment, problem-solving, etc.</li>
+                        <li><strong>Resources</strong>: Physical or digital assets other than money contributed to the project, like equipment, software, or materials.</li>
+                        </ul>
+                    <li><strong>Amount</strong>: Quantifies the investment. For money, it's the monetary value; for time, it could be hours or days; for energy and resources, a descriptive quantification or estimation.
+                    <li><strong>Date</strong>: When the investment was made.
+                    </ul>
+                    
+                    <b>Refined BiasedDecision Class (Subclass of Decision):</b>
+                    <ul>
+                    <li><strong>ID</strong>: Inherits the unique identifier from Decision.</li>
+                    <li><strong>DecisionType</strong>: Fixed to "Biased" for instances of this class.</li>
+                    <li><strong>ReasoningBasis</strong>:
+                        <ul>
+                        <li><strong>PastInvestment</strong>: Indicates the decision is primarily based on the investments already made (time, money, energy, resources).
+                        <li><strong>IgnoredFactors</strong>: Lists aspects that were not adequately considered due to the bias, such as "CurrentValue", "FutureProspect".
+                        </ul>
+                    <li><strong>Outcome</strong>: Inherits the potential outcomes (Success, Failure) from Decision, reflecting the consequences of the biased decision.
+                    <li><strong>InvestmentsConsidered</strong>: A list of Investment IDs that significantly influenced the decision.
+                    </ul>
+                    <b>Relationships Specific to BiasedDecision:</b>
+                    <ul>
+                       <li><strong>BiasedDecision-Considers->Investment</strong>: This relationship indicates that the biased decision specifically considers certain past investments.
+                        <li><strong>Agent-Makes->BiasedDecision</strong>: An extension of the Agent-Makes->Decision relationship, specifying that the decision made is a biased one.
+                    </ul>
+
+
+
+                        <hr class="major" />
+
+                        <h2>Ontology visualization</h2>
+                        <img src="images/sunk_cost_fallacy.svg" alt="Ontology visualization" width="800px" />
+                        <p><a href="owl/sunk_cost_fallacy.owl">TTL code for the ontology</a></p>
+                        </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Generic</a></li>
+                        <li><a href="elements.html">Elements</a></li>
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+                                <li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+                                <li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+                                <li><a href="delmore_effect.html">Delmore effect</a></li>
+                                <li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+                                <li><a href="occams_razor.html">Occam's razor</a></li>
+                                <li><a href="less_is_better.html">Less-is-better effect</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Etiam Dolore</a></li>
+                        <li><a href="#">Adipiscing</a></li>
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="#">Lorem Dolor</a></li>
+                                <li><a href="#">Ipsum Adipiscing</a></li>
+                                <li><a href="#">Tempus Magna</a></li>
+                                <li><a href="#">Feugiat Veroeros</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Maximus Erat</a></li>
+                        <li><a href="#">Sapien Mauris</a></li>
+                        <li><a href="#">Amet Lacinia</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Ante interdum</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                        ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+                        tempus aliquam.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                            Nashville, TN 00000-0000</li>
+                    </ul>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+                            href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+                            UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -65,6 +65,11 @@
                     <h3>Classes:</h3>
                     <ul>
                         <li><strong>Agent (Person)</strong>. Represents individuals subject.</li>
+                        <ul>
+                            <li>RiskAverseAgent</li>
+                            <li>RiskNeutralAgent</li>
+                            <li>RiskSeekingAgent</li>
+                        </ul>
                         
                         <li><strong>Belief</strong>. An agent consider Belief accordignly.</li>
     
@@ -72,149 +77,110 @@
                         <ul>
                             <li>BiasedDecision</li>
                             <li>RationalDecision</li>
+                        
                         </ul>
+                        <li><strong>Value</strong></li>
+                        <ul>
+                            <li>KnownValue</li>
+                            <li>UnknownValue</li>
+                        </ul>
+
                         <li><strong>CognitiveBias</strong>. A specified bias is activated with the agent choice.</li>
                         <ul>
-                            <li><strong>Backfire Effect</strong></li>
+                            <li><strong>ambiguity bias</strong></li>
                         </ul>
-                        <li><strong>Evidence</strong>. The agent makes decision according to the evidence avaiable.</li>
-                        <li><strong>ResponseToEvidence</strong></li>
-                        <li><strong>EmotionalAndCognitiveFactors</strong></li>
-                        <li><strong>Outcome</strong></li>
-                        <li><strong>LogicalThinking</strong></li>
-                        <li><strong>RealLifeSituation</strong></li>
                     </ul>
-
-                    <h3>Object Properties:</h3>
-                    <ul>
-                        <li><strong>affectedBy</strong></li>
-                        <ul>
-                            <li>Domain: Agent</li>
-                            <li>Range: CognitiveBias</li>
-                            <li>Description: Agent is affected by the bias and reacts accordignly.</li>
-                        </ul>
-                        <li><strong>makesDecision</strong></li>
-                        <ul>
-                            <li>Domain: Agent</li>
-                            <li>Range: Decision</li>
-                            <li>Description: Repsents when the Agent takes the decision.</li>
-                        </ul>
-                        <li><strong>hasBelief</strong></li>
-                        <ul>
-                            <li>Domain: Agent </li>
-                            <li>Range:Belief </li>
-                            <li>Description: Represents the agent has a specific belief.</li>
-                        </ul>
-                        <li><strong>influences</strong></li>
-                        <ul>
-                            <li>Domain: CognitiveBias</li>
-                            <li>Range: Decision</li>
-                            <li>Description: Represents when the decison is influnced by the cognitive bias.</li>
-                        </ul>
-                        <li><strong>elicits</strong></li>
-                        <!-- ###obtain### -->
-                        <ul>
-                            <li>Domain: Belief</li>
-                            <li>Range: ResponseToEvidence</li>
-                            <li>Description: Reprseants when the agent responds to the evidence.</li>
-                        </ul>
-                        <li><strong>leadsTo</strong></li>
-                        <ul>
-                            <li>Domain: ResponseToEvidence</li>
-                            <li>Range: Outcome</li>
-                            
-                        </ul>
-                        <li><strong>isBasedOn</strong></li>
-                        <ul>
-                            <li>Domain: Belief</li>
-                            <li>Range: Evidence</li>
-                            
-                        </ul>
-                        <li><strong>evaluates</strong></li>
-                        <ul>
-                            <li>Domain: Agent</li>
-                            <li>Range: Evidence</li>
-                            
-                        </ul>
-                        <li><strong>experiences</strong></li>
-                        <ul>
-                            <li>Domain: Agent</li>
-                            <li>Range: EmotionalAndCognitiveFactors</li>
-                        </ul>
-                        <li><strong>basedOnLogicalReasoning</strong></li>
-                        <ul>
-                            <li>Doamin: RationalDecision</li>
-                            <li>Range: LogicalThinking</li>
-                        </ul>
-                        <li><strong>facesRealWorldSituation</strong></li>
-                        <ul>
-                            <li>Domain: Agent</li>
-                            <li>Range: RealLifeSituation</li>
-                        </ul>
-                        <li><strong>leadsToChangeInBelief</strong></li>
-                        <ul>
-                            <li>Domain: RationalDecision</li>
-                            <li>Range: Belief</li>
-                        </ul>
-                        <li><strong>influencedByBackfireEffect</strong></li>
-                        <ul>
-                            <li>Domain: BiasedDecision</li>
-                            <li>Range: BackfireEffect</li>
-                        </ul>
-                        <li><strong>resultsInBiasedDecision</strong></li>
-                        <ul>
-                            <li>Domain: EmotionalAndCognitiveFactors</li>
-                            <li>Range: BiasedDecision</li>
-                        </ul>
-                        <li><strong>promptsRationalDecision</strong></li>
-                        <ul>
-                            <li>Domain: RealLifeSituation</li>
-                            <li>Range: RationalDecision</li>
-                        </ul>
-                        <li><strong>supportsRightBelief</strong></li>
-                        <ul>
-                            <li>Domain: Evidence</li>
-                            <li>Rnage: Belief</li>
-                        </ul>
-                        <li><strong>leadsToWrongBelief</strong></li>
-                        <ul>
-                            <li>Domain: BiasedDecision</li>
-                            <li>Range: Belief</li>
-                        </ul>
-                        <li><strong>supportsRationalDecision</strong.></li>
-                            <ul>
-                                <li>Domain: Evidence</li>
-                                <li>Range: RationalDecision</li>
-                            </ul>
-
 
                     <h3>Datatype Property:</h3>
                     <ul>
-                        <li><strong>name</strong></li>
+                        <li><strong>Name</strong></li>
                          <ul>
-                            <li>Domain:CognitiveBias </li>
+                            <li>Domain: Agent </li>
                             <li>Range - xsd:string</li>
                                 
                         </ul>
-                        <li><strong>description</strong></li>
+                        <li><strong>Preference</strong></li>
                         <ul>
-                            <li>Domain:CognitiveBias</li>
+                            <li>Domain: Agent</li>
                             <li>Range - xsd:string</li>
                         </ul>
-                        <li><strong>wrongBelief:</strong></li>
+                        <li><strong>Outcome:</strong></li>
                         <ul>
-                            <li>Domain : Belief</li>
-                            <li>Range - xsd:boolean</li>
+                            <li>Domain : Decision</li>
+                            <li>Range - xsd:string</li>
                         </ul>
-                        <li><strong>rightBelief</strong></li>
+                        <li><strong>DecisionDate</strong></li>
                         <ul>
-                            <li>Domain - Belief</li>
-                            <li>Range - xsd:boolean</li>
+                            <li>Domain - Decision</li>
+                            <li>Range - xsd:dateTime</li>
                         </ul>
-                        <li><strong>openToNewInformation</strong></li>
+                        <li><strong>MoreFavourableOutcome</strong></li>
                         <ul>
-                            <li>Domain - RationalDecision</li>
-                            <li> Range - xsd:boolean</li>
+                            <li>Domain: KnownValue</li>
+                            <li>Range: xsd:string</li>
+                        </ul>
+                        <li><strong>PastExperience</strong></li>
+                        <ul>
+                            <li>Domain: KnownValue</li>
+                            <li>Range: xsd:string</li>
+                        </ul>
+                        <li><strong>MoreClarification</strong></li>
+                        <ul>
+                            <li>Domain: KnownValue</li>
+                            <li>Rnage: xsd:string</li>
+                        </ul>
+                        <li><strong>NoPriorKnowledge</strong></li>
+                        <ul>
+                            <li>Domain: UnknownValue</li>
+                            <li>Range: xsd:string</li>
+                        </ul>
+                        <li><strong>NoEvaluation</strong></li>
+                        <ul>
+                            <li>Domain: UnknownValue</li>
+                            <li>Range: xsd:string</li>
+                        </ul>
+                        <li><strong>HighRisk</strong></li>
+                        <ul>
+                            <li>Domain: UnknownValue</li>
+                            <li>Range: xsd:string</li>
+                        </ul>
+
+                    </ul>
+                        
+
+
+                    <h3>Object Property:</h3>
+                    <ul>
+                        
+                        <li><strong>MakesDecision</strong></li>
+                        <ul>
+                            <li>Domain - Agent</li>
+                            <li> Range - Decision</li>
+                        </ul>
+                        <li><strong>AffectedByAmbiguityBias</strong></li>
+                        <ul>
+                            <li>Domain: Agent</li>
+                            <li>Range: AmbiguityBias</li>
+                        </ul>
+                        <li><strong>InfluencedByBiasedDecision</strong></li>
+                        <ul>
+                            <li>Domain: Agent</li>
+                            <li>Range: BiasedDecision</li>
+                        </ul>
+                        <li><strong>IsAbout</strong></li>
+                        <ul>
+                            <li>Domain: Decision</li>
+                            <li>Range: Value</li>
+                        </ul>
+                        <li><strong>GoesFor</strong></li>
+                        <ul>
+                            <li>Domain: BiasedDecision</li>
+                            <li>Range: KnownValue</li>
+                        </ul>
+                        <li><strong>Chooses</strong></li>
+                        <ul>
+                            <li>Domain: RationalDecision</li>
+                            <li>Range: UnknownValue</li>
                         </ul>
                  
                     </ul>

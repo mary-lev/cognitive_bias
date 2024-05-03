@@ -5,167 +5,234 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Cognitive biases</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Cognitive biases</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<body class="is-preload">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Cognitive</strong> Biases</a>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Methodology</h1>
-									</header>
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-									<hr class="major" />
-									<b>Context and literature state-of-the-art</b>
-<p>According to the Extreme Design Methodology (XD), the first step of the whole design workflow is to get into the project context, even though in the context of our course project, we do not have a real “customer” to satisfy. Therefore, the ultimate goal of learning about the state-of-the-art context and literature about cognitive biases is to acknowledge ourselves with sufficient information in this unfamiliar and interdisciplinary area, to make further design of ontologies possible. </p>
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Cognitive</strong> Biases</a>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
 
-<p>The only customers we would like to satisfy and negotiate with are our brains, which lack cognitive science knowledge and find it counter-intuitive to unwrap these cognitive biases that could actually affect us. Reading and learning about our topics are to maximize the possibility of bridging these cognitive gaps.
-</p>
-									<hr class="major" />
-									<b>From Mindmap to Onlology</b>
-									<p>After having a basic understanding of our topics, we decided to start this counter-intuitive and overly abstract task for human beings in a more intuitive way, which is to visualize those ideas in our mind in the form of mindmaps manually, with paper and pen, or online UML tools like draw.io.
-</p>
-									<p>Drawing mindmaps helped us better understand the modeling of cognitive biases clearly, and also prevented us from totally being bought into Chat GPT’s generated information in the next step. Only after having a relatively clear idea about the possible models, did we start to inquire about suggestions from Chat GPT and then convert our naive mindmaps into formal ontologies based on our knowledge and the trained knowledge of LLM.
-</p>
-									<span class="image1"><img src="images/mindmap.jpg" alt="" width="800px" /></span>
-									<span class="image2"><img src="images/drawmap.jpg" alt="" width="800px"/></span>
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Methodology</h1>
+					</header>
 
-									<hr class="major" />
-									<b>Flexible Dialogues with LLM</b>
-									<p>To get the highest quality of generated information possible, we purchased the upgrade of the GPT-4, especially considering its obvious excellence compared to the GPT-3.5 in multiple benchmarks and the more updated training data it obtained, which is as new as December of 2023.</p>
-									<p>At the beginning of our tentative conversations with GPT-4, we decided that all group members should retrieve information from it with the same set of prompts, to fulfill the alignments of group work and increase the repeatability of the information retrieval process. The initial prompts are designed as follows:
-										<ul>
-											<li>Ask GPT-4 to generate 3 real-life situations where the cognitive bias happens to people;
-											<li>Pick the most representative example from the 3 cases above, and ask GPT-4 to describe it in detail;
-											<li>Ask GPT-4 to grasp the most important elements from the detailed user case;
-											<li>Based on previous discussions, ask GPT-4 to model the cognitive bias in the form of UML diagrams, specifying the classes and methods involved;
-											<li>Ask GPT-4 to further convert the UML model into a proper ontology, in the TTL syntax form.
-										</ul>
-								</p>
-									<p>We soon realized the unproperness of such a fixed-prompts workflow, in which the iteration process of XD (Task 3-10) was not implemented, and it was hard to fix the generated contents of GPT-4 with our prerequisite knowledge obtained in previous steps, making the whole ontology exclusive to its own “idea”.</p>
-									<p>To achieve iterability of the workflow and extend the inference of our knowledge as the designers, we decided to give up the fix prompts, and instead talk with GPT-4 in a more Socratic and flexible way: we inspire the LLM to “think” through more user cases, supplement our own ideas to the generated model and ask it to rethink about the ontology bias, and iterate this process until it returned satisfying model. Briefly speaking, we modified steps 2-4 of the aforementioned prompts more flexible and iterable, which is in alignment with the iterative nature of the XD design process, and we also tried to let our own knowledge inspire the generation of LLM, to overcome the possible misleadings and unstableness of the generated information.</p>
-									<p> Examples of our dialogues with GPT-4 will be attached with ontologies in the upcoming part.</p>
+					<hr class="major" />
+					<b>Context and literature state-of-the-art</b>
+					<p>According to the Extreme Design Methodology (XD), the first step of the whole design workflow is
+						to get into the project context, even though in the context of our course project, we do not
+						have a real “customer” to satisfy. Therefore, the ultimate goal of learning about the
+						state-of-the-art context and literature about cognitive biases is to acknowledge ourselves with
+						sufficient information in this unfamiliar and interdisciplinary area, to make further design of
+						ontologies possible. </p>
 
-									<hr class="major" />
-									<b>Decision-Making Frameworks</b>
-									<p>While figuring out the nature of cognitive biases that our group deals with, we learned that cognitive biases could be categorized into different dimensions according to their specific effects:
-										<ul>
-											<li>Biases specific to groups (such as the risky shift) versus biases at the individual level.
-											<li>Biases that affect decision-making, where the desirability of options has to be considered (e.g., sunk costs fallacy).
-											<li>Biases, such as illusory correlation, that affect the judgment of how likely something is or whether one thing is the cause of another.
-											<li>Biases that affect memory, such as consistency bias (remembering one's past attitudes and behavior as more similar to one's present attitudes).
-											<li>Biases that reflect a subject's motivation, for example, the desire for a positive self-image leading to egocentric bias and the avoidance of unpleasant cognitive dissonance.
-										</ul>
-</p>
-									<p>The two general types of cognitive biases our groups are dealing with, according to the cognitive bias codex are: To get things done, we tend to complete things we've invested time and energy in; and another, saying that we favor simple-looking options and complete information over complex, ambiguous options. Both of them affect not only the memories, ideas and motivations of humans but also influence our actual decisions and behaviors, which are highly related to the realm of decision-making process of human.
-									</p>
-									<p>Therefore, to reuse some already well-established ontology frameworks, we get inspired by the following frameworks and core ontologies designed specifically to describe and model decision-making:
-										<ul>
-											<li>A Core Ontology on Decision Making: https://ceur-ws.org/Vol-2728/paper1.pdf
-											<li>The Decision Ontology (DO): https://www.w3.org/2005/Incubator/decision/XGR-decision-20120417/Sample_Decision_Ontology.html
-											<li>Ontology of Value, Risk and Cognitive Biases for an IT Portfolio Decision Making: https://ceur-ws.org/Vol-2728/doctorate3.pdf
-										</ul>
-									</p>
-									<p>Besides these frameworks, we also tried to integrate some ontologies and vocabularies for general use (eg. foaf, DCcores, schemas…) into our ontologies.</p>
+					<p>The only customers we would like to satisfy and negotiate with are our brains, which lack
+						cognitive science knowledge and find it counter-intuitive to unwrap these cognitive biases that
+						could actually affect us. Reading and learning about our topics are to maximize the possibility
+						of bridging these cognitive gaps.
+					</p>
+					<hr class="major" />
+					<b>From Mindmap to Onlology</b>
+					<p>After having a basic understanding of our topics, we decided to start this counter-intuitive and
+						overly abstract task for human beings in a more intuitive way, which is to visualize those ideas
+						in our mind in the form of mindmaps manually, with paper and pen, or online UML tools like
+						draw.io.
+					</p>
+					<p>Drawing mindmaps helped us better understand the modeling of cognitive biases clearly, and also
+						prevented us from totally being bought into Chat GPT’s generated information in the next step.
+						Only after having a relatively clear idea about the possible models, did we start to inquire
+						about suggestions from Chat GPT and then convert our naive mindmaps into formal ontologies based
+						on our knowledge and the trained knowledge of LLM.
+					</p>
+					<span class="image1"><img src="images/mindmap.jpg" alt="" /></span>
+					<span class="image2"><img src="images/drawmap.jpg" alt="" /></span>
 
-									
+					<hr class="major" />
+					<b>Flexible Dialogues with LLM</b>
+					<p>To get the highest quality of generated information possible, we purchased the upgrade of the
+						GPT-4, especially considering its obvious excellence compared to the GPT-3.5 in multiple
+						benchmarks and the more updated training data it obtained, which is as new as December of 2023.
+					</p>
+					<p>At the beginning of our tentative conversations with GPT-4, we decided that all group members
+						should retrieve information from it with the same set of prompts, to fulfill the alignments of
+						group work and increase the repeatability of the information retrieval process. The initial
+						prompts are designed as follows:
+					<ul>
+						<li>Ask GPT-4 to generate 3 real-life situations where the cognitive bias happens to people;
+						<li>Pick the most representative example from the 3 cases above, and ask GPT-4 to describe it in
+							detail;
+						<li>Ask GPT-4 to grasp the most important elements from the detailed user case;
+						<li>Based on previous discussions, ask GPT-4 to model the cognitive bias in the form of UML
+							diagrams, specifying the classes and methods involved;
+						<li>Ask GPT-4 to further convert the UML model into a proper ontology, in the TTL syntax form.
+					</ul>
+					</p>
+					<p>We soon realized the unproperness of such a fixed-prompts workflow, in which the iteration
+						process of XD (Task 3-10) was not implemented, and it was hard to fix the generated contents of
+						GPT-4 with our prerequisite knowledge obtained in previous steps, making the whole ontology
+						exclusive to its own “idea”.</p>
+					<p>To achieve iterability of the workflow and extend the inference of our knowledge as the
+						designers, we decided to give up the fix prompts, and instead talk with GPT-4 in a more Socratic
+						and flexible way: we inspire the LLM to “think” through more user cases, supplement our own
+						ideas to the generated model and ask it to rethink about the ontology bias, and iterate this
+						process until it returned satisfying model. Briefly speaking, we modified steps 2-4 of the
+						aforementioned prompts more flexible and iterable, which is in alignment with the iterative
+						nature of the XD design process, and we also tried to let our own knowledge inspire the
+						generation of LLM, to overcome the possible misleadings and unstableness of the generated
+						information.</p>
+					<p> Examples of our dialogues with GPT-4 will be attached with ontologies in the upcoming part.</p>
+
+					<hr class="major" />
+					<b>Decision-Making Frameworks</b>
+					<p>While figuring out the nature of cognitive biases that our group deals with, we learned that
+						cognitive biases could be categorized into different dimensions according to their specific
+						effects:
+					<ul>
+						<li>Biases specific to groups (such as the risky shift) versus biases at the individual level.
+						<li>Biases that affect decision-making, where the desirability of options has to be considered
+							(e.g., sunk costs fallacy).
+						<li>Biases, such as illusory correlation, that affect the judgment of how likely something is or
+							whether one thing is the cause of another.
+						<li>Biases that affect memory, such as consistency bias (remembering one's past attitudes and
+							behavior as more similar to one's present attitudes).
+						<li>Biases that reflect a subject's motivation, for example, the desire for a positive
+							self-image leading to egocentric bias and the avoidance of unpleasant cognitive dissonance.
+					</ul>
+					</p>
+					<p>The two general types of cognitive biases our groups are dealing with, according to the cognitive
+						bias codex are: To get things done, we tend to complete things we've invested time and energy
+						in; and another, saying that we favor simple-looking options and complete information over
+						complex, ambiguous options. Both of them affect not only the memories, ideas and motivations of
+						humans but also influence our actual decisions and behaviors, which are highly related to the
+						realm of decision-making process of human.
+					</p>
+					<p>Therefore, to reuse some already well-established ontology frameworks, we get inspired by the
+						following frameworks and core ontologies designed specifically to describe and model
+						decision-making:
+					<ul>
+						<li>A Core Ontology on Decision Making: https://ceur-ws.org/Vol-2728/paper1.pdf
+						<li>The Decision Ontology (DO):
+							https://www.w3.org/2005/Incubator/decision/XGR-decision-20120417/Sample_Decision_Ontology.html
+						<li>Ontology of Value, Risk and Cognitive Biases for an IT Portfolio Decision Making:
+							https://ceur-ws.org/Vol-2728/doctorate3.pdf
+					</ul>
+					</p>
+					<p>Besides these frameworks, we also tried to integrate some ontologies and vocabularies for general
+						use (eg. foaf, DCcores, schemas…) into our ontologies.</p>
+				</section>
+			</div>
+		</div>
+
+<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+	  <!-- Search -->
+	  <section id="search" class="alt">
+		<form method="post" action="#">
+		  <input type="text" name="query" id="query" placeholder="Search" />
+		</form>
+	  </section>
 
 
 
-									
 
 
 
 
-									
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index1.html">Homepage</a></li>
-										<li><a href="generic.html">Methodology</a></li>
-										 
-										<li>
-											<span class="opener">We favor simple looking options</span>
-											<ul>
-												<li><a href="ambiguitybias.html">Ambiguity bias</a></li>
-												<li><a href="Informationbias.html">Information bias</a></li>
-												<li><a href="beliefbias.html">Belief bias</a></li>
-												<li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
-												<li><a href="bike_shedding.html">Bike-shedding effect</a></li>
-												<li><a href="delmore_effect.html">Delmore effect</a></li>
-												<li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
-												<li><a href="occams_razor.html">Occam's razor</a></li>
-												<li><a href="less_is_better.html">Less-is-better effect</a></li>
-											</ul>
-										</li>
-										
-										<li>
-											<span class="opener">To get things done</span>
-											<ul>
-												<li><a href="disposition_effect.html">Desposition Effect</a></li>
-												<li><a href="unit_bias.html">Unit bias</a></li>
-												<li><a href="pseudocertainty_effect.html">Pseudocertainty Effect</a></li>
-												<li><a href="Endowment_effect.html">Endowment Effect</a></li>
-												<li><a href="Backfire_effect.html">Bacfire Effect</a></li>
-												<li><a href="sunk_cost_fallacy.html">Sunk Cost Fallacy</a></li>
-												<li><a href="irrational_escalation.html">Irrational Escalation</a></li>
-												<li><a href="loss_aversion.html">Loss Aversion</a></li>
-												<li><a href="ikea_effect.html">IKEA Effect</a></li>
-												<li><a href="processing_difficulty_effect.html">Processing Difficulty Effect</a></li>
-												<li><a href="generation_effect.html">Generation Effect</a></li>
-												<li><a href="zero_risk_bias.html">Zero-Risk Bias</a></li>
-											  </ul>
-										</li>
-										<li><a href="elements.html">Conclusion</a></li>
-										 
-										 
-									</ul>
-								</nav>
 
-						
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
 
-						</div>
-					</div>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index1.html">Homepage</a></li>
+						<li><a href="generic.html">Methodology</a></li>
+
+						<li>
+							<span class="opener">We favor simple looking options</span>
+							<ul>
+								<li><a href="ambiguitybias.html">Ambiguity bias</a></li>
+								<li><a href="Informationbias.html">Information bias</a></li>
+								<li><a href="beliefbias.html">Belief bias</a></li>
+								<li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+								<li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+								<li><a href="delmore_effect.html">Delmore effect</a></li>
+								<li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+								<li><a href="occams_razor.html">Occam's razor</a></li>
+								<li><a href="less_is_better.html">Less-is-better effect</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<span class="opener">To get things done</span>
+							<ul>
+								<li><a href="disposition_effect.html">Desposition Effect</a></li>
+								<li><a href="unit_bias.html">Unit bias</a></li>
+								<li><a href="pseudocertainty_effect.html">Pseudocertainty Effect</a></li>
+								<li><a href="Endowment_effect.html">Endowment Effect</a></li>
+								<li><a href="Backfire_effect.html">Bacfire Effect</a></li>
+								<li><a href="sunk_cost_fallacy.html">Sunk Cost Fallacy</a></li>
+								<li><a href="irrational_escalation.html">Irrational Escalation</a></li>
+								<li><a href="loss_aversion.html">Loss Aversion</a></li>
+								<li><a href="ikea_effect.html">IKEA Effect</a></li>
+								<li><a href="processing_difficulty_effect.html">Processing Difficulty Effect</a></li>
+								<li><a href="generation_effect.html">Generation Effect</a></li>
+								<li><a href="zero_risk_bias.html">Zero-Risk Bias</a></li>
+							</ul>
+						</li>
+						<li><a href="elements.html">Conclusion</a></li>
+
+
+					</ul>
+				</nav>
+
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
 
 			</div>
+		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	</div>
 
-	</body>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Loss Aversion</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>we tend to complete things we've invested
+                        time and energy in</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+                        </li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Loss Aversion</h1>
+                        <p>Loss aversion is a psychological and economic concept, which refers to how outcomes are interpreted as gains and losses where losses are subject to more sensitivity in people's responses compared to equivalent gains acquired. Kahneman and Tversky (1992) suggested that losses can be twice as powerful psychologically as gains.</p>
+
+                        <p>When defined in terms of the utility function shape as in the cumulative prospect theory (CPT), losses have a steeper utility than gains, thus being more "painful" than the satisfaction from a comparable gain, as shown in Figure 1. Loss aversion was first proposed by Amos Tversky and Daniel Kahneman as an important framework for prospect theory - an analysis of decision under risk. Finance and insurance are the sub fields of economics with the most active applications.</p>
+                    </header>
+
+                    <span class="image main"><img src="images/loss_aversion.svg" alt="" /></span>
+
+                    <h2>Examples of usage</h2>
+                    <p> Loss aversion is a cognitive bias where the pain of losing is psychologically about twice as powerful as the pleasure of gaining. This bias suggests that individuals give more weight to the negative consequences of losing something than to the positive aspects of gaining something of equivalent value. In other words, people often prefer to avoid losses rather than acquiring equivalent gains, even when the end result is economically similar.</p>
+                   
+                    <ul>
+                        <li><strong>Marketing and Pricing Strategies</strong>:Businesses often use loss aversion in their pricing strategies. For example, free trials capitalize on loss aversion by giving something for free for a limited time, then taking it away unless the customer pays to continue the service. After using a product or service, customers might feel the loss more keenly, motivating them to convert into paying customers to avoid losing access.
+                        </li>
+                        <li><strong>Investment Decisions</strong>: In finance, investors might hold onto losing stocks longer than is economically rational because they want to avoid the pain of realizing a financial loss. Similarly, they might be reluctant to sell a stock at a gain if they fear missing out on further gains, thus potentially missing the optimal selling point.
+                        </li>
+                        <li><strong>Healthcare Choices</strong>: Patients may opt for treatments that minimize the risk of losing what they have (e.g., opting for a treatment with a lower risk of side effects) rather than choosing a treatment that could potentially offer greater overall health benefits but with a risk of new side effects.
+                        </li>
+                        <li><strong>Policy Making and Public Behavior</strong>: Governments can use loss aversion to influence public behavior. For example, framing a policy in terms of what people stand to lose if they don't comply (e.g., fines or losing privileges) can be more effective than framing it in terms of gains (e.g., rewards or bonuses).
+                        </li>
+                        <li><strong>User Experience and Interface Design</strong>: In software design, loss aversion can influence how features are presented to users. Highlighting what users might lose by not opting into a feature can increase engagement. For instance, a data backup service might emphasize the risks and potential loss of data without their service more than the benefits of using the service.
+                        </li>
+                    </ul>
+                    
+                    <hr class="major" />
+                    <h2>Flexible conversation</h2>
+                    <p><b>Ludi:</b>If I want to model this bias in general cases, can I propose that: 1. an Agent, faces a current Situation and has to make Decision; 2. Decisions have 2 subclasses, Rational decision and Biased decision; 3. Situation leads to two possible classes, Gain and Loss; 4, Gain has a "gainAmount", and Loss has an "lossAmount”; 5, Agent has Psychological Response towards Situation; 6. The psychological response has two subclasses, GainResponse and LossResponse 7.LossResponse is stronger than GainResponse</p>
+                    <p><b>ChatGPT:</b>Yes, your proposed model for representing the cognitive bias of loss aversion in an ontology is a strong foundational structure. It effectively captures the dynamics and the psychological nuances associated with loss aversion. Here's a breakdown and a slight refinement of your model to ensure clarity and completeness...</p>
+                   
+                    <hr class="major" />
+
+                    <h2>Creating an Ontology</h2>
+                    <b>Classes</b>
+                    <ul>
+                        <li><strong>Agent</strong>: Represents the entity (person, organization, etc.) making the decision.
+                        <li><strong>Decision</strong>: Divided into two subclasses:
+                            <ul>
+                            <li><strong>Biased Decision</strong>: Decisions influenced by cognitive biases, including loss aversion.
+                            <li><strong>Rational Decision</strong>:  Decisions made based on logical reasoning and objective assessment of gains and losses.
+                            </ul>
+                        <li><strong>Situation</strong>: Two possible outcomes of the situation:
+                            <ul>
+                            <li><strong>Gain</strong>: A positive outcome with a property <strong>gainAmount</strong> indicating the magnitude of the gain.
+                            <li><strong>Loss</strong>: A negative outcome with a property <strong>lossAmount</strong> indicating the magnitude of the loss.
+                            </ul>
+                        <li><strong>Psychological Response</strong>: The emotional or psychological reaction of the Agent to the situation, which can affect decision-making:
+                            <ul>
+                            <li><strong>GainResponse</strong> - The psychological response to potential or actual gains.
+                            <li><strong>LossResponse</strong> - The psychological response to potential or actual losses. This should be modeled to reflect that it is typically stronger than the GainResponse, perhaps by a quantifiable factor or through a qualitative description in the ontology.
+                            </ul>
+                        <li><strong>Properties of Responses</strong>:
+                            <ul>
+                            <li> <strong>Strength of Response</strong> - This can be a property of both GainResponse and LossResponse, quantifying how strong the emotional or psychological impact is. For LossResponse, this value would generally be greater than that of GainResponse, reflecting the bias.
+                            </ul>
+                    </ul>
+                    <b>Object Properties:</b>
+                        <ul>
+                        <li><strong>triggers</strong> linking Situation to Psychological Response.
+                        <li><strong>has</strong> linking Agent to Psychological Response.
+                        <li><strong>affects</strong> linking Loss Aversion to Psychological Response.
+                        <li><strong>leadsTo</strong> linking Loss Aversion to Biased Decision.
+                        <li><strong>faces</strong> linking Agent to Situation.
+                        <li><strong>makes</strong> linking Agent to Decision.
+                        <li><strong>resultsIn</strong> linking Situation to either Gain or Loss.
+                        </ul>
+                    
+                    <b>Data Properties:</b>
+                    <ul>
+                        <li><strong>gainAmount</strong>: for Gain.</li>
+                        <li><strong>lossAmount</strong>: for Loss.</li>
+                        <li><strong>strength</strong>: for both GainResponse and LossResponse (with a typically higher value for LossResponse).</li>
+                    
+                    <p>This restructured model emphasizes the causal and influencing pathways through which loss aversion impacts an agent's decision-making process in the face of potential gains and losses. It also clearly situates loss aversion within the broader framework of cognitive biases, providing a solid foundation for analyzing behavioral patterns in various contexts.</p>
+                    </ul>
+                
+
+
+
+                        <hr class="major" />
+
+                        <h2>Ontology visualization</h2>
+                        <img src="images/irrational_escalation.svg" alt="Ontology visualization" width="800px" />
+                        <p><a href="owl/irrational_escalation.owl">TTL code for the ontology</a></p>
+                        </p>
+
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index1.html">Homepage</a></li>
+                        <li><a href="generic.html">Methodology</a></li>
+                         
+                        <li>
+                            <span class="opener">We favor simple looking option</span>
+                            <ul>
+								<li><a href="ambiguitybias.html">Ambiguity bias</a></li>
+								<li><a href="Informationbias.html">Information bias</a></li>
+								<li><a href="beliefbias.html">Belief bias</a></li>
+								<li><a href="rhyme_as_reason.html">Rhyme as reason effect</a></li>
+								<li><a href="bike_shedding.html">Bike-shedding effect</a></li>
+								<li><a href="delmore_effect.html">Delmore effect</a></li>
+								<li><a href="conjunction_fallacy.html">Conjunction fallacy</a></li>
+								<li><a href="occams_razor.html">Occam's razor</a></li>
+								<li><a href="less_is_better.html">Less-is-better effect</a></li>
+							</ul>
+                        </li>
+                        
+                        <li>
+                            <span class="opener">To get things done</span>
+                            <ul>
+                                <li><a href="disposition_effect.html">Desposition Effect</a></li>
+                                <li><a href="unit_bias.html">Unit bias</a></li>
+                                <li><a href="pseudocertainty_effect.html">Pseudocertainty Effect</a></li>
+                                <li><a href="Endowment_effect.html">Endowment Effect</a></li>
+                                <li><a href="Backfire_effect.html">Bacfire Effect</a></li>
+                                <li><a href="sunk_cost_fallacy.html">Sunk Cost Fallacy</a></li>
+                                <li><a href="irrational_escalation.html">Irrational Escalation</a></li>
+                                <li><a href="loss_aversion.html">Loss Aversion</a></li>
+                                <li><a href="ikea_effect.html">IKEA Effect</a></li>
+                                <li><a href="processing_difficulty_effect.html">Processing Difficulty Effect</a></li>
+                                <li><a href="generation_effect.html">Generation Effect</a></li>
+                                <li><a href="zero_risk_bias.html">Zero-Risk Bias</a></li>
+                              </ul>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <!-- Section -->
+                  
+
+                <!-- Section -->
+  
+
+                <!-- Footer -->
+                <footer id="footer">
+                      <p class="copyright">
+              &copy; Cognitive biases. All rights reserved. 
+            </p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

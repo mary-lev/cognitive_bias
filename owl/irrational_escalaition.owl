@@ -1,0 +1,111 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
+@prefix ie: <http://example.org/cognitive_bias/irrational_escalation#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Ontology Declaration
+<http://example.org/cognitive_bias>
+    rdf:type owl:Ontology .
+
+### Classes
+foaf:Agent rdf:type owl:Class .
+
+foaf:Project rdf:type owl:Class .
+
+bias:CognitiveBias rdf:type owl:Class .
+
+ie:IrrationalEscalation rdf:type owl:Class ;
+    rdfs:subClassOf bias:CognitiveBias ;
+    owl:equivalentClass ie:EscalationOfCommitment .
+
+ie:EscalationOfCommitment rdf:type owl:Class ;
+    rdfs:subClassOf bias:CognitiveBias .
+
+foaf:PersonDecision rdf:type owl:Class ;
+    rdfs:subClassOf bias:Decision ;
+    owl:onProperty bias:AffectedBy ;
+    owl:someValuesFrom ie:IrrationalEscalation .
+
+foaf:RationalDecision rdf:type owl:Class ;
+    rdfs:subClassOf bias:Decision .
+
+ie:PreviousInvestment rdf:type owl:Class .
+
+### Object Properties
+bias:Faces rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:Person ;
+    rdfs:range foaf:Document .
+
+bias:Makes rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:Person ;
+    rdfs:range bias:Decision .
+
+bias:Indicates rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:Document ;
+    rdfs:range bias:PossibleFailure .
+
+bias:InfluencedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain bias:Decision ;
+    rdfs:range foaf:PreviousInvestment .
+
+bias:Continues rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:PersonDecision ;
+    rdfs:range foaf:PreviousInvestment .
+
+bias:Worsens rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:PersonDecision ;
+    rdfs:range foaf:Document .
+
+bias:LeadsTo rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:PersonDecision ;
+    rdfs:range bias:PossibleFailure .
+
+bias:Stops rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:RationalDecision ;
+    rdfs:range foaf:PreviousInvestment .
+
+bias:WorksOn rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:Person ;
+    rdfs:range foaf:Project .
+
+schema:about rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:Document ;
+    rdfs:range foaf:Project .
+
+bias:Made rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:Person ;
+    rdfs:range bias:PreviousInvestment .
+
+bias:AffectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:PersonDecision ;
+    rdfs:range ie:IrrationalEscalation .
+
+### Attributes of Previous Investment
+ie:FinancialInvestment rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:PreviousInvestment ;
+    rdfs:range xsd:float .
+
+ie:TimeInvested rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:PreviousInvestment ;
+    rdfs:range xsd:duration .
+
+ie:EmotionalInvestment rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:PreviousInvestment ;
+    rdfs:range xsd:string .
+
+### Attributes of Rational Decision
+ie:RiskAssessment rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:RationalDecision ;
+    rdfs:range xsd:string .
+
+ie:CostBenefitAnalysis rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:RationalDecision ;
+    rdfs:range xsd:string .
+
+ie:ExitStrategy rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:RationalDecision ;
+    rdfs:range xsd:string .

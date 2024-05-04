@@ -1,0 +1,124 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
+@prefix ge: <http://example.org/cognitive_bias/generation_effect#> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf: 		<http://xmlns.com/foaf/0.1/> .
+
+
+###  Property Definitions ###
+#  --------------------------- Property 0------------------------- 
+bias:makes rdf:type owl:ObjectProperty ;
+         rdfs:label "makes"@bias; 
+         rdfs:domain foaf:Agent;
+         rdfs:range bias:CognitiveProcess . 
+#  --------------------------- Property 1------------------------- 
+bias:participatesIn rdf:type owl:ObjectProperty ;
+                rdfs:label "participatesIn"@bias; 
+                rdfs:domain foaf:Agent;
+                rdfs:range ge:LearningActivity . 
+#  --------------------------- Property 2------------------------- 
+ge:hasCognitiveAbility rdf:type owl:DatatypeProperty ;
+                     rdfs:label "hasCognitiveAbility"@ge; 
+                     rdfs:domain foaf:Agent;
+                     rdfs:range xsd:string . 
+#  --------------------------- Property 3------------------------- 
+ge:hasLearningStyle rdf:type owl:DatatypeProperty ;
+                  rdfs:label "hasLearningStyle"@ge; 
+                  rdfs:domain foaf:Agent;
+                  rdfs:range xsd:string . 
+#  --------------------------- Property 4------------------------- 
+bias:experiences rdf:type owl:ObjectProperty ;
+             rdfs:label "experiences"@bias; 
+             rdfs:domain foaf:Agent;
+             rdfs:range bias:CognitiveBias . 
+#  --------------------------- Property 5------------------------- 
+bias:influencedBy rdf:type owl:ObjectProperty ;
+              rdfs:label "influencedBy"@bias; 
+              rdfs:domain foaf:Agent;
+              rdfs:range ge:EducationalStrategy . 
+#  --------------------------- Property 6------------------------- 
+ge:hasExperienceLevel rdf:type owl:DatatypeProperty ;
+                    rdfs:label "hasExperienceLevel"@ge; 
+                    rdfs:domain foaf:Agent;
+                    rdfs:range xsd:string . 
+#  --------------------------- Property 7------------------------- 
+bias:affects rdf:type owl:ObjectProperty ;
+         rdfs:label "affects"@bias; 
+         rdfs:domain ge:GenerationEffect;
+         rdfs:range bias:CognitiveProcess . 
+#  --------------------------- Property 8------------------------- 
+bias:helps rdf:type owl:ObjectProperty ;
+       rdfs:label "helps"@bias; 
+       rdfs:domain ge:GenerationEffect;
+       rdfs:range ge:Memory . 
+#  --------------------------- Property 9------------------------- 
+bias:uses rdf:type owl:ObjectProperty ;
+      rdfs:label "uses"@bias; 
+      rdfs:domain ge:LearningActivity;
+      rdfs:range ge:Memory . 
+#  --------------------------- Property 10------------------------- 
+bias:involves rdf:type owl:ObjectProperty ;
+          rdfs:label "involves"@bias; 
+          rdfs:domain ge:LearningActivity;
+          rdfs:range bias:CognitiveProcess . 
+###  Class Definitions (Number of Classes) 15 ###
+#  --------------------------- Class  0------------------------- 
+ge:ShortTermMemory rdf:type owl:Class; 
+                 rdfs:subClassOf ge:Memory ;
+                 rdfs:label "ShortTermMemory"@ge . 
+#  --------------------------- Class  1------------------------- 
+ge:LongTermMemory rdf:type owl:Class; 
+                rdfs:subClassOf ge:Memory ;
+                rdfs:label "LongTermMemory"@ge . 
+#  --------------------------- Class  2------------------------- 
+bias:CognitiveProcess rdf:type owl:Class; 
+                  rdfs:label "CognitiveProcess"@bias . 
+#  --------------------------- Class  3------------------------- 
+bias:CognitiveBias rdf:type owl:Class; 
+               rdfs:label "CognitiveBias"@bias . 
+#  --------------------------- Class  4------------------------- 
+ge:EducationalStrategy rdf:type owl:Class; 
+                     rdfs:label "EducationalStrategy"@ge . 
+#  --------------------------- Class  5------------------------- 
+ge:Memory rdf:type owl:Class; 
+        rdfs:label "Memory"@ge . 
+#  --------------------------- Class  6------------------------- 
+ge:SelfReflection rdf:type owl:Class; 
+                rdfs:subClassOf bias:CognitiveProcess ;
+                rdfs:label "SelfReflection"@ge . 
+#  --------------------------- Class  7------------------------- 
+ge:Learner rdf:type owl:Class; 
+         rdfs:subClassOf foaf:Agent ;
+         rdfs:label "Learner"@ge . 
+#  --------------------------- Class  8------------------------- 
+ge:LearningActivity rdf:type owl:Class; 
+                  rdfs:label "LearningActivity"@ge . 
+#  --------------------------- Class  9------------------------- 
+ge:Elaboration rdf:type owl:Class; 
+             rdfs:subClassOf bias:CognitiveProcess ;
+             rdfs:label "Elaboration"@ge . 
+#  --------------------------- Class  10------------------------- 
+ge:ActiveLearning rdf:type owl:Class; 
+                rdfs:subClassOf ge:LearningActivity ;
+                rdfs:label "ActiveLearning"@ge . 
+#  --------------------------- Class  11------------------------- 
+foaf:Agent rdf:type owl:Class; 
+       rdfs:label "Agent"@foaf . 
+#  --------------------------- Class  12------------------------- 
+ge:Recall rdf:type owl:Class; 
+        rdfs:subClassOf bias:CognitiveProcess ;
+        rdfs:label "Recall"@ge . 
+#  --------------------------- Class  13------------------------- 
+ge:PassiveLearning rdf:type owl:Class; 
+                 rdfs:subClassOf ge:LearningActivity ;
+                 rdfs:label "PassiveLearning"@ge . 
+#  --------------------------- Class  14------------------------- 
+ge:GenerationEffect rdf:type owl:Class; 
+                  rdfs:subClassOf bias:CognitiveBias ;
+                  rdfs:label "GenerationEffect"@ge . 

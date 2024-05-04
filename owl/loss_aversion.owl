@@ -1,0 +1,130 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
+@prefix la: <http://example.org/cognitive_bias/loss_aversion#> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf: 		<http://xmlns.com/foaf/0.1/> .
+
+
+bias:leadsTo rdf:type owl:ObjectProperty ;
+         rdfs:label "leadsTo"@bias; 
+         rdfs:domain la:LossAversion;
+         rdfs:range bias:BiasedDecision . 
+#  --------------------------- Property 1------------------------- 
+bias:affects rdf:type owl:ObjectProperty ;
+         rdfs:label "affects"@bias; 
+         rdfs:domain la:LossAversion;
+         rdfs:range la:PsychologicalResponse . 
+#  --------------------------- Property 2------------------------- 
+la:triggers rdf:type owl:ObjectProperty ;
+          rdfs:label "triggers"@la; 
+          rdfs:domain bias:Situation;
+          rdfs:range la:PsychologicalResponse . 
+#  --------------------------- Property 3------------------------- 
+bias:faces rdf:type owl:ObjectProperty ;
+       rdfs:label "faces"@bias; 
+       rdfs:domain foaf:Agent;
+       rdfs:range bias:Situation . 
+#  --------------------------- Property 4------------------------- 
+bias:has rdf:type owl:ObjectProperty ;
+     rdfs:label "has"@bias; 
+     rdfs:domain foaf:Agent;
+     rdfs:range la:PsychologicalResponse . 
+#  --------------------------- Property 5------------------------- 
+bias:makes rdf:type owl:ObjectProperty ;
+       rdfs:label "makes"@bias; 
+       rdfs:domain foaf:Agent;
+       rdfs:range bias:Decision . 
+#  --------------------------- Property 6------------------------- 
+bias:resultsIn rdf:type owl:ObjectProperty ;
+                    rdfs:label "resultsIn"@bias ; 
+                    rdfs:domain bias:Situation;
+                    rdfs:range la:Loss . 
+#  --------------------------- Property 7------------------------- 
+bias:resultsIn rdf:type owl:ObjectProperty ;
+                    rdfs:label "resultsIn"@bias; 
+                    rdfs:domain bias:Situation;
+                    rdfs:range la:Gain . 
+#  --------------------------- Property 8------------------------- 
+la:hasAmount rdf:type owl:ObjectProperty ;
+                    rdfs:label "hasAmount"@la; 
+                    rdfs:domain la:Gain;
+                    rdfs:range la:gainAmount . 
+#  --------------------------- Property 9------------------------- 
+la:isGreaterThan rdf:type owl:ObjectProperty ;
+                        rdfs:label "isEqualTo"@la; 
+                        rdfs:domain la:lossAmout;
+                        rdfs:range la:gainAmount . 
+#  --------------------------- Property 10------------------------- 
+la:hasAmount rdf:type owl:ObjectProperty ;
+                    rdfs:label "hasAmount"@la; 
+                    rdfs:domain la:Loss;
+                    rdfs:range la:lossAmout . 
+#  --------------------------- Property 11------------------------- 
+la:isGreaterThan rdf:type owl:ObjectProperty ;
+                        rdfs:label "isGreaterThan"@la; 
+                        rdfs:domain la:LossResponse;
+                        rdfs:range la:GainResponse . 
+#  --------------------------- Property 12------------------------- 
+la:amount rdf:type owl:DatatypeProperty ;
+                 rdfs:label "amount"@la; 
+                 rdfs:domain la:gainAmount;
+                 rdfs:range xsd:integer . 
+#  --------------------------- Property 13------------------------- 
+la:amount rdf:type owl:DatatypeProperty ;
+                 rdfs:label "amount"@la; 
+                 rdfs:domain la:lossAmout;
+                 rdfs:range xsd:integer . 
+###  Class Definitions (Number of Classes) 14 ###
+#  --------------------------- Class  0------------------------- 
+bias:BiasedDecision rdf:type owl:Class; 
+                rdfs:subClassOf bias:Decision ;
+                rdfs:label "BiasedDecision"@bias . 
+#  --------------------------- Class  1------------------------- 
+la:LossAversion rdf:type owl:Class; 
+              rdfs:subClassOf bias:CognitiveBias ;
+              rdfs:label "LossAversion"@la . 
+#  --------------------------- Class  2------------------------- 
+la:PsychologicalResponse rdf:type owl:Class; 
+                       rdfs:label "PsychologicalResponse"@la . 
+#  --------------------------- Class  3------------------------- 
+la:LossResponse rdf:type owl:Class; 
+              rdfs:subClassOf la:PsychologicalResponse ;
+              rdfs:label "LossResponse"@la . 
+#  --------------------------- Class  4------------------------- 
+bias:Decision rdf:type owl:Class; 
+          rdfs:label "Decision"@bias . 
+#  --------------------------- Class  5------------------------- 
+bias:CognitiveBias rdf:type owl:Class; 
+               rdfs:label "CognitiveBias"@bias . 
+#  --------------------------- Class  6------------------------- 
+la:Gain rdf:type owl:Class; 
+      rdfs:label "Gain"@la . 
+#  --------------------------- Class  7------------------------- 
+la:GainResponse rdf:type owl:Class; 
+              rdfs:subClassOf la:PsychologicalResponse ;
+              rdfs:label "GainResponse"@la . 
+#  --------------------------- Class  8------------------------- 
+bias:Situation rdf:type owl:Class; 
+           rdfs:label "Situation"@bias . 
+#  --------------------------- Class  9------------------------- 
+bias:RationalDecision rdf:type owl:Class; 
+                  rdfs:subClassOf bias:Decision ;
+                  rdfs:label "RationalDecision"@bias . 
+#  --------------------------- Class  10------------------------- 
+foaf:Agent rdf:type owl:Class; 
+       rdfs:label "Agent"@foaf . 
+#  --------------------------- Class  11------------------------- 
+la:Loss rdf:type owl:Class; 
+      rdfs:label "Loss"@la . 
+#  --------------------------- Class  12------------------------- 
+la:gainAmount rdf:type owl:Class; 
+                     rdfs:label "gainAmount"@la . 
+#  --------------------------- Class  13------------------------- 
+la:lossAmout rdf:type owl:Class; 
+                    rdfs:label "lossAmout"@la. 

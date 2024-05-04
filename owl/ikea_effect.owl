@@ -1,0 +1,90 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
+@prefix ikea: <http://example.org/cognitive_bias/ikea_effect#> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf: 		<http://xmlns.com/foaf/0.1/> .
+
+
+# Classes
+foaf:Agent a owl:Class ;
+    rdfs:comment "An individual or entity engaging in a task." .
+
+bias:Task a owl:Class ;
+    rdfs:comment "A specific activity or project that an agent engages in." .
+
+bias:Labor a owl:Class ;
+    rdfs:comment "Physical or mental effort exerted to complete a task." .
+
+bias:Emotion a owl:Class ;
+    rdfs:comment "Emotions experienced by an agent as a result of labor." .
+
+bias:Outcome a owl:Class ;
+    rdfs:comment "The end result or product of the task and labor." .
+
+# Properties
+bias:involves a owl:ObjectProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range bias:Task ;
+    rdfs:comment "Relates an agent to a task that they are involved in." .
+
+bias:makesEffort a owl:ObjectProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range bias:Labor ;
+    rdfs:comment "Relates an agent to the labor they exert." .
+
+bias:triggersEmotion a owl:ObjectProperty ;
+    rdfs:domain bias:Labor ;
+    rdfs:range bias:Emotion ;
+    rdfs:comment "Relates labor to the emotion it triggers." .
+
+bias:hasEmotion a owl:ObjectProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range bias:Emotion ;
+    rdfs:comment "Relates an agent to their experienced emotion." .
+
+bias:hasOutcome a owl:ObjectProperty ;
+    rdfs:domain bias:Task ;
+    rdfs:range bias:Outcome ;
+    rdfs:comment "Relates a task to its outcome." .
+
+bias:affectsValue a owl:ObjectProperty ;
+    rdfs:domain bias:Emotion ;
+    rdfs:range bias:Outcome ;
+    rdfs:comment "Relates emotions to how they affect the value of the outcome." .
+
+# Data Properties for Labor
+bias:intensity a owl:DatatypeProperty ;
+    rdfs:domain bias:Labor ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the intensity of labor, on a scale from 0.0 to 10.0." .
+
+bias:duration a owl:DatatypeProperty ;
+    rdfs:domain bias:Labor ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Represents the duration of labor in minutes." .
+
+bias:typeOfActivity a owl:DatatypeProperty ;
+    rdfs:domain bias:Labor ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Describes the type of activity involved in the labor, such as 'assembly', 'configuration', or 'customization'." .
+
+bias:complexity a owl:DatatypeProperty ;
+    rdfs:domain bias:Labor ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Represents the complexity of the task, on a scale from 0.0 to 10.0." .
+
+bias:skillRequired a owl:DatatypeProperty ;
+    rdfs:domain bias:Labor ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Describes the level of skill required to complete the labor, such as 'none', 'moderate', or 'high'." .
+
+bias:completedSuccessfully a owl:DatatypeProperty ;
+    rdfs:domain bias:Labor ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates whether the labor was completed successfully or not (true/false)." .

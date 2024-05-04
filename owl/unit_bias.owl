@@ -1,53 +1,90 @@
-@prefix : <http://example.org/unit_bias#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bias:
+<http:// example.org/ cognitive_bias#> .
+@prefix unit:
+<http:// example.org/ cognitive_bias/ unitBias#> .
+@prefix owl:
+<http:// www.w3.org/ 2002/ 07/ owl#> .
+@prefix rdf:
+<http:// www.w3.org/ 1999/ 02/ 22-rdf-syntax-ns#> .
+@prefix rdfs:
+<http:// www.w3.org/ 2000/ 01/ rdf-schema#> .
+@prefix xsd:
+<http:// www.w3.org/ 2001/ XMLSchema#> .
+@prefix xml:
+<http:// www.w3.org/ XML/ 1998/ namespace> .
+@prefix foaf:
+<http:// xmlns.com/ foaf/ 0.1 /> .
 
 ### Classes
-:Agent rdf:type owl:Class .
-:Decision rdf:type owl:Class .
-:BiasedDecision rdf:type owl:Class ; rdfs:subClassOf :Decision .
-:RationalDecision rdf:type owl:Class ; rdfs:subClassOf :Decision .
-:Value rdf:type owl:Class .
-:PredefinedValue rdf:type owl:Class ; rdfs:subClassOf :Value .
-:NonPredefinedValue rdf:type owl:Class ; rdfs:subClassOf :Value .
-:PastExperience rdf:type owl:Class .
-:IrrationalBehavior rdf:type owl:Class .
-:Task rdf:type owl:Class .
-:CognitiveBias rdf:type owl:Class .
-:UnitBias rdf:type owl:Class ; rdfs:subClassOf :CognitiveBias .
+foaf:Agent rdf:type owl:Class .
+bias:Decision rdf:type owl:Class .
+bias:BiasedDecision rdf:type owl:Class ; rdfs:subClassOf bias:Decision .
+bias:RationalDecision rdf:type owl:Class ; rdfs:subClassOf bias:Decision .
+bias:Value rdf:type owl:Class .
+bias:PredefinedValue rdf:type owl:Class ; rdfs:subClassOf bias:Value .
+bias:NonPredefinedValue rdf:type owl:Class ; rdfs:subClassOf bias:Value .
+bias:PastExperience rdf:type owl:Class .
+bias:IrrationalBehavior rdf:type owl:Class .
+bias:Task rdf:type owl:Class .
+bias:CognitiveBias rdf:type owl:Class .
+bias:UnitBias rdf:type owl:Class ; rdfs:subClassOf bias:CognitiveBias .
 
 ### Attributes (Data Properties)
-:AgentID rdf:type owl:DatatypeProperty ; rdfs:domain :Agent ; rdfs:range xsd:string .
-:Preference rdf:type owl:DatatypeProperty ; rdfs:domain :Agent ; rdfs:range xsd:string .
-:ExperienceLevel rdf:type owl:DatatypeProperty ; rdfs:domain :Agent ; rdfs:range xsd:string .
-:DecisionContext rdf:type owl:DatatypeProperty ; rdfs:domain :Decision ; rdfs:range xsd:string .
-:InfluenceFactor rdf:type owl:DatatypeProperty ; rdfs:domain :BiasedDecision ; rdfs:range xsd:string .
-:PredefinedPreferenceJustification rdf:type owl:DatatypeProperty ; rdfs:domain :BiasedDecision ; rdfs:range xsd:string .
-:CustomizationLevel rdf:type owl:DatatypeProperty ; rdfs:domain :RationalDecision ; rdfs:range xsd:string .
-:LogicalBasis rdf:type owl:DatatypeProperty ; rdfs:domain :RationalDecision ; rdfs:range xsd:string .
-:HistoricalInfluence rdf:type owl:DatatypeProperty ; rdfs:domain :PredefinedValue ; rdfs:range xsd:boolean .
-:CognitiveEase rdf:type owl:DatatypeProperty ; rdfs:domain :PredefinedValue ; rdfs:range xsd:boolean .
-:SuitabilityAssessment rdf:type owl:DatatypeProperty ; rdfs:domain :PredefinedValue ; rdfs:range xsd:string .
-:Outcome rdf:type owl:DatatypeProperty ; rdfs:domain :PastExperience ; rdfs:range xsd:string .
-:InfluenceLevel rdf:type owl:DatatypeProperty ; rdfs:domain :PastExperience ; rdfs:range xsd:string .
-:TaskID rdf:type owl:DatatypeProperty ; rdfs:domain :BiasedDecision ; rdfs:range xsd:string .
-:UnitBiasInfluence rdf:type owl:DatatypeProperty ; rdfs:domain :BiasedDecision ; rdfs:range xsd:boolean .
-:PredefinedValueID rdf:type owl:DatatypeProperty ; rdfs:domain :BiasedDecision ; rdfs:range xsd:string .
-:CustomizedValueID rdf:type owl:DatatypeProperty ; rdfs:domain :RationalDecision ; rdfs:range xsd:string .
-:LogicalAssessment rdf:type owl:DatatypeProperty ; rdfs:domain :RationalDecision ; rdfs:range xsd:string .
+bias:AgentID rdf:type owl:DatatypeProperty ; rdfs:domain foaf:Agent ; rdfs:range xsd:string .
+bias:Preference rdf:type owl:DatatypeProperty ; rdfs:domain foaf:Agent ; rdfs:range xsd:string .
+bias:ExperienceLevel rdf:type owl:DatatypeProperty ; rdfs:domain foaf:Agent ; rdfs:range xsd:string
+.
+bias:DecisionContext rdf:type owl:DatatypeProperty ; rdfs:domain bias:Decision ; rdfs:range
+xsd:string .
+bias:InfluenceFactor rdf:type owl:DatatypeProperty ; rdfs:domain bias:BiasedDecision ; rdfs:range
+xsd:string .
+bias:PredefinedPreferenceJustification rdf:type owl:DatatypeProperty ; rdfs:domain
+bias:BiasedDecision ; rdfs:range xsd:string .
+bias:CustomizationLevel rdf:type owl:DatatypeProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:string .
+bias:LogicalBasis rdf:type owl:DatatypeProperty ; rdfs:domain bias:RationalDecision ; rdfs:range
+xsd:string .
+bias:HistoricalInfluence rdf:type owl:DatatypeProperty ; rdfs:domain bias:PredefinedValue ;
+rdfs:range xsd:boolean .
+bias:CognitiveEase rdf:type owl:DatatypeProperty ; rdfs:domain bias:PredefinedValue ; rdfs:range
+xsd:boolean .
+bias:SuitabilityAssessment rdf:type owl:DatatypeProperty ; rdfs:domain bias:PredefinedValue ;
+rdfs:range xsd:string .
+bias:Outcome rdf:type owl:DatatypeProperty ; rdfs:domain bias:PastExperience ; rdfs:range xsd:string
+.
+bias:InfluenceLevel rdf:type owl:DatatypeProperty ; rdfs:domain bias:PastExperience ; rdfs:range
+xsd:string .
+bias:TaskID rdf:type owl:DatatypeProperty ; rdfs:domain bias:BiasedDecision ; rdfs:range xsd:string
+.
+bias:UnitBiasInfluence rdf:type owl:DatatypeProperty ; rdfs:domain bias:BiasedDecision ; rdfs:range
+xsd:boolean .
+bias:PredefinedValueID rdf:type owl:DatatypeProperty ; rdfs:domain bias:BiasedDecision ; rdfs:range
+xsd:string .
+bias:CustomizedValueID rdf:type owl:DatatypeProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:string .
+bias:LogicalAssessment rdf:type owl:DatatypeProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:string .
 
 ### Relationships (Object Properties)
-:makes rdf:type owl:ObjectProperty ; rdfs:domain :Agent ; rdfs:range :Decision .
-:isBasedOn rdf:type owl:ObjectProperty ; rdfs:domain :Decision ; rdfs:range :Value .
-:influences rdf:type owl:ObjectProperty ; rdfs:domain :PastExperience ; rdfs:range :BiasedDecision .
-:resultsIn rdf:type owl:ObjectProperty ; rdfs:domain :BiasedDecision ; rdfs:range :IrrationalBehavior .
-:facilitates rdf:type owl:ObjectProperty ; rdfs:domain :RationalDecision ; rdfs:range :NonPredefinedValue .
-:isInfluencedBy rdf:type owl:ObjectProperty ; rdfs:domain :PredefinedValue ; rdfs:range :PastExperience .
-:resultsFrom rdf:type owl:ObjectProperty ; rdfs:domain :NonPredefinedValue ; rdfs:range :RationalDecision .
-:choosesPredefinedValue rdf:type owl:ObjectProperty ; rdfs:domain :BiasedDecision ; rdfs:range :PredefinedValue .
-:leadsToTaskExecution rdf:type owl:ObjectProperty ; rdfs:domain :BiasedDecision ; rdfs:range :Task .
-:choosesCustomizedValue rdf:type owl:ObjectProperty ; rdfs:domain :RationalDecision ; rdfs:range :NonPredefinedValue .
-:facilitatesTaskOptimization rdf:type owl:ObjectProperty ; rdfs:domain :RationalDecision ; rdfs:range :Task .
-:isInfluencedByBias rdf:type owl:ObjectProperty ; rdfs:domain :Decision ; rdfs:range :CognitiveBias .
+bias:makes rdf:type owl:ObjectProperty ; rdfs:domain foaf:Agent ; rdfs:range bias:Decision .
+bias:isBasedOn rdf:type owl:ObjectProperty ; rdfs:domain bias:Decision ; rdfs:range bias:Value .
+bias:influences rdf:type owl:ObjectProperty ; rdfs:domain bias:PastExperience ; rdfs:range
+bias:BiasedDecision .
+bias:resultsIn rdf:type owl:ObjectProperty ; rdfs:domain bias:BiasedDecision ; rdfs:range
+bias:IrrationalBehavior .
+bias:facilitates rdf:type owl:ObjectProperty ; rdfs:domain bias:RationalDecision ; rdfs:range
+bias:NonPredefinedValue .
+bias:isInfluencedBy rdf:type owl:ObjectProperty ; rdfs:domain bias:PredefinedValue ; rdfs:range
+bias:PastExperience .
+bias:resultsFrom rdf:type owl:ObjectProperty ; rdfs:domain bias:NonPredefinedValue ; rdfs:range
+bias:RationalDecision .
+bias:choosesPredefinedValue rdf:type owl:ObjectProperty ; rdfs:domain bias:BiasedDecision ;
+rdfs:range bias:PredefinedValue .
+bias:leadsToTaskExecution rdf:type owl:ObjectProperty ; rdfs:domain bias:BiasedDecision ; rdfs:range
+bias:Task .
+bias:choosesCustomizedValue rdf:type owl:ObjectProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range bias:NonPredefinedValue .
+bias:facilitatesTaskOptimization rdf:type owl:ObjectProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range bias:Task .
+bias:isInfluencedByBias rdf:type owl:ObjectProperty ; rdfs:domain bias:Decision ; rdfs:range
+bias:CognitiveBias .

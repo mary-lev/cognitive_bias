@@ -1,100 +1,114 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://example.org/ontology#> .
+@prefix bias:
+<http:// example.org/ cognitive_bias#> .
+@prefix information:
+<http:// example.org/ cognitive_bias/ informationBias#> .
+@prefix rdf:
+<http:// www.w3.org/ 1999/ 02/ 22-rdf-syntax-ns#> .
+@prefix rdfs:
+<http:// www.w3.org/ 2000/ 01/ rdf-schema#> .
+@prefix owl:
+<http:// www.w3.org/ 2002/ 07/ owl#> .
+@prefix xsd:
+<http:// www.w3.org/ 2001/ XMLSchema#> .
+@prefix xml:
+<http:// www.w3.org/ XML/ 1998/ namespace> .
+@prefix foaf:
+<http:// xmlns.com/ foaf/ 0.1 /> .
 
 #### Classes
 
-:Agent rdf:type owl:Class .
+foaf:Agent rdf:type owl:Class .
 
-:Decision rdf:type owl:Class .
+bias:Decision rdf:type owl:Class .
 
-:BiasedDecision rdf:type owl:Class ;
-                rdfs:subClassOf :Decision .
+bias:BiasedDecision rdf:type owl:Class ;
+rdfs:subClassOf bias:Decision .
 
-:RationalDecision rdf:type owl:Class ;
-                  rdfs:subClassOf :Decision .
+bias:RationalDecision rdf:type owl:Class ;
+rdfs:subClassOf bias:Decision .
 
-:LogicalDecision rdf:type owl:Class ;
-                 rdfs:subClassOf :RationalDecision .
+bias:LogicalDecision rdf:type owl:Class ;
+rdfs:subClassOf bias:RationalDecision .
 
-:InformedDecision rdf:type owl:Class ;
-                  rdfs:subClassOf :RationalDecision .
+bias:InformedDecision rdf:type owl:Class ;
+rdfs:subClassOf bias:RationalDecision .
 
-:Value rdf:type owl:Class .
+bias:Value rdf:type owl:Class .
 
-:RealValue rdf:type owl:Class ;
-           rdfs:subClassOf :Value .
+bias:RealValue rdf:type owl:Class ;
+rdfs:subClassOf bias:Value .
 
-:OverEstimatedValue rdf:type owl:Class ;
-                    rdfs:subClassOf :Value .
+bias:OverEstimatedValue rdf:type owl:Class ;
+rdfs:subClassOf bias:Value .
 
-:CognitiveBias rdf:type owl:Class .
+bias:CognitiveBias rdf:type owl:Class .
 
-:InformationBias rdf:type owl:Class ;
-                 rdfs:subClassOf :CognitiveBias .
+bias:InformationBias rdf:type owl:Class ;
+rdfs:subClassOf bias:CognitiveBias .
 
 #### Object Properties
 
-:AffectedByCognitiveBias rdf:type owl:ObjectProperty ;
-                         rdfs:domain :Agent ;
-                         rdfs:range :CognitiveBias .
+bias:AffectedByCognitiveBias rdf:type owl:ObjectProperty ;
+rdfs:domain foaf:Agent ;
+rdfs:range bias:CognitiveBias .
 
-:AffectedByInformationBias rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf :AffectedByCognitiveBias ;
-                           rdfs:domain :Agent ;
-                           rdfs:range :InformationBias .
+bias:AffectedByInformationBias rdf:type owl:ObjectProperty ;
+rdfs:subPropertyOf bias:AffectedByCognitiveBias ;
+rdfs:domain foaf:Agent ;
+rdfs:range bias:InformationBias .
 
-:MakesDecision rdf:type owl:ObjectProperty ;
-               rdfs:domain :Agent ;
-               rdfs:range :Decision .
+bias:MakesDecision rdf:type owl:ObjectProperty ;
+rdfs:domain foaf:Agent ;
+rdfs:range bias:Decision .
 
-:Prefers rdf:type owl:ObjectProperty ;
-         rdfs:domain :BiasedDecision ;
-         rdfs:range :OverEstimatedValue .
+bias:Prefers rdf:type owl:ObjectProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range bias:OverEstimatedValue .
 
-:GoesWith rdf:type owl:ObjectProperty ;
-          rdfs:domain :RationalDecision ;
-          rdfs:range :RealValue .
+bias:GoesWith rdf:type owl:ObjectProperty ;
+rdfs:domain bias:RationalDecision ;
+rdfs:range bias:RealValue .
 
 #### Data Properties (Attributes)
 
-:susceptibilityLevel rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :Agent ;
-                     rdfs:range xsd:float .
+bias:susceptibilityLevel rdf:type owl:DatatypeProperty ;
+rdfs:domain foaf:Agent ;
+rdfs:range xsd:float .
 
-:informationOverload rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :BiasedDecision ;
-                     rdfs:range xsd:boolean .
+bias:informationOverload rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range xsd:boolean .
 
-:reasoningDepth rdf:type owl:DatatypeProperty ;
-                rdfs:domain :LogicalDecision ;
-                rdfs:range xsd:string .
+bias:reasoningDepth rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:LogicalDecision ;
+rdfs:range xsd:string .
 
-:informationQuantity rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :InformedDecision ;
-                     rdfs:range xsd:string .
+bias:informationQuantity rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:InformedDecision ;
+rdfs:range xsd:string .
 
-:qualityOfInformation rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :InformedDecision ;
-                       rdfs:range xsd:float .
+bias:qualityOfInformation rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:InformedDecision ;
+rdfs:range xsd:float .
 
-:excessiveInformation rdf:type owl:DatatypeProperty ;
-                      rdfs:domain :OverEstimatedValue ;
-                      rdfs:range xsd:boolean .
+bias:excessiveInformation rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:OverEstimatedValue ;
+rdfs:range xsd:boolean .
 
-:misinterpretation rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :OverEstimatedValue ;
-                   rdfs:range xsd:boolean .
+bias:misinterpretation rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:OverEstimatedValue ;
+rdfs:range xsd:boolean .
 
-:noExcessiveInformation rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :RealValue ;
-                        rdfs:range xsd:boolean .
+bias:noExcessiveInformation rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:RealValue ;
+rdfs:range xsd:boolean .
 
-:logicalThinking rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :RealValue ;
-                 rdfs:range xsd:boolean .
+bias:logicalThinking rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:RealValue ;
+rdfs:range xsd:boolean .
 
 #### Enhancements for RealValue and OverEstimatedValue
 
-# To demonstrate the application of the new attributes, individual instances of RealValue and OverEstimatedValue can be created and annotated with these properties, showcasing their specific characteristics.
+# To demonstrate the application of the new attributes, individual instances of RealValue and
+OverEstimatedValue can be created and annotated with these properties, showcasing their specific
+characteristics.

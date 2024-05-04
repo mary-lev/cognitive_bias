@@ -1,57 +1,89 @@
-@prefix : <http://example.org/ontology/pseudocertaintyeffect#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bias:
+<http:// example.org/ cognitive_bias#> .
+@prefix Pseudocertainty:
+<http:// example.org/ cognitive_bias/ pseudocertaintyEffect#> .
+@prefix owl:
+<http:// www.w3.org/ 2002/ 07/ owl#> .
+@prefix rdf:
+<http:// www.w3.org/ 1999/ 02/ 22-rdf-syntax-ns#> .
+@prefix rdfs:
+<http:// www.w3.org/ 2000/ 01/ rdf-schema#> .
+@prefix xsd:
+<http:// www.w3.org/ 2001/ XMLSchema#> .
+@prefix xml:
+<http:// www.w3.org/ XML/ 1998/ namespace> .
+@prefix foaf:
+<http:// xmlns.com/ foaf/ 0.1 /> .
 
 ### Classes
-:Agent rdf:type owl:Class .
-:CognitiveBias rdf:type owl:Class .
-:PseudocertaintyEffect rdf:type owl:Class ; rdfs:subClassOf :CognitiveBias .
-:Decision rdf:type owl:Class .
-:BiasedDecision rdf:type owl:Class ; rdfs:subClassOf :Decision .
-:RationalDecision rdf:type owl:Class ; rdfs:subClassOf :Decision .
-:Value rdf:type owl:Class .
-:ShortTermValue rdf:type owl:Class ; rdfs:subClassOf :Value .
-:LongTermValue rdf:type owl:Class ; rdfs:subClassOf :Value .
-:LongTermCertainty rdf:type owl:Class .
-:EmotionalInfluence rdf:type owl:Class .
-:ExternalInfluence rdf:type owl:Class .
-:DecisionOutcome rdf:type owl:Class .
+foaf:Agent rdf:type owl:Class .
+bias:CognitiveBias rdf:type owl:Class .
+bias:PseudocertaintyEffect rdf:type owl:Class ; rdfs:subClassOf bias:CognitiveBias .
+bias:Decision rdf:type owl:Class .
+bias:BiasedDecision rdf:type owl:Class ; rdfs:subClassOf bias:Decision .
+bias:RationalDecision rdf:type owl:Class ; rdfs:subClassOf bias:Decision .
+bias:Value rdf:type owl:Class .
+bias:ShortTermValue rdf:type owl:Class ; rdfs:subClassOf bias:Value .
+bias:LongTermValue rdf:type owl:Class ; rdfs:subClassOf bias:Value .
+bias:LongTermCertainty rdf:type owl:Class .
+bias:EmotionalInfluence rdf:type owl:Class .
+bias:ExternalInfluence rdf:type owl:Class .
+bias:DecisionOutcome rdf:type owl:Class .
 
 ### Object Properties
-:hasValue rdf:type owl:ObjectProperty ; rdfs:domain :Agent ; rdfs:range :Value .
-:makesDecision rdf:type owl:ObjectProperty ; rdfs:domain :Agent ; rdfs:range :Decision .
-:isAffectedByBias rdf:type owl:ObjectProperty ; rdfs:domain :Decision ; rdfs:range :CognitiveBias .
-:favors rdf:type owl:ObjectProperty ; rdfs:domain :BiasedDecision ; rdfs:range :ShortTermValue .
-:considersBoth rdf:type owl:ObjectProperty ; rdfs:domain :RationalDecision ; rdfs:range :Value .
-:seeksLongTermCertainty rdf:type owl:ObjectProperty ; rdfs:domain :RationalDecision ; rdfs:range :LongTermCertainty .
-:isAffectedBy rdf:type owl:ObjectProperty ; rdfs:domain :Decision ; rdfs:range :EmotionalInfluence .
-:isInfluencedBy rdf:type owl:ObjectProperty ; rdfs:domain :Decision ; rdfs:range :ExternalInfluence .
-:experiencesOutcome rdf:type owl:ObjectProperty ; rdfs:domain :Agent ; rdfs:range :DecisionOutcome .
+bias:hasValue rdf:type owl:ObjectProperty ; rdfs:domain foaf:Agent ; rdfs:range bias:Value .
+bias:makesDecision rdf:type owl:ObjectProperty ; rdfs:domain foaf:Agent ; rdfs:range bias:Decision .
+bias:isAffectedByBias rdf:type owl:ObjectProperty ; rdfs:domain bias:Decision ; rdfs:range
+bias:CognitiveBias .
+bias:favors rdf:type owl:ObjectProperty ; rdfs:domain bias:BiasedDecision ; rdfs:range
+bias:ShortTermValue .
+bias:considersBoth rdf:type owl:ObjectProperty ; rdfs:domain bias:RationalDecision ; rdfs:range
+bias:Value .
+bias:seeksLongTermCertainty rdf:type owl:ObjectProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range bias:LongTermCertainty .
+bias:isAffectedBy rdf:type owl:ObjectProperty ; rdfs:domain bias:Decision ; rdfs:range
+bias:EmotionalInfluence .
+bias:isInfluencedBy rdf:type owl:ObjectProperty ; rdfs:domain bias:Decision ; rdfs:range
+bias:ExternalInfluence .
+bias:experiencesOutcome rdf:type owl:ObjectProperty ; rdfs:domain foaf:Agent ; rdfs:range
+bias:DecisionOutcome .
 
 ### Data Properties
-:logicBasedEvaluation rdf:type owl:DatatypeProperty ; rdfs:domain :RationalDecision ; rdfs:range xsd:boolean .
-:longTermGoalsConsidered rdf:type owl:DatatypeProperty ; rdfs:domain :RationalDecision ; rdfs:range xsd:boolean .
-:immediateBenefit rdf:type owl:DatatypeProperty ; rdfs:domain :ShortTermValue ; rdfs:range xsd:string .
-:certaintyLevel rdf:type owl:DatatypeProperty ; rdfs:domain :ShortTermValue ; rdfs:range xsd:int .
-:potentialLongTermBenefit rdf:type owl:DatatypeProperty ; rdfs:domain :LongTermValue ; rdfs:range xsd:string .
-:uncertaintyLevel rdf:type owl:DatatypeProperty ; rdfs:domain :LongTermValue ; rdfs:range xsd:int .
-:expectedLongTermValue rdf:type owl:DatatypeProperty ; rdfs:domain :LongTermCertainty ; rdfs:range xsd:int .
-:shortTermUncertaintyAccepted rdf:type owl:DatatypeProperty ; rdfs:domain :LongTermCertainty ; rdfs:range xsd:boolean .
-:emotionType rdf:type owl:DatatypeProperty ; rdfs:domain :EmotionalInfluence ; rdfs:range xsd:string .
-:influenceStrength rdf:type owl:DatatypeProperty ; rdfs:domain :ExternalInfluence ; rdfs:range xsd:int .
-:influenceType rdf:type owl:DatatypeProperty ; rdfs:domain :ExternalInfluence ; rdfs:range xsd:string .
-:outcomeType rdf:type owl:DatatypeProperty ; rdfs:domain :DecisionOutcome ; rdfs:range xsd:string .
-:impactScope rdf:type owl:DatatypeProperty ; rdfs:domain :DecisionOutcome ; rdfs:range xsd:string .
+bias:logicBasedEvaluation rdf:type owl:DatatypeProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:boolean .
+bias:longTermGoalsConsidered rdf:type owl:DatatypeProperty ; rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:boolean .
+bias:immediateBenefit rdf:type owl:DatatypeProperty ; rdfs:domain bias:ShortTermValue ; rdfs:range
+xsd:string .
+bias:certaintyLevel rdf:type owl:DatatypeProperty ; rdfs:domain bias:ShortTermValue ; rdfs:range
+xsd:int .
+bias:potentialLongTermBenefit rdf:type owl:DatatypeProperty ; rdfs:domain bias:LongTermValue ;
+rdfs:range xsd:string .
+bias:uncertaintyLevel rdf:type owl:DatatypeProperty ; rdfs:domain bias:LongTermValue ; rdfs:range
+xsd:int .
+bias:expectedLongTermValue rdf:type owl:DatatypeProperty ; rdfs:domain bias:LongTermCertainty ;
+rdfs:range xsd:int .
+bias:shortTermUncertaintyAccepted rdf:type owl:DatatypeProperty ; rdfs:domain bias:LongTermCertainty
+; rdfs:range xsd:boolean .
+bias:emotionType rdf:type owl:DatatypeProperty ; rdfs:domain bias:EmotionalInfluence ; rdfs:range
+xsd:string .
+bias:influenceStrength rdf:type owl:DatatypeProperty ; rdfs:domain bias:ExternalInfluence ;
+rdfs:range xsd:int .
+bias:influenceType rdf:type owl:DatatypeProperty ; rdfs:domain bias:ExternalInfluence ; rdfs:range
+xsd:string .
+bias:outcomeType rdf:type owl:DatatypeProperty ; rdfs:domain bias:DecisionOutcome ; rdfs:range
+xsd:string .
+bias:impactScope rdf:type owl:DatatypeProperty ; rdfs:domain bias:DecisionOutcome ; rdfs:range
+xsd:string .
 
 ### Example Individuals and Relationships
-# To demonstrate how the Pseudocertainty Effect affects an agent's decision, specific instances can be created.
+# To demonstrate how the Pseudocertainty Effect affects an agent's decision, specific instances can
+be created.
 
-:Agent001 rdf:type :Agent .
+foaf:Agent001 rdf:type foaf:Agent .
 
-:Decision001 rdf:type :BiasedDecision ; 
-    :makesDecision :Agent001 ;
-    :isAffectedByBias :PseudocertaintyEffect001 .
+bias:Decision001 rdf:type bias:BiasedDecision ;
+bias:makesDecision foaf:Agent001 ;
+bias:isAffectedByBias bias:PseudocertaintyEffect001 .
 
-:PseudocertaintyEffect001 rdf:type :PseudocertaintyEffect .
+bias:PseudocertaintyEffect001 rdf:type bias:PseudocertaintyEffect .

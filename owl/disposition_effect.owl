@@ -1,139 +1,151 @@
-@prefix : <http://example.org/dispositionEffect#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bias:
+<http:// example.org/ cognitive_bias#> .
+@prefix disposition:
+<http:// example.org/ cognitive_bias/ dispositionEffect#> .
+@prefix rdf:
+<http:// www.w3.org/ 1999/ 02/ 22-rdf-syntax-ns#> .
+@prefix rdfs:
+<http:// www.w3.org/ 2000/ 01/ rdf-schema#> .
+@prefix owl:
+<http:// www.w3.org/ 2002/ 07/ owl#> .
+@prefix xsd:
+<http:// www.w3.org/ 2001/ XMLSchema#> .
+@prefix xml:
+<http:// www.w3.org/ XML/ 1998/ namespace> .
+@prefix foaf:
+<http:// xmlns.com/ foaf/ 0.1 /> .
 
 # Classes
 
-:Agent a owl:Class .
+foaf:Agent a owl:Class .
 
-:Asset a owl:Class .
+bias:Asset a owl:Class .
 
-:Decision a owl:Class .
+bias:Decision a owl:Class .
 
-:BiasedDecision a owl:Class ;
-                rdfs:subClassOf :Decision .
+bias:BiasedDecision a owl:Class ;
+rdfs:subClassOf bias:Decision .
 
-:RationalDecision a owl:Class ;
-                   rdfs:subClassOf :Decision .
+bias:RationalDecision a owl:Class ;
+rdfs:subClassOf bias:Decision .
 
-:AssetValueState a owl:Class .
+bias:AssetValueState a owl:Class .
 
-:CognitiveBias a owl:Class .
+bias:CognitiveBias a owl:Class .
 
-:DispositionEffect a owl:Class ;
-                    rdfs:subClassOf :CognitiveBias ;
-                    rdfs:comment "A specific cognitive bias where investors are more likely to sell assets that have increased in value while holding assets that have decreased in value." .
-
-:DispositionEffectCondition a owl:Class ;
-                            rdfs:comment "Conditions that lead to making a decision based on the disposition effect." .
+bias:DispositionEffect a owl:Class ;
+rdfs:subClassOf bias:CognitiveBias ;
+rdfs:comment "A specific cognitive bias where investors are more likely to sell assets that have
+increased in value while holding assets that have decreased in value." .
+bias:DispositionEffectCondition a owl:Class ;
+rdfs:comment "Conditions that lead to making a decision based on the disposition effect." .
 
 # Properties
 
-:hasName a owl:DatatypeProperty ;
-         rdfs:domain :Agent ;
-         rdfs:range xsd:string .
+bias:hasName a owl:DatatypeProperty ;
+rdfs:domain foaf:Agent ;
+rdfs:range xsd:string .
 
-:experienceLevel a owl:DatatypeProperty ;
-                  rdfs:domain :Agent ;
-                  rdfs:range xsd:string .
+bias:experienceLevel a owl:DatatypeProperty ;
+rdfs:domain foaf:Agent ;
+rdfs:range xsd:string .
 
-:type a owl:DatatypeProperty ;
-      rdfs:domain :Agent ;
-      rdfs:range xsd:string .
+bias:type a owl:DatatypeProperty ;
+rdfs:domain foaf:Agent ;
+rdfs:range xsd:string .
 
-:decisionDate a owl:DatatypeProperty ;
-               rdfs:domain :Decision ;
-               rdfs:range xsd:date .
+bias:decisionDate a owl:DatatypeProperty ;
+rdfs:domain bias:Decision ;
+rdfs:range xsd:date .
 
-:decisionOutcome a owl:DatatypeProperty ;
-                  rdfs:domain :Decision ;
-                  rdfs:range xsd:string .
+bias:decisionOutcome a owl:DatatypeProperty ;
+rdfs:domain bias:Decision ;
+rdfs:range xsd:string .
 
-:biasType a owl:DatatypeProperty ;
-           rdfs:domain :BiasedDecision ;
-           rdfs:range xsd:string .
+bias:biasType a owl:DatatypeProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range xsd:string .
 
-:triggerCondition a owl:DatatypeProperty ;
-                   rdfs:domain :BiasedDecision ;
-                   rdfs:range xsd:string .
+bias:triggerCondition a owl:DatatypeProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range xsd:string .
 
-:logicBasis a owl:DatatypeProperty ;
-             rdfs:domain :RationalDecision ;
-             rdfs:range xsd:string .
+bias:logicBasis a owl:DatatypeProperty ;
+rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:string .
 
-:assetID a owl:DatatypeProperty ;
-         rdfs:domain :Asset ;
-         rdfs:range xsd:string .
+bias:assetID a owl:DatatypeProperty ;
+rdfs:domain bias:Asset ;
+rdfs:range xsd:string .
 
-:assetName a owl:DatatypeProperty ;
-            rdfs:domain :Asset ;
-            rdfs:range xsd:string .
+bias:assetName a owl:DatatypeProperty ;
+rdfs:domain bias:Asset ;
+rdfs:range xsd:string .
 
-:assetValue a owl:DatatypeProperty ;
-             rdfs:domain :Asset ;
-             rdfs:range xsd:decimal .
+bias:assetValue a owl:DatatypeProperty ;
+rdfs:domain bias:Asset ;
+rdfs:range xsd:decimal .
 
-:previousValue a owl:DatatypeProperty ;
-                rdfs:domain :AssetValueState ;
-                rdfs:range xsd:decimal .
+bias:previousValue a owl:DatatypeProperty ;
+rdfs:domain bias:AssetValueState ;
+rdfs:range xsd:decimal .
 
-:currentValue a owl:DatatypeProperty ;
-               rdfs:domain :AssetValueState ;
-               rdfs:range xsd:decimal .
+bias:currentValue a owl:DatatypeProperty ;
+rdfs:domain bias:AssetValueState ;
+rdfs:range xsd:decimal .
 
-:valueDifference a owl:DatatypeProperty ;
-                  rdfs:domain :AssetValueState ;
-                  rdfs:range xsd:decimal .
+bias:valueDifference a owl:DatatypeProperty ;
+rdfs:domain bias:AssetValueState ;
+rdfs:range xsd:decimal .
 
-:makesDecision a owl:ObjectProperty ;
-                rdfs:domain :Agent ;
-                rdfs:range :Decision .
+bias:makesDecision a owl:ObjectProperty ;
+rdfs:domain foaf:Agent ;
+rdfs:range bias:Decision .
 
-:aboutAsset a owl:ObjectProperty ;
-             rdfs:domain :Decision ;
-             rdfs:range :Asset .
+bias:aboutAsset a owl:ObjectProperty ;
+rdfs:domain bias:Decision ;
+rdfs:range bias:Asset .
 
-:hasValueState a owl:ObjectProperty ;
-                rdfs:domain :Asset ;
-                rdfs:range :AssetValueState .
+bias:hasValueState a owl:ObjectProperty ;
+rdfs:domain bias:Asset ;
+rdfs:range bias:AssetValueState .
 
-:influencedBy a owl:ObjectProperty ;
-               rdfs:domain :BiasedDecision ;
-               rdfs:range :DispositionEffectCondition .
+bias:influencedBy a owl:ObjectProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range bias:DispositionEffectCondition .
 
-:affectedByBias a owl:ObjectProperty ;
-                 rdfs:domain :Decision ;
-                 rdfs:range :CognitiveBias ;
-                 rdfs:comment "Property indicating that a decision is influenced by a specific cognitive bias." .
+bias:affectedByBias a owl:ObjectProperty ;
+rdfs:domain bias:Decision ;
+rdfs:range bias:CognitiveBias ;
+rdfs:comment "Property indicating that a decision is influenced by a specific cognitive bias." .
+bias:PreventsRationalDecision a owl:ObjectProperty ;
+rdfs:domain bias:CognitiveBias ;
+rdfs:range bias:RationalDecision ;
+rdfs:comment "Indicates that a cognitive bias prevents an agent from making a rational decision." .
+bias:decisionBasedOn a owl:ObjectProperty ;
+rdfs:domain bias:Decision ;
+rdfs:range bias:AssetValueState .
 
-:PreventsRationalDecision a owl:ObjectProperty ;
-                          rdfs:domain :CognitiveBias ;
-                          rdfs:range :RationalDecision ;
-                          rdfs:comment "Indicates that a cognitive bias prevents an agent from making a rational decision." .
-
-:decisionBasedOn a owl:ObjectProperty ;
-                  rdfs:domain :Decision ;
-                  rdfs:range :AssetValueState .
-
-:hasCondition a owl:ObjectProperty ;
-               rdfs:domain :AssetValueState ;
-               rdfs:range :DispositionEffectCondition .
+bias:hasCondition a owl:ObjectProperty ;
+rdfs:domain bias:AssetValueState ;
+rdfs:range bias:DispositionEffectCondition .
 
 # Instances of cognitive biases and conditions
-:LossAversion a owl:NamedIndividual ;
-              rdf:type :CognitiveBias ;
-              rdfs:comment "The tendency to prefer avoiding losses to acquiring equivalent gains." .
+bias:LossAversion a owl:NamedIndividual ;
+rdf:type bias:CognitiveBias ;
+rdfs:comment "The tendency to prefer avoiding losses to acquiring equivalent gains." .
+bias:RegretAversion a owl:NamedIndividual ;
+rdf:type bias:CognitiveBias ;
+rdfs:comment "The tendency to make decisions in a way that allows one to avoid feeling regret in the
+future." .
 
-:RegretAversion a owl:NamedIndividual ;
-                rdf:type :CognitiveBias ;
-                rdfs:comment "The tendency to make decisions in a way that allows one to avoid feeling regret in the future." .
+bias:positiveValueDifferenceCondition a owl:NamedIndividual ;
+rdf:type bias:DispositionEffectCondition ;
+rdfs:comment "The condition where an asset has increased in value, triggering a disposition effect
+influenced decision to sell." .
 
-:positiveValueDifferenceCondition a owl:NamedIndividual ;
-                                  rdf:type :DispositionEffectCondition ;
-                                  rdfs:comment "The condition where an asset has increased in value, triggering a disposition effect influenced decision to sell." .
-
-:negativeValueRetentionCondition a owl:NamedIndividual ;
-                                  rdf:type :DispositionEffectCondition ;
-                                  rdfs:comment "The condition where an asset has decreased in value, leading to a decision to hold due to the disposition effect." .
+bias:negativeValueRetentionCondition a owl:NamedIndividual ;
+rdf:type bias:DispositionEffectCondition ;
+rdfs:comment "The condition where an asset has decreased in value, leading to a decision to hold due
+to the disposition effect." .

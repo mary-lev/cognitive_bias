@@ -1,108 +1,119 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ee: <http://example.org/endowmentEffect#> .
+@prefix bias:
+<http:// example.org/ cognitive_bias#> .
+@prefix endowment:
+<http:// example.org/ cognitive_bias/ endowmentEffect#> .
+@prefix rdf:
+<http:// www.w3.org/ 1999/ 02/ 22-rdf-syntax-ns#> .
+@prefix rdfs:
+<http:// www.w3.org/ 2000/ 01/ rdf-schema#> .
+@prefix owl:
+<http:// www.w3.org/ 2002/ 07/ owl#> .
+@prefix xsd:
+<http:// www.w3.org/ 2001/ XMLSchema#> .
+@prefix bias:
+<http:// example.org/ endowmentEffect#> .
+@prefix foaf:
+<http:// xmlns.com/ foaf/ 0.1 /> .
 
 ### Classes
-ee:Agent rdf:type owl:Class .
+foaf:Agent rdf:type owl:Class .
 
-ee:Individual rdf:type owl:Class ;
-              rdfs:subClassOf ee:Agent .
+bias:Individual rdf:type owl:Class ;
+rdfs:subClassOf foaf:Agent .
 
-ee:Decision rdf:type owl:Class .
+bias:Decision rdf:type owl:Class .
 
-ee:BiasedDecision rdf:type owl:Class ;
-                  rdfs:subClassOf ee:Decision .
+bias:BiasedDecision rdf:type owl:Class ;
+rdfs:subClassOf bias:Decision .
 
-ee:RationalDecision rdf:type owl:Class ;
-                    rdfs:subClassOf ee:Decision .
+bias:RationalDecision rdf:type owl:Class ;
+rdfs:subClassOf bias:Decision .
 
-ee:Value rdf:type owl:Class .
+bias:Value rdf:type owl:Class .
 
-ee:CognitiveBias rdf:type owl:Class .
+bias:CognitiveBias rdf:type owl:Class .
 
-ee:EndowmentEffect rdf:type owl:Class ;
-                   rdfs:subClassOf ee:CognitiveBias .
+bias:EndowmentEffect rdf:type owl:Class ;
+rdfs:subClassOf bias:CognitiveBias .
 
 ### Attributes (Data Properties)
-ee:OverestimatedValue rdf:type owl:DatatypeProperty ;
-                      rdfs:domain ee:Value ;
-                      rdfs:range xsd:decimal .
+bias:OverestimatedValue rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:Value ;
+rdfs:range xsd:decimal .
 
-ee:ActualValue rdf:type owl:DatatypeProperty ;
-                rdfs:domain ee:Value ;
-                rdfs:range xsd:decimal .
+bias:ActualValue rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:Value ;
+rdfs:range xsd:decimal .
 
-ee:LossAversionIntensity rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ee:BiasedDecision ;
-                         rdfs:range xsd:decimal .
+bias:LossAversionIntensity rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range xsd:decimal .
 
-ee:RealityAvoidanceLevel rdf:type owl:DatatypeProperty ;
-                         rdfs:domain ee:BiasedDecision ;
-                         rdfs:range xsd:decimal .
+bias:RealityAvoidanceLevel rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range xsd:decimal .
 
-ee:Role rdf:type owl:DatatypeProperty ;
-        rdfs:domain ee:Individual ;
-        rdfs:range xsd:string .
+bias:Role rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:Individual ;
+rdfs:range xsd:string .
 
-ee:ExperienceLevel rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ee:Individual ;
-                   rdfs:range xsd:string .
+bias:ExperienceLevel rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:Individual ;
+rdfs:range xsd:string .
 
-ee:DecisionMakingStyle rdf:type owl:DatatypeProperty ;
-                       rdfs:domain ee:Individual ;
-                       rdfs:range xsd:string .
+bias:DecisionMakingStyle rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:Individual ;
+rdfs:range xsd:string .
 
-ee:RiskTolerance rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ee:Individual ;
-                 rdfs:range xsd:decimal .
+bias:RiskTolerance rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:Individual ;
+rdfs:range xsd:decimal .
 
-ee:RealWorldConsiderationLevel rdf:type owl:DatatypeProperty ;
-                               rdfs:domain ee:RationalDecision ;
-                               rdfs:range xsd:decimal .
+bias:RealWorldConsiderationLevel rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:decimal .
 
-ee:LogicalThinkingIntensity rdf:type owl:DatatypeProperty ;
-                            rdfs:domain ee:RationalDecision ;
-                            rdfs:range xsd:decimal .
+bias:LogicalThinkingIntensity rdf:type owl:DatatypeProperty ;
+rdfs:domain bias:RationalDecision ;
+rdfs:range xsd:decimal .
 
 ### Relationships (Object Properties)
-ee:makes rdf:type owl:ObjectProperty ;
-         rdfs:domain ee:Agent ;
-         rdfs:range ee:Decision .
+bias:makes rdf:type owl:ObjectProperty ;
+rdfs:domain bias:Agent ;
+rdfs:range bias:Decision .
 
-ee:isBasedOn rdf:type owl:ObjectProperty ;
-             rdfs:domain ee:Decision ;
-             rdfs:range ee:Value .
+bias:isBasedOn rdf:type owl:ObjectProperty ;
+rdfs:domain bias:Decision ;
+rdfs:range bias:Value .
 
-ee:resultsFrom rdf:type owl:ObjectProperty ;
-               rdfs:domain ee:BiasedDecision ;
-               rdfs:range ee:Value .
+bias:resultsFrom rdf:type owl:ObjectProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range bias:Value .
 
-ee:influencedBy rdf:type owl:ObjectProperty ;
-                rdfs:domain ee:BiasedDecision ;
-                rdfs:range ee:Value .
+bias:influencedBy rdf:type owl:ObjectProperty ;
+rdfs:domain bias:BiasedDecision ;
+rdfs:range bias:Value .
 
-ee:resultsFromActualValueAssessment rdf:type owl:ObjectProperty ;
-                                    rdfs:domain ee:RationalDecision ;
-                                    rdfs:range ee:Value .
+bias:resultsFromActualValueAssessment rdf:type owl:ObjectProperty ;
+rdfs:domain bias:RationalDecision ;
+rdfs:range bias:Value .
 
-ee:reflectsRealWorldConsideration rdf:type owl:ObjectProperty ;
-                                  rdfs:domain ee:RationalDecision ;
-                                  rdfs:range ee:Value .
+bias:reflectsRealWorldConsideration rdf:type owl:ObjectProperty ;
+rdfs:domain bias:RationalDecision ;
+rdfs:range bias:Value .
 
-ee:influencedByLogicalThinking rdf:type owl:ObjectProperty ;
-                               rdfs:domain ee:RationalDecision ;
-                               rdfs:range ee:Value .
+bias:influencedByLogicalThinking rdf:type owl:ObjectProperty ;
+rdfs:domain bias:RationalDecision ;
+rdfs:range bias:Value .
 
-ee:assumes rdf:type owl:ObjectProperty ;
-           rdfs:domain ee:Individual ;
-           rdfs:range ee:Role .
+bias:assumes rdf:type owl:ObjectProperty ;
+rdfs:domain bias:Individual ;
+rdfs:range bias:Role .
 
-ee:roleInfluencesDecision rdf:type owl:ObjectProperty ;
-                          rdfs:domain ee:Role ;
-                          rdfs:range ee:Decision .
+bias:roleInfluencesDecision rdf:type owl:ObjectProperty ;
+rdfs:domain bias:Role ;
+rdfs:range bias:Decision .
 
-ee:influencedByBias rdf:type owl:ObjectProperty ;
-                    rdfs:domain ee:Agent ;
-                    rdfs:range ee:CognitiveBias .
+bias:influencedByBias rdf:type owl:ObjectProperty ;
+rdfs:domain bias:Agent ;
+rdfs:range bias:CognitiveBias .

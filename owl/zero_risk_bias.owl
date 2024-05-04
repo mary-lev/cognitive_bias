@@ -1,0 +1,121 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
+@prefix zero: <http://example.org/cognitive_bias/zero_risk_bias#> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf: 		<http://xmlns.com/foaf/0.1/> .
+
+### Classes
+bias:DecisionContext rdf:type owl:Class .
+
+zero:Risk rdf:type owl:Class .
+
+bias:Intervention rdf:type owl:Class .
+
+bias:Outcome rdf:type owl:Class .
+
+bias:DecisionMaker rdf:type owl:Class .
+
+bias:BiasedAgent rdf:type owl:Class ;
+             rdfs:subClassOf bias:DecisionMaker .
+
+bias:RationalAgent rdf:type owl:Class ;
+               rdfs:subClassOf bias:DecisionMaker .
+
+### Properties
+zero:hasRisk rdf:type owl:ObjectProperty ;
+         rdfs:domain bias:DecisionContext ;
+         rdfs:range zero:Risk .
+
+zero:considersIntervention rdf:type owl:ObjectProperty ;
+                      rdfs:domain bias:DecisionContext ;
+                      rdfs:range bias:Intervention .
+
+bias:leadsToOutcome rdf:type owl:ObjectProperty ;
+                rdfs:domain bias:Intervention ;
+                rdfs:range bias:Outcome .
+
+bias:makesDecision rdf:type owl:ObjectProperty ;
+               rdfs:domain bias:DecisionMaker ;
+               rdfs:range bias:Intervention .
+
+bias:influences rdf:type owl:ObjectProperty ;
+            rdfs:domain bias:DecisionMaker ;
+            rdfs:range bias:DecisionContext .
+
+bias:impacts rdf:type owl:ObjectProperty ;
+         rdfs:domain zero:Risk ;
+         rdfs:range bias:Outcome .
+
+bias:prioritizes rdf:type owl:ObjectProperty ;
+             rdfs:domain bias:BiasedAgent ;
+             rdfs:range bias:Intervention .
+
+zero:assessesRiskUsing rdf:type owl:ObjectProperty ;
+                   rdfs:domain bias:RationalAgent ;
+                   rdfs:range bias:DecisionContext .
+
+### Individuals
+# Decision Contexts
+zero:UrbanSafetyBudget rdf:type bias:DecisionContext ;
+                   zero:description "Allocate budget for urban safety improvements" ;
+                   zero:stakeholders "City Council, Local Residents" .
+
+# Risks
+zero:TrafficAccidents rdf:type zero:Risk ;
+                  zero:description "Increase in traffic accidents" ;
+                  zero:severity "High" ;
+                  zero:probability "Medium" .
+
+zero:PedestrianAccidents rdf:type zero:Risk ;
+                     zero:description "Pedestrian accidents at intersections" ;
+                     zero:severity "Medium" ;
+                     zero:probability "High" .
+
+# Interventions
+zero:InstallTrafficLights rdf:type zero:Intervention ;
+                      zero:description "Install traffic lights at all intersections" ;
+                      zero:cost "High" ;
+                      zero:effectiveness "High" .
+
+zero:SpeedLimitReduction rdf:type zero:Intervention ;
+                     zero:description "City-wide speed limit reduction" ;
+                     zero:cost "Medium" ;
+                     zero:effectiveness "Medium" .
+
+# Outcomes
+zero:NoPedestrianAccidents rdf:type bias:Outcome ;
+                       zero:description "Elimination of pedestrian accidents at intersections" ;
+                       zero:overallRiskReduction "High" .
+
+zero:ReducedAccidentsOverall rdf:type bias:Outcome ;
+                         zero:description "Moderate reduction in both traffic and pedestrian accidents" ;
+                         zero:overallRiskReduction "Medium" .
+
+# Decision Makers
+zero:CityCouncil rdf:type bias:BiasedAgent ;
+             foaf:name "City Council" ;
+             foaf:role "Local Government" ;
+             zero:preferredRiskToEliminate zero:PedestrianAccidents .
+
+zero:LocalSafetyBoard rdf:type bias:RationalAgent ;
+                  foaf:name "Local Safety Board" ;
+                  foaf:role "Safety Regulator" ;
+                  zero:riskAssessmentMethod "Cost-Benefit Analysis" .
+
+### Relationships
+zero:UrbanSafetyBudget zero:hasRisk zero:TrafficAccidents .
+zero:UrbanSafetyBudget zero:hasRisk zero:PedestrianAccidents .
+zero:UrbanSafetyBudget zero:considersIntervention zero:InstallTrafficLights .
+zero:UrbanSafetyBudget zero:considersIntervention zero:SpeedLimitReduction .
+zero:InstallTrafficLights zero:leadsToOutcome zero:NoPedestrianAccidents .
+zero:SpeedLimitReduction zero:leadsToOutcome zero:ReducedAccidentsOverall .
+zero:CityCouncil bias:makesDecision zero:InstallTrafficLights .
+zero:LocalSafetyBoard bias:makesDecision zero:SpeedLimitReduction .
+zero:CityCouncil bias:influences zero:UrbanSafetyBudget .
+zero:LocalSafetyBoard zero:assessesRiskUsing zero:UrbanSafetyBudget .

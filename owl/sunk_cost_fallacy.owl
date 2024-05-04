@@ -1,0 +1,148 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
+@prefix scf: <http://example.org/cognitive_bias/sunk_cost_fallacy#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+### Ontology Declaration
+<http://example.org/cognitive_bias>
+    rdf:type owl:Ontology .
+
+# Classes
+foaf:Agent a owl:Class .
+
+foaf:Project a owl:Class .
+
+bias:Decision a owl:Class .
+
+bias:RationalDecision a owl:Class ;
+                  rdfs:subClassOf :Decision .
+
+bias:BiasedDecision a owl:Class ;
+                rdfs:subClassOf :Decision .
+
+bias:Investment a owl:Class .
+
+# Properties
+bias:hasID a owl:DatatypeProperty ;
+      rdfs:domain [ owl:unionOf (:Agent :Project :Decision :Investment) ] ;
+      rdfs:range xsd:string .
+
+bias:decisionType a owl:DatatypeProperty ;
+               rdfs:domain bias:Decision ;
+               rdfs:range xsd:string .
+
+bias:reasoningBasis a owl:DatatypeProperty ;
+                 rdfs:domain bias:BiasedDecision ;
+                 rdfs:range xsd:string .
+
+bias:basedOn a owl:DatatypeProperty ;
+          rdfs:domain bias:RationalDecision ;
+          rdfs:range xsd:string .
+
+bias:outcome a owl:DatatypeProperty ;
+          rdfs:domain bias:Decision ;
+          rdfs:range xsd:string .
+
+schema:type a owl:DatatypeProperty ;
+       rdfs:domain bias:Investment ;
+       rdfs:range xsd:string .
+
+schema:amount a owl:DatatypeProperty ;
+         rdfs:domain bias:Investment ;
+         rdfs:range xsd:decimal .
+
+schema:date a owl:DatatypeProperty ;
+       rdfs:domain bias:Investment ;
+       rdfs:range xsd:date .
+
+bias:investsIn a owl:ObjectProperty ;
+            rdfs:domain foaf:Agent ;
+            rdfs:range foaf:Project .
+
+bias:makes a owl:ObjectProperty ;
+         rdfs:domain foaf:Agent ;
+         rdfs:range bias:Decision .
+
+bias:considers a owl:ObjectProperty ;
+             rdfs:domain bias:BiasedDecision ;
+             rdfs:range bias:Investment .
+
+bias:regarding a owl:ObjectProperty ;
+            rdfs:domain bias:Decision ;
+            rdfs:range foaf:Project .
+
+:hasInvestment a owl:ObjectProperty ;
+               rdfs:domain foaf:Project ;
+               rdfs:range bias:Investment .
+
+
+# Project Evaluation Properties for Rational Decisions
+scf:evaluatesCurrentValue a owl:ObjectProperty ;
+                       rdfs:domain bias:RationalDecision ;
+                       rdfs:range foaf:Project .
+
+scf:assessesFutureProspect a owl:ObjectProperty ;
+                        rdfs:domain bias:RationalDecision ;
+                        rdfs:range foaf:Project .
+
+scf:considersRiskAssessment a owl:ObjectProperty ;
+                         rdfs:domain bias:RationalDecision ;
+                         rdfs:range foaf:Project .
+
+scf:analyzesMarketConditions a owl:ObjectProperty ;
+                          rdfs:domain bias:RationalDecision ;
+                          rdfs:range foaf:Project .
+
+scf:checksResourceAvailability a owl:ObjectProperty ;
+                            rdfs:domain bias:RationalDecision ;
+                            rdfs:range foaf:Project .
+
+scf:compliesWithRegulations a owl:ObjectProperty ;
+                         rdfs:domain bias:RationalDecision ;
+                         rdfs:range foaf:Project .
+
+scf:balancesStakeholderInterests a owl:ObjectProperty ;
+                              rdfs:domain bias:RationalDecision ;
+                              rdfs:range foaf:Project .
+
+scf:considersSustainabilityImpact a owl:ObjectProperty ;
+                               rdfs:domain bias:RationalDecision ;
+                               rdfs:range foaf:Project .
+
+# Making and Considering Decisions
+bias:makes a owl:ObjectProperty ;
+         rdfs:domain foaf:Agent ;
+         rdfs:range bias:Decision .
+
+bias:regarding a owl:ObjectProperty ;
+            rdfs:domain bias:Decision ;
+            rdfs:range foaf:Project .
+
+# Investments and Projects
+bias:investsIn a owl:ObjectProperty ;
+            rdfs:domain foaf:Agent ;
+            rdfs:range foaf:Project .
+
+bias:hasInvestment a owl:ObjectProperty ;
+               rdfs:domain foaf:Project ;
+               rdfs:range bias:Investment .
+
+bias:wasInformedBy a owl:ObjectProperty ;
+                rdfs:subPropertyOf prov:wasInformedBy ;
+                rdfs:domain bias:Decision ;
+                rdfs:range foaf:Project .
+
+:wasAssociatedWith a owl:ObjectProperty ;
+                    rdfs:subPropertyOf prov:wasAssociatedWith ;
+                    rdfs:domain :Decision ;
+                    rdfs:range :Agent .
+
+:generatedBy a owl:ObjectProperty ;
+              rdfs:subPropertyOf prov:wasGeneratedBy ;
+              rdfs:domain :Project ;
+              rdfs:range :Decision .

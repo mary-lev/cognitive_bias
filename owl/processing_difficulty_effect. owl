@@ -1,0 +1,109 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
+@prefix pde: <http://example.org/cognitive_bias/processing_difficulty_effect#> .
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: 		<http://purl.org/dc/elements/1.1/> .
+@prefix xml: 		<http://www.w3.org/XML/1998/namespace> .
+@prefix wot: 		<http://xmlns.com/wot/0.1/> .
+@prefix vs: 		<http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf: 		<http://xmlns.com/foaf/0.1/> .
+
+
+###  Property Definitions ###
+#  --------------------------- Property 0------------------------- 
+pde:ProcessingSpeed rdf:type owl:DatatypeProperty ;
+                 rdfs:comment "A measure of the speed at which an agent processes information, typically in milliseconds." ;
+                 rdfs:label "ProcessingSpeed"@pde; 
+                 rdfs:domain pde:CognitiveFluency;
+                 rdfs:range xsd:decimal . 
+#  --------------------------- Property 1------------------------- 
+bias:engagesIn rdf:type owl:ObjectProperty ;
+           rdfs:comment "Relation where a biased agent engages in a thinking process." ;
+           rdfs:label "engagesIn"@bias; 
+           rdfs:domain bias:BiasedAgent;
+           rdfs:range bias:ThinkingProcess . 
+#  --------------------------- Property 2------------------------- 
+bias:affects rdf:type owl:ObjectProperty ;
+         rdfs:comment "Processing Difficulty affects the Biased Agent's ability to process information." ;
+         rdfs:label "affects"@bias; 
+         rdfs:domain pde:ProcessingDifficulty;
+         rdfs:range bias:BiasedAgent . 
+#  --------------------------- Property 3------------------------- 
+pde:FamiliarityLevel rdf:type owl:DatatypeProperty ;
+                  rdfs:comment "A qualitative assessment of how familiar information is to the agent, e.g., 'high', 'medium', 'low'." ;
+                  rdfs:label "FamiliarityLevel"@pde; 
+                  rdfs:domain pde:CognitiveFluency;
+                  rdfs:range xsd:string . 
+#  --------------------------- Property 4------------------------- 
+pde:EaseOfUnderstanding rdf:type owl:DatatypeProperty ;
+                     rdfs:comment "A numerical score representing how easily information can be understood by the agent." ;
+                     rdfs:label "EaseOfUnderstanding"@pde; 
+                     rdfs:domain pde:CognitiveFluency;
+                     rdfs:range xsd:decimal . 
+#  --------------------------- Property 5------------------------- 
+pde:processes rdf:type owl:ObjectProperty ;
+           rdfs:comment "The thinking process is used to process information." ;
+           rdfs:label "processes"@pde; 
+           rdfs:domain bias:ThinkingProcess;
+           rdfs:range bias:Information . 
+#  --------------------------- Property 6------------------------- 
+bias:has rdf:type owl:ObjectProperty ;
+                                       rdfs:label "has"@bias; 
+                                       rdfs:domain pde:Information;
+                                       rdfs:range pde:Credibility . 
+#  --------------------------- Property 7------------------------- 
+pde:enhances rdf:type owl:ObjectProperty ;
+                                            rdfs:label "enhances"@pde; 
+                                            rdfs:domain pde:CognitiveFluency;
+                                            rdfs:range pde:Credibility . 
+#  --------------------------- Property 8------------------------- 
+bias:obtains rdf:type owl:ObjectProperty ;
+                                       rdfs:label "obtains"@bias; 
+                                       rdfs:domain bias:BiasedAgent;
+                                       rdfs:range pde:CognitiveFluency . 
+#  --------------------------- Property 9------------------------- 
+pde:judges rdf:type owl:ObjectProperty ;
+                                          rdfs:label "judges"@pde; 
+                                          rdfs:domain bias:BiasedAgent;
+                                          rdfs:range pde:Credibility . 
+#  --------------------------- Property 10------------------------- 
+bias:relatedTo rdf:type owl:ObjectProperty ;
+                                             rdfs:label "relatedTo"@bias; 
+                                             rdfs:domain pde:CognitiveFluency;
+                                             rdfs:range pde:Information . 
+###  Class Definitions  ###
+#  --------------------------- Class  0------------------------- 
+pde:Information rdf:type owl:Class; 
+             rdfs:comment "Data or knowledge communicated or received." ;
+             rdfs:label "Information"@pde . 
+#  --------------------------- Class  1------------------------- 
+bias:CognitiveBias rdf:type owl:Class; 
+               rdfs:comment "A class of biases in cognitive processes." ;
+               rdfs:label "CognitiveBias"@bias . 
+#  --------------------------- Class  2------------------------- 
+bias:BiasedAgent rdf:type owl:Class; 
+             rdfs:comment "An agent whose decision-making is influenced by cognitive biases." ;
+             rdfs:subClassOf foaf:Agent ;
+             rdfs:label "BiasedAgent"@bias . 
+#  --------------------------- Class  3------------------------- 
+foaf:Agent rdf:type owl:Class; 
+       rdfs:comment "An entity capable of performing actions and making decisions." ;
+       rdfs:label "Agent"@foaf . 
+#  --------------------------- Class  4------------------------- 
+pde:CognitiveFluency rdf:type owl:Class; 
+                  rdfs:comment "Ease of processing information by an agent." ;
+                  rdfs:label "CognitiveFluency"@pde . 
+#  --------------------------- Class  5------------------------- 
+bias:ThinkingProcess rdf:type owl:Class; 
+                 rdfs:comment "The cognitive activity involved in understanding or processing information." ;
+                 rdfs:label "ThinkingProcess"@bias . 
+#  --------------------------- Class  6------------------------- 
+pde:ProcessingDifficulty rdf:type owl:Class; 
+                      rdfs:comment "A cognitive bias where difficult to process information is judged less credible." ;
+                      rdfs:subClassOf bias:CognitiveBias ;
+                      rdfs:label "ProcessingDifficulty"@pde . 
+#  --------------------------- Class  7------------------------- 
+pde:Credibility rdf:type owl:Class; 
+                                               rdfs:label "Credibility"@pde . 

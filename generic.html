@@ -47,36 +47,35 @@
 					<header class="major">
 						<h2>Context and literature state-of-the-art</h2>
 					</header>
-					<p>According to the Extreme Design Methodology (XD), the first step of the whole design workflow is
-						to get into the project context, even though in the context of our course project, we do not
-						have a real “customer” to satisfy. Therefore, the ultimate goal of learning about the
-						state-of-the-art context and literature about cognitive biases is to acknowledge ourselves with
-						sufficient information in this unfamiliar and interdisciplinary area, to make further design of
-						ontologies possible. </p>
-
-					<p>The only customers we would like to satisfy and negotiate with are our brains, which lack
-						cognitive science knowledge and find it counter-intuitive to unwrap these cognitive biases that
-						could actually affect us. Reading and learning about our topics are to maximize the possibility
-						of bridging these cognitive gaps.
+					<p>According to the Extreme Design Methodology (XD), the first step of the entire design workflow is
+						to enter the project context, even though in the context of our course project we do not have a
+						real "customer" to satisfy. The only customers we want to satisfy and negotiate with are our
+						brains, which lack cognitive science knowledge and find it counterintuitive to unpack these
+						cognitive biases that might actually affect us. Reading and learning about our topics is
+						intended to maximize the possibility of bridging these cognitive gaps.
 					</p>
+
 					<hr class="major" />
-					<b>From Mindmap to Onlology</b>
+					<b>Step 1. From Mindmap to Onlology</b>
 					<p>After having a basic understanding of our topics, we decided to start this counter-intuitive and
 						overly abstract task for human beings in a more intuitive way, which is to visualize those ideas
 						in our mind in the form of mindmaps manually, with paper and pen, or online UML tools like
 						draw.io.
 					</p>
+					<img src="images/ontology.png" style="width: 600px; height: auto;" />
 					<p>Drawing mindmaps helped us better understand the modeling of cognitive biases clearly, and also
 						prevented us from totally being bought into Chat GPT’s generated information in the next step.
 						Only after having a relatively clear idea about the possible models, did we start to inquire
 						about suggestions from Chat GPT and then convert our naive mindmaps into formal ontologies based
 						on our knowledge and the trained knowledge of LLM.
 					</p>
-					<span class="image1"><img src="images/mindmap.jpg" alt="" style="width: 600px; height: auto;" /></span>
-					<span class="image2"><img src="images/drawmap.jpg" alt="" style="width: 600px; height: auto;" /></span>
+					<span class="image1"><img src="images/mindmap.jpg" alt=""
+							style="width: 600px; height: auto;" /></span>
+					<span class="image2"><img src="images/drawmap.jpg" alt=""
+							style="width: 600px; height: auto;" /></span>
 
 					<hr class="major" />
-					<b>Flexible Dialogues with LLM</b>
+					<b>Step 2. Flexible Dialogues with LLM</b>
 					<p>To get the highest quality of generated information possible, we purchased the upgrade of the
 						GPT-4, especially considering its obvious excellence compared to the GPT-3.5 in multiple
 						benchmarks and the more updated training data it obtained, which is as new as December of 2023.
@@ -111,7 +110,7 @@
 					<p> Examples of our dialogues with GPT-4 will be attached with ontologies in the upcoming part.</p>
 
 					<hr class="major" />
-					<b>Decision-Making Frameworks</b>
+					<b>Step 3. Decision-Making Frameworks</b>
 					<p>While figuring out the nature of cognitive biases that our group deals with, we learned that
 						cognitive biases could be categorized into different dimensions according to their specific
 						effects:
@@ -134,19 +133,95 @@
 						humans but also influence our actual decisions and behaviors, which are highly related to the
 						realm of decision-making process of human.
 					</p>
-					<p>Therefore, to reuse some already well-established ontology frameworks, we get inspired by the
-						following frameworks and core ontologies designed specifically to describe and model
-						decision-making:
-					<ul>
-						<li>A Core Ontology on Decision Making: https://ceur-ws.org/Vol-2728/paper1.pdf
-						<li>The Decision Ontology (DO):
-							https://www.w3.org/2005/Incubator/decision/XGR-decision-20120417/Sample_Decision_Ontology.html
-						<li>Ontology of Value, Risk and Cognitive Biases for an IT Portfolio Decision Making:
-							https://ceur-ws.org/Vol-2728/doctorate3.pdf
-					</ul>
+					<h2>
+						Step 4. Concepts and classes definition
+					</h2>
+					<p>At this stage, we could define our main concepts and define the base classes for our ontology.
 					</p>
-					<p>Besides these frameworks, we also tried to integrate some ontologies and vocabularies for general
-						use (eg. foaf, DCcores, schemas…) into our ontologies.</p>
+					<ul>
+						<li>Decision: The outcome of a cognitive process wherein an agent selects one option among
+							several
+							alternatives. It can be classified as either "Biased Decision," influenced by cognitive
+							biases,
+							or "Rational Decision," based on objective evaluation and reasoning.</li>
+						<li>Agent: The entity responsible for making decisions, which can be an individual person or a
+							group
+							of individuals acting collectively. Agents may exhibit varying degrees of susceptibility to
+							cognitive biases based on factors such as cognitive abilities, experiences, and
+							environmental
+							influences.</li>
+						<li>Decision Object: The entity or situation that the agent evaluates or makes decisions about.
+							It
+							can encompass a wide range of objects, including products, services, investments, policies,
+							actions, or any other choice-worthy entities. The characteristics and attributes of the
+							decision
+							object may influence the decision-making process and the likelihood of biases occurring.
+						</li>
+					</ul>
+					<p>Then, to iteratively develop our base classes and their relationships, we combine top-down and
+						bottom-up approaches.</p>
+					<p>Our <b>top-down approach</b> to class definition and hierarchy is to start with broad, overarching
+						concepts and gradually refine them into more specific subclasses and attributes. Here's how we
+						describe this approach:
+					</p>
+					<ul>
+						<li>Start with High-Level Concepts: Begin by identifying the main concepts or entities relevant
+							to
+							the domain, such as "Decision," "Agent," and "Decision Object."</li>
+						<li>Define General Characteristics: Describe the general attributes and behaviors associated
+							with
+							each high-level concept. For example, a "Decision" may involve attributes such as outcome,
+							criteria, and process.</li>
+						<li>Identify Subclasses: Identify any distinct subclasses or categories within each high-level
+							concept. For instance, within "Decision," we may have subclasses like "Biased Decision" and
+							"Rational Decision."</li>
+						<li>Refine Attributes and Methods: Refine the attributes and methods specific to each subclass
+							to
+							capture their unique characteristics and behaviors. For instance, a "Biased Decision" class
+							may
+							include attributes related to identified biases and methods for bias detection.</li>
+						<li>Establish Hierarchical Relationships: Organize the classes into a hierarchical structure,
+							with
+							broader concepts at the top and more specialized concepts as subclasses. This hierarchy
+							reflects
+							the relationships between the concepts and facilitates organization and understanding.</li>
+						<li>Ensure Consistency and Coherence: Ensure that the subclasses inherit relevant attributes and
+							behaviors from their parent classes while also adding their own specific characteristics.
+							This
+							helps maintain consistency and coherence within the ontology.</li>
+						<li>Iterate and Refine: Iterate on the class definitions and hierarchy as needed, refining them
+							based
+							on feedback, additional domain knowledge, or evolving requirements. Continuously validate
+							and
+							adjust the ontology to ensure it accurately represents the domain of cognitive biases.</li>
+					</ul>
+
+					<p>At the same time we used a <b>bottom-up approach</b>, starting with situations where bias occurs and
+						then moving up to broader concepts. Here's how we can describe it:
+					</p>
+<ul>
+					<li>Beginning with Specific Situations: We start by identifying specific situations or contexts where
+						cognitive biases commonly occur, such as pricing decisions, medical diagnoses, or hiring
+						processes.</li>
+					<li>Linking Biases to Situations: For each situation, we associate the cognitive biases that are
+						likely to influence decision-making in that context. For example, availability bias might affect
+						medical diagnoses due to the salience of recent cases.</li>
+					<li>Defining Biases Based on Situations: As we identify biases in specific situations, we develop
+						definitions and characteristics for each bias tailored to those contexts. This helps ground the
+						abstract concept of bias in concrete scenarios.</li>
+					<li>Grouping Similar Situations: We then group similar situations together based on the biases
+						involved, creating clusters or categories of contexts where similar biases are at play.</li>
+					<li>Generalizing Concepts: From these specific situations and clusters, we abstract broader concepts
+						such as "Biased Decision" and "Rational Decision." These concepts encompass a range of
+						situations where biases may occur.</li>
+					<li>Creating Hierarchical Relationships: We organize the concepts and subclasses into a hierarchical
+						structure, with more specific situations nested within broader categories of biases and
+						decision-making processes.</li>
+					<li>Iterative Refinement: Throughout this process, we continuously refine the ontology based on
+						feedback and insights, ensuring that it accurately captures the relationship between biases and
+						decision-making contexts.</li>
+</ul>
+
 				</section>
 			</div>
 		</div>
@@ -211,9 +286,9 @@
 
 				<!-- Footer -->
 				<footer id="footer">
-					  <p class="copyright">
-              &copy; Cognitive biases. All rights reserved. 
-            </p>
+					<p class="copyright">
+						&copy; Cognitive biases. All rights reserved.
+					</p>
 				</footer>
 			</div>
 		</div>

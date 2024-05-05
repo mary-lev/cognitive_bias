@@ -1,0 +1,134 @@
+@prefix bias: <http://example.org/bias#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Classes
+bias:Decision rdf:type owl:Class .
+
+bias:BiasedDecision rdf:type owl:Class ;
+                      rdfs:subClassOf bias:Decision .
+                  
+bias:RationalDecision rdf:type owl:Class ;
+                      rdfs:subClassOf bias:Decision .
+
+bias:CognitiveBias rdf:type owl:Class .
+
+bias:ConjunctionFallacy rdf:type owl:Class ;
+                  rdfs:subClassOf bias:CognitiveBias .
+
+bias:BikeSheddingBias rdf:type owl:Class ;
+                  rdfs:subClassOf bias:CognitiveBias .
+
+bias:DelmoreEffect rdf:type owl:Class ;
+                  rdfs:subClassOf bias:CognitiveBias .
+
+bias:RhymeAsReasonEffect rdf:type owl:Class ;
+                    rdfs:subClassOf bias:CognitiveBias .
+
+foaf:Agent rdf:type owl:Class .
+
+schema:Thing a rdfs:Class ;
+                        rdfs:label "Thing" ;
+                        rdfs:comment "The most generic type of item." .
+
+schema:Event a rdfs:Class ;
+                    rdfs:label "Event" ;
+                    rdfs:subClassOf schema:Thing ;
+                    rdfs:comment "A non-persistent, time-based occurrence. An occurrence happening at a determinable time and place, with or without the participation of human agents." .
+                    
+foaf:Project a owl:Class ;
+                        rdfs:label "Project" ;
+                        rdfs:subClassOf schema:Thing ;
+                        rdfs:comment "A temporary endeavor undertaken to create a unique product, service, or result." .
+                    
+schema:Action a rdfs:Class ;
+                        rdfs:label "Action" ;
+                        rdfs:subClassOf schema:Thing ;
+                        rdfs:comment "Something done or performed." .
+
+                        
+bias:Belief a rdfs:Class ;
+                        rdfs:label "Belief" ;
+                        rdfs:subClassOf schema:Thing ;
+                        rdfs:comment "An acceptance that a statement is true or that something exists." .
+                    
+bias:GeneralEvent rdf:type owl:Class ;
+    rdfs:subClassOf schema:Event .
+
+bias:SpecificEvent rdf:type owl:Class ;
+    rdfs:subClassOf bias:GeneralEvent .
+
+
+## AGENT
+# Agent Properties
+:hasName rdf:type owl:DatatypeProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:string .
+    
+:hasMotivationLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:integer .
+    
+:hasGoalPriority rdf:type owl:DatatypeProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:string .
+
+bias:makesDecision rdf:type owl:ObjectProperty ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range bias:Decision .
+
+bias:performsAction rdf:type owl:ObjectProperty ;
+                       rdfs:domain foaf:Agent ;
+                       rdfs:range schema:Action ;
+                       rdfs:comment "Specifies that an agent performs an action." .
+    
+
+# Object Properties
+bias:hasDetail rdf:type owl:DatatypeProperty ;
+    rdfs:domain schema:Thing ;
+    rdfs:range xsd:string .
+    
+# Task and Goal Properties
+bias:hasDescription rdf:type owl:DatatypeProperty ;
+        rdfs:domain schema:Thing ;
+        rdfs:range xsd:string .
+    
+bias:hasComplexityLevel rdf:type owl:DatatypeProperty ;
+        rdfs:domain schema:Action ;
+        rdfs:range xsd:string .
+    
+bias:hasCompletionTime rdf:type owl:DatatypeProperty ;
+        rdfs:domain schema:Action ;
+        rdfs:range xsd:integer .
+
+bias:duration rdf:type owl:DatatypeProperty ;
+        rdfs:domain foaf:Project ;
+        rdfs:range xsd:double .
+        
+# Goal Specific Properties
+bias:hasLongTermImpact rdf:type owl:DatatypeProperty ;
+        rdfs:domain schema:Action ;
+        rdfs:range xsd:string .
+        
+bias:hasRequiredEffort rdf:type owl:DatatypeProperty ;
+        rdfs:domain schema:Action ;
+        rdfs:range xsd:integer .
+
+bias:budget rdf:type owl:DatatypeProperty ;
+        rdfs:domain foaf:Project ;
+        rdfs:range xsd:double .
+
+    
+bias:regarding a owl:ObjectProperty ;
+            rdfs:domain bias:Decision ;
+            rdfs:range schema:Thing .
+
+bias:affects rdf:type owl:ObjectProperty ;
+            rdfs:domain bias:CognitiveBias ;
+            rdfs:range bias:BiasedDecision ;
+            rdfs:comment "Specifies that a cognitive bias affects a biased decision." .

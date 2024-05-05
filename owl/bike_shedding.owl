@@ -1,49 +1,50 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://example.org/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 ### Classes
-:Decision rdf:type owl:Class .
+bias:Decision rdf:type owl:Class .
 
-:BiasedDecision rdf:type owl:Class ;
-                rdfs:subClassOf :Decision .
+bias:BiasedDecision rdf:type owl:Class ;
+                rdfs:subClassOf bias:Decision .
 
-:RationalDecision rdf:type owl:Class ;
-                  rdfs:subClassOf :Decision .
+bias:RationalDecision rdf:type owl:Class ;
+                  rdfs:subClassOf bias:Decision .
 
-:CognitiveBias rdf:type owl:Class .
+bias:CognitiveBias rdf:type owl:Class .
 
-:BikeSheddingBias rdf:type owl:Class ;
-                  rdfs:subClassOf :CognitiveBias .
+bias:BikeSheddingBias rdf:type owl:Class ;
+                  rdfs:subClassOf bias:CognitiveBias .
 
-:DecisionMaker rdf:type owl:Class .
+foaf:Agent rdf:type owl:Class .
 
-:Project rdf:type owl:Class .
+foaf:Project rdf:type owl:Class .
 
 ### Object Properties
-:influencedBy rdf:type owl:ObjectProperty ;
-              rdfs:domain :DecisionMaker ;
-              rdfs:range :CognitiveBias .
+bias:influencedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain foaf:Agent ;
+              rdfs:range bias:CognitiveBias .
 
-:makesDecision rdf:type owl:ObjectProperty ;
-               rdfs:domain :DecisionMaker ;
-               rdfs:range :Decision .
+bias:makesDecision rdf:type owl:ObjectProperty ;
+               rdfs:domain foaf:Agent ;
+               rdfs:range bias:Decision .
 
-:concernsProject rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Decision ;
-                 rdfs:range :Project .
+bias:concernsProject rdf:type owl:ObjectProperty ;
+                 rdfs:domain bias:Decision ;
+                 rdfs:range foaf:Project .
 
 ### Data Properties
-:importance rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Project ;
+bias:importance rdf:type owl:DatatypeProperty ;
+            rdfs:domain foaf:Project ;
             rdfs:range xsd:integer .
 
-:budget rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Project ;
+bias:budget rdf:type owl:DatatypeProperty ;
+        rdfs:domain foaf:Project ;
         rdfs:range xsd:double .
 
-:duration rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Decision ;
+bias:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain bias:Decision ;
           rdfs:range xsd:double .

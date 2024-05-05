@@ -1,72 +1,73 @@
+@prefix bias: <http://example.org/cognitive_bias#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://example.org/rhyme-reason#> .
+@prefix rr: <http://example.org/cognitive_bias/rhyme-reason#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 ### Ontology Declaration
-: rdf:type owl:Ontology ;
+bias:RhymeAsReasonOntology rdf:type owl:Ontology ;
   rdfs:comment "An ontology for the Rhyme as Reason effect." .
 
 ### Classes
-:Message rdf:type owl:Class .
+rr:Message rdf:type owl:Class .
 
 ### Class Definition with Property Restriction
-:RhymingMessage rdf:type owl:Class ;
-                rdfs:subClassOf :Message ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasRhyme ;
-                                  owl:hasValue true
-                                ] .
+rr:RhymingMessage rdf:type owl:Class ;
+                  rdfs:subClassOf rr:Message ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty rr:hasRhyme ;
+                                        owl:hasValue true
+                                      ] .
 
-### Class Definition with Property Restriction for SimpleMessage
-:SimpleMessage rdf:type owl:Class ;
-                rdfs:subClassOf :Message ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasRhyme ;
-                                  owl:hasValue false
-                                ] .
+rr:SimpleMessage rdf:type owl:Class ;
+                  rdfs:subClassOf rr:Message ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty rr:hasRhyme ;
+                                        owl:hasValue false
+                                      ] .
 
-:Perceiver rdf:type owl:Class .
+foaf:Agent rdf:type owl:Class .
 
-:CognitiveBias rdf:type owl:Class .
+bias:CognitiveBias rdf:type owl:Class .
 
 ### Individuals - Examples of cognitive bias
-:RhymeAsReasonEffect rdf:type :CognitiveBias .
+bias:RhymeAsReasonEffect rdf:type bias:CognitiveBias .
 
 ### Object Properties
-:hasMessage rdf:type owl:ObjectProperty ;
-            rdfs:domain :Perceiver ;
-            rdfs:range :Message .
+rr:hasMessage rdf:type owl:ObjectProperty ;
+              rdfs:domain foaf:Agent ;
+              rdfs:range rr:Message .
 
 ### Adjusted Object Property
-:influencedBy rdf:type owl:ObjectProperty ;
-              rdfs:domain :Perceiver ;
-              rdfs:range :RhymeAsReasonEffect ;
-              rdfs:comment "Indicates that the perceiver's interpretation or judgment is influenced by a cognitive bias." .
+bias:influencedBy rdf:type owl:ObjectProperty ;
+                  rdfs:domain foaf:Agent ;
+                  rdfs:range bias:RhymeAsReasonEffect ;
+                  rdfs:comment "Indicates that the perceiver's interpretation or judgment is influenced by a cognitive bias." .
             
 ### Data Properties
-:hasRhyme rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Message ;
-          rdfs:range xsd:boolean ;
-          rdfs:comment "Indicates if the message contains a rhyme." .
+rr:hasRhyme rdf:type owl:DatatypeProperty ;
+            rdfs:domain rr:Message ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Indicates if the message contains a rhyme." .
 
-:impactScore rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Message ;
-          rdfs:range xsd:float ;
-          rdfs:comment "Quantifies the impact or persuasiveness of the message." .
+rr:impactScore rdf:type owl:DatatypeProperty ;
+              rdfs:domain rr:Message ;
+              rdfs:range xsd:float ;
+              rdfs:comment "Quantifies the impact or persuasiveness of the message." .
 
 
 ### Adjusting the individuals to include the hasRhyme property
-:ExampleRhymingMessage rdf:type :RhymingMessage ;
-                       rdfs:label "Loose lips sink ships." ;
-                       :hasRhyme true ;
-                       :impactScore 8.5 .
+bias:ExampleRhymingMessage rdf:type rr:RhymingMessage ;
+                           rdfs:label "Loose lips sink ships." ;
+                           rr:hasRhyme true ;
+                           rr:impactScore 8.5 .
                      
-:ExampleSimpleMessage rdf:type :SimpleMessage ;
-                      rdfs:label "Careless talk causes harm." ;
-                      :hasRhyme false ;
-                      :impactScore 6.0 .
+bias:ExampleSimpleMessage rdf:type rr:SimpleMessage ;
+                          rdfs:label "Careless talk causes harm." ;
+                          rr:hasRhyme false ;
+                          rr:impactScore 6.0 .
 
 ### Axioms (Examples - Simplified for illustration)
 # Here you would include axioms that specify the conditions under which

@@ -1,14 +1,28 @@
-@prefix : <http://example.org/delmore#> .
+@prefix bias: <http://example.org/cognitive_bias#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # Classes
-:Agent a owl:Class .
+foaf:Agent a owl:Class .
 :Task a owl:Class .
 :Goal a owl:Class ; rdfs:subClassOf :Task .
+
+bias:Decision rdf:type owl:Class .
+
+bias:BiasedDecision rdf:type owl:Class ;
+                rdfs:subClassOf :Decision .
+
+bias:RationalDecision rdf:type owl:Class ;
+                  rdfs:subClassOf :Decision .
+
+bias:CognitiveBias rdf:type owl:Class .
+
+bias:DelmoreEffect rdf:type owl:Class ;
+                  rdfs:subClassOf :CognitiveBias .
 
 # Properties
 # Agent Properties

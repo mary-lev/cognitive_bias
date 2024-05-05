@@ -1,65 +1,81 @@
-@prefix : <http://example.com/occam#> .
+@prefix bias: <http://example.org/cognitive_bias#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 # Classes
-:Person a owl:Class .
-:Problem a owl:Class .
-:Explanation a owl:Class .
-:SimpleExplanation a owl:Class ; rdfs:subClassOf :Explanation .
-:ComplexExplanation a owl:Class ; rdfs:subClassOf :Explanation .
-:Decision a owl:Class .
-:RationalDecision a owl:Class ; rdfs:subClassOf :Decision .
-:BiasedDecision a owl:Class ; rdfs:subClassOf :Decision .
+foaf:Agent rdf:type owl:Class .
 
-# Properties
-:hasName a owl:DatatypeProperty ;
-    rdfs:domain :Person ;
+bias:Problem rdf:type owl:Class .
+
+bias:Explanation rdf:type owl:Class .
+
+bias:Decision rdf:type owl:Class .
+
+bias:RationalDecision rdf:type owl:Class ;
+                  rdfs:subClassOf bias:Decision .
+
+bias:BiasedDecision rdf:type owl:Class ;
+                  rdfs:subClassOf bias:Decision .
+
+bias:SimpleExplanation rdf:type owl:Class ;
+                  rdfs:subClassOf bias:Explanation .
+
+bias:ComplexExplanation rdf:type owl:Class ;
+                  rdfs:subClassOf bias:Explanation .
+
+bias:CognitiveBias rdf:type owl:Class .
+
+bias:OccamRazor rdf:type owl:Class ;
+                    rdfs:subClassOf :CognitiveBias .
+
+                                    # Properties
+bias:hasName rdf:type owl:DatatypeProperty ;
+    rdfs:domain foaf:Agent ;
     rdfs:range xsd:string .
 
-:hasDescription a owl:DatatypeProperty ;
-    rdfs:domain [ owl:unionOf ( :Problem :Explanation ) ] ;
+bias:hasDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain owl:Thing ;
     rdfs:range xsd:string .
 
-:hasAssumptionCount a owl:DatatypeProperty ;
-    rdfs:domain :Explanation ;
+bias:hasAssumptionCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:Explanation ;
     rdfs:range xsd:integer .
 
-:hasComplexityLevel a owl:DatatypeProperty ;
-    rdfs:domain :Explanation ;
+bias:hasComplexityLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain bias:Explanation ;
     rdfs:range xsd:string .
 
-:makesDecision a owl:ObjectProperty ;
-    rdfs:domain :Person ;
-    rdfs:range :Decision .
+bias:makes rdf:type owl:ObjectProperty ;
+             rdfs:domain foaf:Agent ;
+             rdfs:range bias:Decision .
 
-:considersExplanation a owl:ObjectProperty ;
-    rdfs:domain :Problem ;
-    rdfs:range :Explanation .
+bias:considersExplanation rdf:type owl:ObjectProperty ;
+    rdfs:domain bias:Problem ;
+    rdfs:range bias:Explanation .
 
-:chosenExplanation a owl:ObjectProperty ;
-    rdfs:domain :Decision ;
-    rdfs:range :Explanation .
+bias:chosenExplanation rdf:type owl:ObjectProperty ;
+    rdfs:domain bias:Decision ;
+    rdfs:range bias:Explanation .
 
 # Example Individuals
-:DrSmith a :Person ;
-    :hasName "Dr. Smith" .
+:DrSmith rdf:type foaf:Agent ;
+    bias:hasName "Dr. Smith" .
 
-:SuddenHeadache a :Problem ;
-    :hasDescription "Patient reports a sudden onset of headache." .
+:SuddenHeadache rdf:type bias:Problem ;
+    bias:hasDescription "Patient reports a sudden onset of headache." .
 
-:DehydrationExplanation a :SimpleExplanation ;
-    :hasDescription "The headache is due to dehydration." ;
-    :hasAssumptionCount 1 ;
-    :hasComplexityLevel "Low" .
+:DehydrationExplanation rdf:type bias:SimpleExplanation ;
+    bias:hasDescription "The headache is due to dehydration." ;
+    bias:hasAssumptionCount 1 ;
+    bias:hasComplexityLevel "Low" .
 
-:NeurologicalConditionExplanation a :ComplexExplanation ;
-    :hasDescription "The headache is caused by a rare neurological condition." ;
-    :hasAssumptionCount 5 ;
-    :hasComplexityLevel "High" .
+:NeurologicalConditionExplanation rdf:type bias:ComplexExplanation ;
+    bias:hasDescription "The headache is caused by a rare neurological condition." ;
+    bias:hasAssumptionCount 5 ;
+    bias:hasComplexityLevel "High" .
 
-:ChooseDehydration a :RationalDecision ;
-    :chosenExplanation :DehydrationExplanation .
+:ChooseDehydration rdf:type bias:RationalDecision ;
+    bias:chosenExplanation :DehydrationExplanation .
